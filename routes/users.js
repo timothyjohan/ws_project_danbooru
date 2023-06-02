@@ -9,6 +9,11 @@ const JWT_KEY = 'UvuvwevwevweOnyetenyevweUgwemubwemOssas'
 // Register user account
 router.post('/register', async (req, res) => {
     let { username, password, confirm_pass } = req.body
+    //user g boleh regis pake username admin
+    if (username == admin) {
+        return res.status(403).send({ message: 'Username has unauthorized credentials' })
+
+    }
 
 
     //cek username biar gk duplicate
@@ -46,6 +51,21 @@ router.post('/register', async (req, res) => {
 //User Login
 router.post('/login', async (req, res) => {
     let { username, password } = req.body
+    //Login admin
+    if (username == 'admin' && password == 'nimda321') {
+
+        //token yang diambil cuman username dari admin untuk mempermudah akses yg lain
+        let token = jwt.sign({
+            username: username,
+        }, JWT_KEY, { expiresIn: '3600s' })
+        return res.status(200).send({
+            'message': 'Admin successfully logged in',
+            username: username,
+            token: token
+        })
+
+    }
+
     //Cari apa username ada di database 
     let findUser = await Users.findByPk(username)
     if (!findUser) {
