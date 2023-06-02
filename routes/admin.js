@@ -13,8 +13,6 @@ router.get('/users', async (req, res) => {
     let userdata
     try {
         userdata = jwt.verify(token, JWT_KEY)
-
-
     } catch (err) {
         return res.status(400).send('Invalid JWT Key')
 
@@ -24,8 +22,6 @@ router.get('/users', async (req, res) => {
         return res.status(403).send('Unauthorized Access')
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
     let getUsers = await Users.findAll({
         attributes: ['us_username', 'us_kuota']
@@ -74,11 +70,5 @@ router.delete('/users', async (req, res) => {
     return res.status(201).send({message: 'User has been deleted from the database'})
     
 })
-
-
-
-
-
-
 
 module.exports = router 
