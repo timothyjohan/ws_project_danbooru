@@ -10,7 +10,7 @@ const JWT_KEY = 'UvuvwevwevweOnyetenyevweUgwemubwemOssas'
 router.post('/register', async (req, res) => {
     let { username, password, confirm_pass } = req.body
     //user g boleh regis pake username admin
-    if (username == admin) {
+    if (username == 'admin') {
         return res.status(403).send({ message: 'Username has unauthorized credentials' })
 
     }
