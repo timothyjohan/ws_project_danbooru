@@ -45,7 +45,7 @@ router.post('/register', async (req, res) => {
     }
     let message = `Account "${username}" has been created! please check our information site before using our services :)`
 
-    return res.status(200).send(message)
+    return res.status(201).send(message)
 })
 
 //User Login
