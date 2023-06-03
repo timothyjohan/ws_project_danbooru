@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "583fec9b-1295-41d8-a9d4-d52f1856e659",
+		"_postman_id": "312e36ea-cbed-49f1-a522-72b29ec99f76",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26088181"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -133,37 +132,46 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg1NzA1MDEzLCJleHAiOjE2ODU3MDg2MTN9.omM0oDAccwt0xfPTsQg-5Jihy67zf-OXBcAqKVjQa6U",
+						"type": "default"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
 							"key": "username",
 							"value": "user0",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "password",
 							"value": "123",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "confirm_pass",
 							"value": "123",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "localhost:3000/api/admin/users",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"api",
-						"users",
-						"register"
+						"admin",
+						"users"
 					]
 				}
 			},
