@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 const users = require('./routes/users');
 const admin = require('./routes/admin');
+const picture = require('./routes/picture');
 const info = require('./routes/info');
 
 app.use(express.json())
@@ -13,4 +14,5 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.use('/api/users', users)
 app.use('/api/admin', admin)
+app.use('/api/picture', picture)
 app.use('/api/info', info)
