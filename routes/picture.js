@@ -11,6 +11,14 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.post('/fav', async (req, res) => {
+    
+})
+
+router.get('/fav/show', async (req, res) => {
+    
+})
+
 router.get('/info', async (req, res) => {
     let num = req.query.id;
     axios.get(`https://danbooru.donmai.us/posts/${num}.json`)
