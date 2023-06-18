@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "312e36ea-cbed-49f1-a522-72b29ec99f76",
+		"_postman_id": "b0387866-c95f-4a9d-a7b5-186550ff1bf1",
 		"name": "ProjectWS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -191,6 +191,101 @@
 					"path": [
 						"api",
 						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search some post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/search?start_with=ganyu",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"search"
+					],
+					"query": [
+						{
+							"key": "start_with",
+							"value": "ganyu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an info picture",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/info?id=6390722",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"info"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6390722"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get max",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getpict (cara tembak langsung)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"donmai",
+						"us"
+					],
+					"path": [
+						"sample",
+						"f9",
+						"08",
+						"__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
 					]
 				}
 			},
