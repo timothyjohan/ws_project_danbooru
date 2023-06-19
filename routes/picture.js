@@ -11,9 +11,9 @@ router.get("/", async (req, res) => {
     });
 });
 
-router.post("/fav", async (req, res) => {});
+router.post("/fav", async (req, res) => { });
 
-router.get("/fav/show", async (req, res) => {});
+router.get("/fav/show", async (req, res) => { });
 
 router.get("/info", async (req, res) => {
     let num = req.query.id;
@@ -21,9 +21,10 @@ router.get("/info", async (req, res) => {
         .get(`https://danbooru.donmai.us/posts/${num}.json`)
         .then((response) => {
             console.log(response.data);
-            res.status(200).send({
+            return res.status(200).send({
                 id: response.data.id,
                 tag_name: response.data.tag_string_character,
+                artist: response.data.tag_string_artist,
                 created_at: response.data.created_at,
                 score: response.data.score,
                 fav_count: response.data.fav_count,
@@ -31,6 +32,7 @@ router.get("/info", async (req, res) => {
                 picture: response.data.file_url,
                 width: response.data.media_asset.image_width + "px",
                 height: response.data.media_asset.image_height + "px",
+                tags: response.data.tag_string
             });
         })
         .catch((error) => {
@@ -42,20 +44,23 @@ router.get("/info", async (req, res) => {
 router.get("/search", async (req, res) => {
     let start = req.query.start_with;
     let search = await axios.get(
-        `https://danbooru.donmai.us/tags.json?search[name_matches]=${start}*`
+        `https://danbooru.donmai.us/posts.json?tags=${start}`
     );
+    console.log(search)
+    let temp = search.data
+
     let count = search.data.length;
     let data = [];
     for (let i = 0; i < count; i++) {
         data.push({
             id: search.data[i].id,
-            name: search.data[i].name,
+            artist_name: search.data[i].tag_string_artist,
             created_at: search.data[i].created_at,
-            updated_at: search.data[i].updated_at,
+            tags: search.data[i].tag_string,
         });
     }
     res.status(200).send({
-        Note: `Here is 20 result about name tag start with ${start}`,
+        Note: `Here is ${count} result about name tag start with ${start}`,
         Data: data,
     });
 });

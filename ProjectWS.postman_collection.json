@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ce9f7b42-2a0d-4c29-b8f2-9144332f5726",
+		"_postman_id": "a85d2ef0-0090-4cf8-bcb9-b0f1538d1738",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "25659054"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26088181"
 	},
 	"item": [
 		{
@@ -31,7 +31,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/register"
+				"url": {
+					"raw": "localhost:3000/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
 			},
 			"response": []
 		},
@@ -60,7 +71,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/register"
+				"url": {
+					"raw": "localhost:3000/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
 			},
 			"response": []
 		},
@@ -89,7 +111,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/register"
+				"url": {
+					"raw": "localhost:3000/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
 			},
 			"response": []
 		},
@@ -130,7 +163,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/admin/users"
+				"url": {
+					"raw": "localhost:3000/api/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
@@ -139,7 +183,17 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:3000/api/info"
+				"url": {
+					"raw": "localhost:3000/api/info",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"info"
+					]
+				}
 			},
 			"response": []
 		},
@@ -176,7 +230,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=apple",
+					"raw": "localhost:3000/api/picture/search?start_with=ganyu",
 					"host": [
 						"localhost"
 					],
@@ -189,7 +243,7 @@
 					"query": [
 						{
 							"key": "start_with",
-							"value": "apple"
+							"value": "ganyu"
 						}
 					]
 				},
@@ -388,6 +442,12 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"const jsonData = pm.response.json().message\r",
+							"pm.visualizer.set(`\r",
+							"<body>\r",
+							"<img src=\"${jsonData}\">\r",
+							"</body>`);\r",
+							"\r",
 							"pm.test(\"Case 1 : Status OK (200)\", function () {\r",
 							"    pm.expect(pm.response.code).equal(200);\r",
 							"});\r",
@@ -399,7 +459,14 @@
 							"    pm.expect(hasil).to.be.an('object');\r",
 							"    \r",
 							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\");\r",
+							"    const jsonData = pm.response.json().picture\r",
+							"    pm.visualizer.set(`\r",
+							"    <body>\r",
+							"    <img src=\"${jsonData}\">\r",
+							"    </body>`);\r",
 							"});\r",
+							"\r",
+							"\r",
 							"\r",
 							"pm.test(\"Case 3 : Status Code Sudah Benar\", function (){\r",
 							"    const res = pm.response.code;\r",
@@ -409,7 +476,9 @@
 							"    else{\r",
 							"        pm.expect(pm.response.code).equal(404)\r",
 							"    }\r",
-							"});"
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -419,7 +488,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/info?id=999999",
+					"raw": "localhost:3000/api/picture/info?id=1902723",
 					"host": [
 						"localhost"
 					],
@@ -432,7 +501,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "999999"
+							"value": "1902723"
 						}
 					]
 				},
@@ -629,7 +698,18 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": "localhost:3000/api/picture/fav"
+				"url": {
+					"raw": "localhost:3000/api/picture/fav",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"fav"
+					]
+				}
 			},
 			"response": []
 		},
@@ -638,7 +718,18 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:3000/api/picture/"
+				"url": {
+					"raw": "localhost:3000/api/picture/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						""
+					]
+				}
 			},
 			"response": []
 		},
@@ -647,7 +738,19 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:3000/api/picture/fav/show"
+				"url": {
+					"raw": "localhost:3000/api/picture/fav/show",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"fav",
+						"show"
+					]
+				}
 			},
 			"response": []
 		},
@@ -656,7 +759,21 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
+				"url": {
+					"raw": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"donmai",
+						"us"
+					],
+					"path": [
+						"sample",
+						"f9",
+						"08",
+						"__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
+					]
+				}
 			},
 			"response": []
 		}
