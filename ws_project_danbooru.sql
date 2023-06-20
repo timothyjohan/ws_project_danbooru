@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`us_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS `favorite` ( 
+  `id_fav` VARCHAR(255) NOT NULL, 
+  `us_username` VARCHAR(255) NOT NULL, 
+  `id_picture` VARCHAR(255) NOT NULL, 
+  PRIMARY KEY (`id_fav`),
+  CONSTRAINT `fk_username` FOREIGN KEY (`us_username`) REFERENCES `users` (`us_username`)
+  ); 
+
 --
 -- Dumping data for table `users`
 --

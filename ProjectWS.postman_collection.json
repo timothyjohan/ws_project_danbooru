@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "a85d2ef0-0090-4cf8-bcb9-b0f1538d1738",
+		"_postman_id": "4184024e-0a66-459f-8563-e4c68a750150",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26088181"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -230,7 +229,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=ganyu",
+					"raw": "localhost:3000/api/picture/search?start_with=apple",
 					"host": [
 						"localhost"
 					],
@@ -243,7 +242,7 @@
 					"query": [
 						{
 							"key": "start_with",
-							"value": "ganyu"
+							"value": "apple"
 						}
 					]
 				},
@@ -442,12 +441,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"const jsonData = pm.response.json().message\r",
-							"pm.visualizer.set(`\r",
-							"<body>\r",
-							"<img src=\"${jsonData}\">\r",
-							"</body>`);\r",
-							"\r",
 							"pm.test(\"Case 1 : Status OK (200)\", function () {\r",
 							"    pm.expect(pm.response.code).equal(200);\r",
 							"});\r",
@@ -459,14 +452,7 @@
 							"    pm.expect(hasil).to.be.an('object');\r",
 							"    \r",
 							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\");\r",
-							"    const jsonData = pm.response.json().picture\r",
-							"    pm.visualizer.set(`\r",
-							"    <body>\r",
-							"    <img src=\"${jsonData}\">\r",
-							"    </body>`);\r",
 							"});\r",
-							"\r",
-							"\r",
 							"\r",
 							"pm.test(\"Case 3 : Status Code Sudah Benar\", function (){\r",
 							"    const res = pm.response.code;\r",
@@ -476,9 +462,7 @@
 							"    else{\r",
 							"        pm.expect(pm.response.code).equal(404)\r",
 							"    }\r",
-							"});\r",
-							"\r",
-							""
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -488,7 +472,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/info?id=1902723",
+					"raw": "localhost:3000/api/picture/info?id=999999",
 					"host": [
 						"localhost"
 					],
@@ -501,7 +485,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "1902723"
+							"value": "999999"
 						}
 					]
 				},
@@ -714,12 +698,12 @@
 			"response": []
 		},
 		{
-			"name": "Get max",
+			"name": "Delete favorite",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/",
+					"raw": "localhost:3000/api/picture/delete",
 					"host": [
 						"localhost"
 					],
@@ -727,7 +711,7 @@
 					"path": [
 						"api",
 						"picture",
-						""
+						"delete"
 					]
 				}
 			},

@@ -5,13 +5,27 @@ const JWT_KEY = "UvuvwevwevweOnyetenyevweUgwemubwemOssas";
 const Joi = require("joi");
 const axios = require("axios");
 
-router.get("/", async (req, res) => {
-    axios.get(`https://danbooru.donmai.us/posts.json`).then((response) => {
-        console.log(response.data.id[response.count]);
-    });
-});
+// router.get("/", async (req, res) => {
+//     await axios.get(`https://danbooru.donmai.us/posts.json`).then((response) => {
+//         console.log(response.data.length);
+//     });
+// });
 
-router.post("/fav", async (req, res) => { });
+router.post("/fav", async (req, res) => {
+    let token = req.header('x-auth-token')
+    if(!req.header('x-auth-token')){
+       let out = 'Authentication token is missing';
+       return res.status(401).send({out});
+    }
+    try{
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        // const insert = 
+    }catch(err){
+        return res.status(400).send('Invalid JWT Key');
+    }
+
+});
 
 router.get("/fav/show", async (req, res) => { });
 
