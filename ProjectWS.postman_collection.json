@@ -70,6 +70,80 @@
 					"raw": "localhost:3000/api/users/login",
 					"host": [
 						"localhost"
+<<<<<<< HEAD
+=======
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "Endpoint ini digunakan untuk melakukan login, agar user dapat melihat token mereka masing-masing.\n\nUntuk dapat mengkases endpoint ini, pastikan bahwa :\n\n- password sesuai\n- user terdaftar\n    \n\nUntuk dapat mengakses login admin, pastikan bahwa anda mengisi username dan password yang sesuai untuk admin."
+			},
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "nimda321",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "localhost:3000/api/users/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "259"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"103-jWj7ExemKPWzf0yAsTB7J2eSjQk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 06:08:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+>>>>>>> parent of 615bf83 (Update ProjectWS.postman_collection.json)
 					],
 					"port": "3000",
 					"path": [
@@ -504,7 +578,11 @@
 						}
 					]
 				},
+<<<<<<< HEAD
 				"description": "Endpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+=======
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+>>>>>>> parent of 615bf83 (Update ProjectWS.postman_collection.json)
 			},
 			"response": [
 				{
