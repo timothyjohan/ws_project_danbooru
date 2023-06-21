@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5d19b059-3f15-4745-8e9a-a7346fc9a302",
+		"_postman_id": "f6cb1512-7aef-4b05-9dac-97dcebe094ed",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26088181"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25659054"
 	},
 	"item": [
 		{
@@ -474,18 +474,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/users/login",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"login"
-					]
-				},
+				"url": "localhost:3000/api/users/login",
 				"description": "Endpoint ini digunakan untuk melakukan login, agar user dapat melihat token mereka masing-masing.\n\nUntuk dapat mengkases endpoint ini, pastikan bahwa :\n\n- password sesuai\n- user terdaftar\n    \n\nUntuk dapat mengakses login admin, pastikan bahwa anda mengisi username dan password yang sesuai untuk admin."
 			},
 			"response": [
@@ -880,7 +869,7 @@
 						}
 					]
 				},
-				"description": "Endpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
 			},
 			"response": [
 				{
@@ -1118,7 +1107,7 @@
 						}
 					]
 				},
-				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang terbaru.  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error."
 			},
 			"response": [
 				{
@@ -1590,18 +1579,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/picture/fav",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"fav"
-					]
-				}
+				"url": "localhost:3000/api/picture/fav"
 			},
 			"response": []
 		},
