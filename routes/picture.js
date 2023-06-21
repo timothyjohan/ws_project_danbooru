@@ -91,11 +91,42 @@ router.get("/fav/show", async (req, res) => { });
 
 //Search by ID
 router.get("/info", async (req, res) => {
+    //////////////////////////////////////////////////////////
+    let token = req.header('x-auth-token')
+    if (!req.header('x-auth-token')) {
+        let out = 'Authentication token is missing';
+        return res.status(401).send({ out });
+    }
+    let username
+    let userdata
+    try {
+        userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username
+        // const insert = 
+    } catch (err) {
+        return res.status(400).send('Invalid JWT Key');
+    }
+
+    //////////////////////////////////////////////////////////
+
+    //Payment kuota
+    let findUser = await Users.findByPk(username)
+    if (findUser.us_kuota < 3) {
+        return res.status(403).send('Kuota tidak mencukupi, untuk melakukan fitur ini diperlukan 3 kuota')
+    }
+    let tempKuota = findUser.us_kuota - 3
+    let update = await Users.update(
+        { us_kuota: tempKuota },
+        { where: { us_username: username } }
+    )
+
     let num = req.query.id;
     axios
         .get(`https://danbooru.donmai.us/posts/${num}.json`)
         .then((response) => {
             console.log(response.data);
+
             return res.status(200).send({
                 id: response.data.id,
                 tag_name: response.data.tag_string_character,
@@ -107,7 +138,8 @@ router.get("/info", async (req, res) => {
                 picture: response.data.file_url,
                 width: response.data.media_asset.image_width + "px",
                 height: response.data.media_asset.image_height + "px",
-                tags: response.data.tag_string
+                tags: response.data.tag_string,
+                kuota_user: tempKuota
             });
         })
         .catch((error) => {
@@ -118,6 +150,38 @@ router.get("/info", async (req, res) => {
 
 // Search by tags
 router.get("/search", async (req, res) => {
+    //////////////////////////////////////////////////////////
+    let token = req.header('x-auth-token')
+    if (!req.header('x-auth-token')) {
+        let out = 'Authentication token is missing';
+        return res.status(401).send({ out });
+    }
+    let username
+    let userdata
+    try {
+        userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username
+        // const insert = 
+    } catch (err) {
+        return res.status(400).send('Invalid JWT Key');
+    }
+
+    //////////////////////////////////////////////////////////
+
+
+    //Payment kuota
+    let findUser = await Users.findByPk(username)
+    if (findUser.us_kuota < 5) {
+        return res.status(403).send('Kuota tidak mencukupi, untuk melakukan fitur ini diperlukan 5 kuota')
+    }
+    let tempKuota = findUser.us_kuota - 5
+    let update = await Users.update(
+        { us_kuota: tempKuota },
+        { where: { us_username: username } }
+    )
+
+
     let start = req.query.start_with;
     let nsfw = ''
     if (req.query.nsfw) {
@@ -145,6 +209,7 @@ router.get("/search", async (req, res) => {
         });
     }
     res.status(200).send({
+        kuota_user: tempKuota,
         Note: `Here is ${count} result about name tag start with ${start}`,
         Data: data,
     });
@@ -152,6 +217,40 @@ router.get("/search", async (req, res) => {
 
 // Get all post from latest
 router.get("/search_notag", async (req, res) => {
+        //////////////////////////////////////////////////////////
+        let token = req.header('x-auth-token')
+        if (!req.header('x-auth-token')) {
+            let out = 'Authentication token is missing';
+            return res.status(401).send({ out });
+        }
+        let username
+        let userdata
+        try {
+            userdata = jwt.verify(token, JWT_KEY);
+            console.log(userdata.username);
+            username = userdata.username
+            // const insert = 
+        } catch (err) {
+            return res.status(400).send('Invalid JWT Key');
+        }
+    
+        //////////////////////////////////////////////////////////
+    
+    
+        //Payment kuota
+        let findUser = await Users.findByPk(username)
+        if (findUser.us_kuota < 10) {
+            return res.status(403).send('Kuota tidak mencukupi, untuk melakukan fitur ini diperlukan 10 kuota')
+        }
+        let tempKuota = findUser.us_kuota - 10
+        let update = await Users.update(
+            { us_kuota: tempKuota },
+            { where: { us_username: username } }
+        )
+
+
+
+
     let start = req.query.start_with;
     let search = await axios.get(
         `https://danbooru.donmai.us/posts.json`
@@ -171,6 +270,7 @@ router.get("/search_notag", async (req, res) => {
         });
     }
     res.status(200).send({
+        kuota_user: tempKuota,
         Note: `Here is ${count} result of the latest posts`,
         Data: data,
     });
