@@ -217,36 +217,36 @@ router.get("/search", async (req, res) => {
 
 // Get all post from latest
 router.get("/search_notag", async (req, res) => {
-        //////////////////////////////////////////////////////////
-        let token = req.header('x-auth-token')
-        if (!req.header('x-auth-token')) {
-            let out = 'Authentication token is missing';
-            return res.status(401).send({ out });
-        }
-        let username
-        let userdata
-        try {
-            userdata = jwt.verify(token, JWT_KEY);
-            console.log(userdata.username);
-            username = userdata.username
-            // const insert = 
-        } catch (err) {
-            return res.status(400).send('Invalid JWT Key');
-        }
-    
-        //////////////////////////////////////////////////////////
-    
-    
-        //Payment kuota
-        let findUser = await Users.findByPk(username)
-        if (findUser.us_kuota < 10) {
-            return res.status(403).send('Kuota tidak mencukupi, untuk melakukan fitur ini diperlukan 10 kuota')
-        }
-        let tempKuota = findUser.us_kuota - 10
-        let update = await Users.update(
-            { us_kuota: tempKuota },
-            { where: { us_username: username } }
-        )
+    //////////////////////////////////////////////////////////
+    let token = req.header('x-auth-token')
+    if (!req.header('x-auth-token')) {
+        let out = 'Authentication token is missing';
+        return res.status(401).send({ out });
+    }
+    let username
+    let userdata
+    try {
+        userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username
+        // const insert = 
+    } catch (err) {
+        return res.status(400).send('Invalid JWT Key');
+    }
+
+    //////////////////////////////////////////////////////////
+
+
+    //Payment kuota
+    let findUser = await Users.findByPk(username)
+    if (findUser.us_kuota < 10) {
+        return res.status(403).send('Kuota tidak mencukupi, untuk melakukan fitur ini diperlukan 10 kuota')
+    }
+    let tempKuota = findUser.us_kuota - 10
+    let update = await Users.update(
+        { us_kuota: tempKuota },
+        { where: { us_username: username } }
+    )
 
 
 
