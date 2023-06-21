@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 08:12 AM
+-- Generation Time: Jun 21, 2023 at 09:03 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -26,6 +26,28 @@ USE `ws_project_danbooru`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `favorite`
+--
+
+DROP TABLE IF EXISTS `favorite`;
+CREATE TABLE IF NOT EXISTS `favorite` (
+  `id_fav` int(255) NOT NULL AUTO_INCREMENT,
+  `us_username` varchar(255) NOT NULL,
+  `id_picture` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_fav`),
+  KEY `fk_username` (`us_username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `favorite`
+--
+
+INSERT INTO `favorite` (`id_fav`, `us_username`, `id_picture`) VALUES
+(1, 'user0', '6420033');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -37,21 +59,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`us_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `favorite` ( 
-  `id_fav` VARCHAR(255) NOT NULL, 
-  `us_username` VARCHAR(255) NOT NULL, 
-  `id_picture` VARCHAR(255) NOT NULL, 
-  PRIMARY KEY (`id_fav`),
-  CONSTRAINT `fk_username` FOREIGN KEY (`us_username`) REFERENCES `users` (`us_username`)
-  ); 
-
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`us_username`, `us_password`, `us_kuota`) VALUES
-('user0', '123', 10),
-('user1', '123', 10);
+('user0', '12345', 10),
+('user1', '12345', 10);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `favorite`
+--
+ALTER TABLE `favorite`
+  ADD CONSTRAINT `fk_username` FOREIGN KEY (`us_username`) REFERENCES `users` (`us_username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4184024e-0a66-459f-8563-e4c68a750150",
+		"_postman_id": "5d19b059-3f15-4745-8e9a-a7346fc9a302",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26088181"
 	},
 	"item": [
 		{
@@ -60,18 +61,13 @@
 						},
 						{
 							"key": "password",
-							"value": "123",
-							"type": "text"
-						},
-						{
-							"key": "confirm_pass",
-							"value": "123",
+							"value": "12345",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "localhost:3000/api/users/login",
 					"host": [
 						"localhost"
 					],
@@ -79,7 +75,7 @@
 					"path": [
 						"api",
 						"users",
-						"register"
+						"login"
 					]
 				}
 			},
@@ -197,7 +193,7 @@
 			"response": []
 		},
 		{
-			"name": "Search some post",
+			"name": "Get post by tags",
 			"event": [
 				{
 					"listen": "test",
@@ -229,7 +225,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=apple",
+					"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=false",
 					"host": [
 						"localhost"
 					],
@@ -242,7 +238,249 @@
 					"query": [
 						{
 							"key": "start_with",
-							"value": "apple"
+							"value": "ganyu"
+						},
+						{
+							"key": "nsfw",
+							"value": "false"
+						}
+					]
+				},
+				"description": "Endpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+			},
+			"response": [
+				{
+					"name": "contoh berhasil (input diisi)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=ganyu",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "ganyu",
+									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1620"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"654-nBk7i3c++0rif0Jx0Vc81BIROzw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Jun 2023 17:51:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 1902723,\n            \"name\": \"ganyu(genshin_impact)\",\n            \"created_at\": \"2023-02-17T12:26:10.288-05:00\",\n            \"updated_at\": \"2023-02-17T12:26:10.288-05:00\"\n        },\n        {\n            \"id\": 1870743,\n            \"name\": \"ganyusukasusu\",\n            \"created_at\": \"2022-12-01T18:07:12.845-05:00\",\n            \"updated_at\": \"2022-12-01T18:07:12.845-05:00\"\n        },\n        {\n            \"id\": 1858245,\n            \"name\": \"ganyu_(autumn_pop-up_store)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T20:19:43.269-04:00\",\n            \"updated_at\": \"2022-10-27T20:19:53.541-04:00\"\n        },\n        {\n            \"id\": 1858103,\n            \"name\": \"ganyu_(winter_olympics)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T11:03:12.944-04:00\",\n            \"updated_at\": \"2022-10-27T11:03:38.034-04:00\"\n        },\n        {\n            \"id\": 1858094,\n            \"name\": \"ganyu_(china_merchants_bank)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T10:31:33.205-04:00\",\n            \"updated_at\": \"2022-10-27T10:32:07.179-04:00\"\n        },\n        {\n            \"id\": 1844584,\n            \"name\": \"ganyujiang~\",\n            \"created_at\": \"2022-09-19T20:48:26.907-04:00\",\n            \"updated_at\": \"2022-09-19T20:48:26.907-04:00\"\n        },\n        {\n            \"id\": 1814043,\n            \"name\": \"ganyu_(qilin)_(genshin_impact)\",\n            \"created_at\": \"2022-07-09T19:10:08.900-04:00\",\n            \"updated_at\": \"2022-07-09T19:10:08.926-04:00\"\n        },\n        {\n            \"id\": 1695058,\n            \"name\": \"ganyu_(impacto_genshin)\",\n            \"created_at\": \"2021-09-20T12:05:32.976-04:00\",\n            \"updated_at\": \"2021-09-20T12:05:32.976-04:00\"\n        },\n        {\n            \"id\": 1619687,\n            \"name\": \"ganyu_(genshin_impact)_(cosplay)\",\n            \"created_at\": \"2020-12-31T07:43:07.505-05:00\",\n            \"updated_at\": \"2020-12-31T07:43:07.505-05:00\"\n        },\n        {\n            \"id\": 1602203,\n            \"name\": \"ganyu_(genshin_impact)\",\n            \"created_at\": \"2020-10-18T21:55:37.708-04:00\",\n            \"updated_at\": \"2020-10-25T02:10:42.428-04:00\"\n        },\n        {\n            \"id\": 1601769,\n            \"name\": \"ganyu\",\n            \"created_at\": \"2020-10-17T02:38:48.062-04:00\",\n            \"updated_at\": \"2021-01-17T04:20:06.222-05:00\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh berhasil (input kosong)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "",
+									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2649"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a59-gYJsYznPPY8v7zDBokmHXk98Z84\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Jun 2023 18:19:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with \",\n    \"Data\": [\n        {\n            \"id\": 1955960,\n            \"name\": \"crimson_nova_trinity_the_dark_cubic_lord\",\n            \"created_at\": \"2023-06-18T14:12:20.604-04:00\",\n            \"updated_at\": \"2023-06-18T14:12:20.604-04:00\"\n        },\n        {\n            \"id\": 1955959,\n            \"name\": \"four_have.\",\n            \"created_at\": \"2023-06-18T14:07:43.711-04:00\",\n            \"updated_at\": \"2023-06-18T14:07:43.711-04:00\"\n        },\n        {\n            \"id\": 1955958,\n            \"name\": \"acoco_kaicyan\",\n            \"created_at\": \"2023-06-18T14:06:19.021-04:00\",\n            \"updated_at\": \"2023-06-18T14:06:19.021-04:00\"\n        },\n        {\n            \"id\": 1955957,\n            \"name\": \"lunae_mon\",\n            \"created_at\": \"2023-06-18T14:03:46.066-04:00\",\n            \"updated_at\": \"2023-06-18T14:03:46.066-04:00\"\n        },\n        {\n            \"id\": 1955956,\n            \"name\": \"tadano_hitohito_(cosplay)\",\n            \"created_at\": \"2023-06-18T14:02:33.076-04:00\",\n            \"updated_at\": \"2023-06-18T14:02:33.076-04:00\"\n        },\n        {\n            \"id\": 1955955,\n            \"name\": \"comsou\",\n            \"created_at\": \"2023-06-18T14:01:52.145-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:52.145-04:00\"\n        },\n        {\n            \"id\": 1955954,\n            \"name\": \"kichi_i_i\",\n            \"created_at\": \"2023-06-18T14:01:45.779-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:45.779-04:00\"\n        },\n        {\n            \"id\": 1955953,\n            \"name\": \"earl_grey_ballistic\",\n            \"created_at\": \"2023-06-18T14:00:59.302-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:59.302-04:00\"\n        },\n        {\n            \"id\": 1955952,\n            \"name\": \"shuspocket\",\n            \"created_at\": \"2023-06-18T14:00:37.219-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:37.219-04:00\"\n        },\n        {\n            \"id\": 1955951,\n            \"name\": \"jeanne0424\",\n            \"created_at\": \"2023-06-18T14:00:23.061-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:23.061-04:00\"\n        },\n        {\n            \"id\": 1955950,\n            \"name\": \"kure_(90_xxx)\",\n            \"created_at\": \"2023-06-18T13:58:51.353-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:51.353-04:00\"\n        },\n        {\n            \"id\": 1955949,\n            \"name\": \"beefussop12\",\n            \"created_at\": \"2023-06-18T13:58:03.332-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:03.332-04:00\"\n        },\n        {\n            \"id\": 1955948,\n            \"name\": \"anzubowl\",\n            \"created_at\": \"2023-06-18T13:56:33.620-04:00\",\n            \"updated_at\": \"2023-06-18T13:56:33.620-04:00\"\n        },\n        {\n            \"id\": 1955947,\n            \"name\": \"maabo_harusame\",\n            \"created_at\": \"2023-06-18T13:54:21.657-04:00\",\n            \"updated_at\": \"2023-06-18T13:54:21.657-04:00\"\n        },\n        {\n            \"id\": 1955946,\n            \"name\": \"gundam_calibarn_(cosplay)\",\n            \"created_at\": \"2023-06-18T13:48:50.675-04:00\",\n            \"updated_at\": \"2023-06-18T13:48:50.675-04:00\"\n        },\n        {\n            \"id\": 1955945,\n            \"name\": \"shiawasemono_(utau)\",\n            \"created_at\": \"2023-06-18T13:42:46.023-04:00\",\n            \"updated_at\": \"2023-06-18T13:42:46.023-04:00\"\n        },\n        {\n            \"id\": 1955944,\n            \"name\": \"corydoras_(fish)\",\n            \"created_at\": \"2023-06-18T13:37:25.418-04:00\",\n            \"updated_at\": \"2023-06-18T13:37:25.418-04:00\"\n        },\n        {\n            \"id\": 1955943,\n            \"name\": \"phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:57.524-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:57.524-04:00\"\n        },\n        {\n            \"id\": 1955942,\n            \"name\": \"user_phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:24.689-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:24.689-04:00\"\n        },\n        {\n            \"id\": 1955941,\n            \"name\": \"blendzy\",\n            \"created_at\": \"2023-06-18T13:32:04.695-04:00\",\n            \"updated_at\": \"2023-06-18T13:32:04.695-04:00\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh berhasil (parameter start_with dimatikan)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/picture/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "apple",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1302"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"516-8Z3FGkHV0fpZ6SXX5ZMiGI4ldpM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Jun 2023 18:24:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with undefined\",\n    \"Data\": [\n        {\n            \"id\": 1491020,\n            \"name\": \"undefined_(vocaloid)\",\n            \"created_at\": \"2018-09-03T12:34:42.515-04:00\",\n            \"updated_at\": \"2019-08-27T19:39:13.435-04:00\"\n        },\n        {\n            \"id\": 1041095,\n            \"name\": \"undefined\",\n            \"created_at\": \"2013-03-10T03:34:26.128-04:00\",\n            \"updated_at\": \"2019-08-26T03:59:22.786-04:00\"\n        },\n        {\n            \"id\": 681935,\n            \"name\": \"undefined_fantasic_object\",\n            \"created_at\": \"2015-01-31T17:57:07.465-05:00\",\n            \"updated_at\": \"2015-01-31T17:57:07.465-05:00\"\n        },\n        {\n            \"id\": 597196,\n            \"name\": \"undefined_fanastic_object\",\n            \"created_at\": \"2013-02-25T01:12:17.578-05:00\",\n            \"updated_at\": \"2015-01-09T02:07:55.563-05:00\"\n        },\n        {\n            \"id\": 565794,\n            \"name\": \"undefined_fanstatic_object\",\n            \"created_at\": \"2016-08-25T20:56:15.653-04:00\",\n            \"updated_at\": \"2016-08-25T20:56:15.653-04:00\"\n        },\n        {\n            \"id\": 564470,\n            \"name\": \"undefined_fantastic_objest\",\n            \"created_at\": \"2013-02-24T22:16:19.211-05:00\",\n            \"updated_at\": \"2015-02-01T10:17:26.073-05:00\"\n        },\n        {\n            \"id\": 545343,\n            \"name\": \"undefined_fantastic_oject\",\n            \"created_at\": \"2015-02-07T06:26:54.086-05:00\",\n            \"updated_at\": \"2015-02-07T06:26:54.086-05:00\"\n        },\n        {\n            \"id\": 504379,\n            \"name\": \"undefined_fantastic\",\n            \"created_at\": \"2017-11-07T07:14:06.658-05:00\",\n            \"updated_at\": \"2017-11-07T07:14:06.658-05:00\"\n        },\n        {\n            \"id\": 472969,\n            \"name\": \"undefined_fantastic_object\",\n            \"created_at\": \"2013-02-28T16:41:00.142-05:00\",\n            \"updated_at\": \"2019-09-02T04:22:22.374-04:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get latest posts with no tags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1 : Status OK (200)\", function () {\r",
+							"    pm.expect(pm.response.code).equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2 : Struktur Kembalian Sesuai\", function () {\r",
+							"    const hasil = pm.response.json();\r",
+							"    // Memeriksa apakah hasil adalah objek\r",
+							"    pm.expect(hasil).to.be.an('object');\r",
+							"    // Mendapatkan nilai dari properti \"Data\" pada objek hasil\r",
+							"    const data = hasil.Data;\r",
+							"    // Memeriksa apakah data adalah array\r",
+							"    pm.expect(data).to.be.an('array');\r",
+							"    for (const h of data) {\r",
+							"        pm.expect(h).to.have.keys(\"id\", \"name\", \"created_at\", \"updated_at\");\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/search_notag?",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"search_notag"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
 						}
 					]
 				},
@@ -451,7 +689,12 @@
 							"    // Memeriksa apakah hasil adalah objek\r",
 							"    pm.expect(hasil).to.be.an('object');\r",
 							"    \r",
-							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\");\r",
+							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\",\"artist\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\", \"tags\");\r",
+							"    const jsonData = pm.response.json().picture\r",
+							"    pm.visualizer.set(`\r",
+							"    <body>\r",
+							"    <img src=\"${jsonData}\">\r",
+							"    </body>`);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Case 3 : Status Code Sudah Benar\", function (){\r",
@@ -472,7 +715,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/info?id=999999",
+					"raw": "localhost:3000/api/picture/info?id=6420033",
 					"host": [
 						"localhost"
 					],
@@ -485,7 +728,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "999999"
+							"value": "6420033"
 						}
 					]
 				},
@@ -679,9 +922,40 @@
 		},
 		{
 			"name": "Add to favorite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json().picture\r",
+							"    pm.visualizer.set(`\r",
+							"    <body>\r",
+							"    <img src=\"${jsonData}\">\r",
+							"    </body>`);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzI4MDg1LCJleHAiOjE2ODczMzE2ODV9.2QsHIIkMyvld5AGTRLGT3Plmoy-auPq3bAugEJPukAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "6420033",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
 					"raw": "localhost:3000/api/picture/fav",
 					"host": [
@@ -719,9 +993,16 @@
 		},
 		{
 			"name": "Show favorite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
 					"raw": "localhost:3000/api/picture/fav/show",
 					"host": [
@@ -733,6 +1014,13 @@
 						"picture",
 						"fav",
 						"show"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},

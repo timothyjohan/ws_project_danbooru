@@ -55,20 +55,20 @@ router.delete('/users', async (req, res) => {
     let findUser = await Users.findByPk(username)
     if (!findUser) {
         return res.status(404).send('User not found')
-        
+
     }
     let delUser
     try {
         delUser = await Users.destroy({
             where: { us_username: username }
         })
-        
+
     } catch (error) {
         return res.status(500).send(error)
-        
+
     }
-    return res.status(201).send({message: 'User has been deleted from the database'})
-    
+    return res.status(201).send({ message: 'User has been deleted from the database' })
+
 })
 
 module.exports = router 
