@@ -116,4 +116,48 @@ router.post('/login', async (req, res) => {
     })
 })
 
+router.put('/changepw', async (req, res) => {
+    const schema = Joi.object({
+        old_password: Joi.string().required(),
+        new_password: Joi.string().required(),
+        confirm_pass: Joi.string().required(),
+    });
+
+    try {
+        await schema.validateAsync(req.body)
+    } catch (error) {
+        return res.status(403).send(error.toString())
+    }
+    const data = {...req.body}
+    if(data.new_password != data.confirm_pass){
+        return res.status(401).send('New password and confirm password should be same!');
+    }
+    let token = req.header('x-auth-token')
+    if(!req.header('x-auth-token')){
+       let out = 'Authentication token is missing';
+       return res.status(401).send({out});
+    }
+    try{
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata);
+        const change = await Users.findOne({
+            where:{
+                us_username : userdata.username,
+                us_password : data.old_password
+            }
+        });
+        console.log("lewat find");
+        if(change){
+            change.update({
+                us_password : data.new_password
+            })
+            return res.status(201).send('Successfully updated new password!');
+        }else{
+            return res.status(401).send('Wrong password');
+        }
+    }catch(err){
+        return res.status(400).send('Invalid JWT Key');
+    }
+})
+
 module.exports = router 
