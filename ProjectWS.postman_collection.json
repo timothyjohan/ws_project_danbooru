@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5d19b059-3f15-4745-8e9a-a7346fc9a302",
+		"_postman_id": "5c317136-a0e6-4008-81c9-4ba4951d093c",
 		"name": "ProjectWS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26088181"
@@ -8,6 +8,40 @@
 	"item": [
 		{
 			"name": "Register User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (201)\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2: Struktur Kembalian Sesuai\", function () {\r",
+							"    const response = pm.response.text(); // Assuming the response is plain text\r",
+							"    pm.expect(response).to.include(\"has been created! please check our information site before using our services :)\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3 : Status Code Sudah Benar\", function (){\r",
+							"    const res = pm.response.code;\r",
+							"    if(res === 201){\r",
+							"       pm.expect(pm.response.code).equal(201);\r",
+							"    }\r",
+							"    else if(res === 403){\r",
+							"        pm.expect(pm.response.code).equal(403)\r",
+							"    }\r",
+							"    else if(res === 200){\r",
+							"        pm.expect(pm.response.code).equal(200)\r",
+							"    }\r",
+							"    else if(res === 500){\r",
+							"        pm.expect(pm.response.code).equal(500)\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -16,17 +50,17 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "user1",
+							"value": "user3",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "123",
+							"value": "12345",
 							"type": "text"
 						},
 						{
 							"key": "confirm_pass",
-							"value": "123",
+							"value": "12345",
 							"type": "text"
 						}
 					]
@@ -42,12 +76,452 @@
 						"users",
 						"register"
 					]
-				}
+				},
+				"description": "Endpoint ini berguna untuk mendaftarkan user ke dalam database.\n\nUntuk menghindari mengakses endpoint ini, pastikan bahwa :\n\n- username tidak kembar\n- password & confirm_pass lebih dari 5 char\n- password & confirm_pass sesuai"
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh gagal (username sudah terpakai)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user1",
+									"description": "username tidak boleh kembar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-N6LBSWjSzaUuta2WKt6/oESpRxU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 05:49:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Username \"user1\" has been taken"
+				},
+				{
+					"name": "contoh gagal (password kurang dari 5 char)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"description": "password harus lebih dari 5 char",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-u8/uFhITbuScukYq0xkA940kg0Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 05:50:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "ValidationError: \"password\" length must be at least 5 characters long"
+				},
+				{
+					"name": "contoh gagal (confirm_pass kurang dari 5 char)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "123",
+									"description": "confirm_pass harus lebih dari 5 char",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-PH6PSM5pIV9nkT7ThuTmXT10jC8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 05:50:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "ValidationError: \"confirm_pass\" length must be at least 5 characters long"
+				},
+				{
+					"name": "contoh gagal (password dan confirm_pass tidak sama)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"description": "password dan confirm_pass harus sama",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "12356",
+									"description": "password dan confirm_pass harus sama",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-1nx/S7zYYD8Fjco3w1TmPMEAvxE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 05:51:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password Confirmation Mismatched\"\n}"
+				},
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-4o1FjLmjndSmBWtGI81MlZCp/ZM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 05:52:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Account \"user4\" has been created! please check our information site before using our services :)"
+				}
+			]
 		},
 		{
 			"name": "Login User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (200)\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2: Struktur Kembalian Sesuai\", function () {\r",
+							"    const hasil = pm.response.json();\r",
+							"\r",
+							"    // Memeriksa apakah hasil adalah objek\r",
+							"    pm.expect(hasil).to.be.an('object');\r",
+							"\r",
+							"    // Memeriksa kunci pada objek hasil\r",
+							"    pm.expect(hasil).to.have.keys(\"message\", \"username\", \"token\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3: 'Successfully logged in'\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    const message = response.message;\r",
+							"    const username = response.username;\r",
+							"\r",
+							"    if (username === \"admin\") {\r",
+							"        // Admin case\r",
+							"        pm.expect(message).to.equal(\"Admin successfully logged in\");\r",
+							"    } else {\r",
+							"        // User case\r",
+							"        pm.expect(message).to.include(\"successfully logged in\");\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4 : Token property should exist and be a string\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"token\").that.is.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 5 : Token property should have a length greater than 0\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response.token).to.have.length.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 6 : Status Code Sudah Benar\", function (){\r",
+							"    const res = pm.response.code;\r",
+							"    if(res === 404){\r",
+							"       pm.expect(pm.response.code).equal(404);\r",
+							"    }\r",
+							"    else if(res === 403){\r",
+							"        pm.expect(pm.response.code).equal(403)\r",
+							"    }\r",
+							"    else if(res === 200){\r",
+							"        pm.expect(pm.response.code).equal(200)\r",
+							"    }\r",
+							"    else if(res === 400){\r",
+							"        pm.expect(pm.response.code).equal(400)\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -70,8 +544,6 @@
 					"raw": "localhost:3000/api/users/login",
 					"host": [
 						"localhost"
-<<<<<<< HEAD
-=======
 					],
 					"port": "3000",
 					"path": [
@@ -109,7 +581,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/login"
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"status": "OK",
 					"code": 200,
@@ -143,17 +626,236 @@
 							"key": "Keep-Alive",
 							"value": "timeout=5"
 						}
->>>>>>> parent of 615bf83 (Update ProjectWS.postman_collection.json)
 					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"login"
-					]
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully logged in\",\n    \"username\": \"user3\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzI3NjgyLCJleHAiOjE2ODczMzEyODJ9.AjoAV_8LSswM42_wfwZnuScm36IevWyLTGdxtt5dNYM\"\n}"
+				},
+				{
+					"name": "contoh berhasil (admin)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "nimda321",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "nimda321",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1-K3pHTBsdO06vilyYVMIBz4TeKrU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 06:09:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Admin successfully logged in\",\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg3MzI3NzQyLCJleHAiOjE2ODczMzEzNDJ9.6yenm7UxEDag6ioKaqrBdZr4z3ZWZNmhG-eHDVghg5M\"\n}"
+				},
+				{
+					"name": "contoh gagal (password tidak sesuai)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "nimda321",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-6TC2siujKjb4Sye7f7qJOBZ/udc\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 06:08:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"incorrect password\"\n}"
+				},
+				{
+					"name": "contoh gagal (user tidak terdaftar)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "nimda321",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-ieIwnOqHR5OnNrGm4L2JMUYR7YM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 06:08:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"username not found\"\n}"
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "(ADMIN)Delete Account",
@@ -295,22 +997,15 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzM5NzY5LCJleHAiOjE2ODczNDMzNjl9.30xHvctun2XFfUdnMyH_KsTOmkgMOvQighdP30wNXIE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
 				"url": {
 					"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=false",
 					"host": [
@@ -333,7 +1028,7 @@
 						}
 					]
 				},
-				"description": "Endpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
 			},
 			"response": [
 				{
@@ -555,12 +1250,12 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzM5NzY5LCJleHAiOjE2ODczNDMzNjl9.30xHvctun2XFfUdnMyH_KsTOmkgMOvQighdP30wNXIE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/search_notag",
+					"raw": "localhost:3000/api/picture/search_notag?",
 					"host": [
 						"localhost"
 					],
@@ -573,16 +1268,11 @@
 					"query": [
 						{
 							"key": "",
-							"value": null,
-							"disabled": true
+							"value": null
 						}
 					]
 				},
-<<<<<<< HEAD
-				"description": "Endpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
-=======
-				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
->>>>>>> parent of 615bf83 (Update ProjectWS.postman_collection.json)
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang terbaru.  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error."
 			},
 			"response": [
 				{
@@ -814,7 +1504,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzM5NzY5LCJleHAiOjE2ODczNDMzNjl9.30xHvctun2XFfUdnMyH_KsTOmkgMOvQighdP30wNXIE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
 						"type": "text"
 					}
 				],
@@ -836,7 +1526,7 @@
 						}
 					]
 				},
-				"description": "Value \"id\" tidak boleh melebihi 6 digit & tidak boleh kosong."
+				"description": "Endpoint ini digunakan untuk memunculkan detil informasi dari suatu post dengan id yang spesifik.\n\nUntuk menghindari kegagalan, value \"id\" tidak boleh melebihi 6 digit & tidak boleh kosong."
 			},
 			"response": [
 				{
@@ -877,15 +1567,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "239"
+							"value": "592"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"ef-rEKWmfjL5b5e3/tz6rIwcuOi33A\""
+							"value": "W/\"250-pME6P8DUW2PuuXBB3VOz+ANyAAo\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:30:08 GMT"
+							"value": "Wed, 21 Jun 2023 05:41:41 GMT"
 						},
 						{
 							"key": "Connection",
@@ -897,10 +1587,10 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": 999999,\n    \"tag_name\": \"cirno\",\n    \"created_at\": \"2011-09-20T11:22:48.006-04:00\",\n    \"score\": 256,\n    \"fav_count\": 310,\n    \"rating\": \"g\",\n    \"picture\": \"https://cdn.donmai.us/original/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg\",\n    \"width\": \"1000px\",\n    \"height\": \"2082px\"\n}"
+					"body": "{\n    \"id\": 123,\n    \"tag_name\": \"suigintou\",\n    \"artist\": \"shinshin\",\n    \"created_at\": \"2005-05-25T11:07:40.000-04:00\",\n    \"score\": 8,\n    \"fav_count\": 18,\n    \"rating\": \"g\",\n    \"picture\": \"https://cdn.donmai.us/original/a1/cf/a1cfa0a448bbca975267789e2a22bfb0.jpg\",\n    \"width\": \"618px\",\n    \"height\": \"718px\",\n    \"tags\": \"1girl black_dress black_wings dress feathers frilled_dress frilled_sleeves frills gothic gothic_lolita gradient_background hairband hand_up headdress holding holding_feather lolita_fashion lolita_hairband long_hair long_sleeves pale_skin pink_eyes rozen_maiden shinshin solo source_request suigintou upper_body white_hair wings\"\n}"
 				},
 				{
-					"name": "contoh gagal (parameter \"id\" lebih dari 6 digit)",
+					"name": "contoh gagal (input \"id\" lebih dari 6 digit)",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -919,7 +1609,7 @@
 								{
 									"key": "id",
 									"value": "9999999",
-									"description": "alasan not found : karena input untuk \"id\" lebih dari 6 digit"
+									"description": "alasan not found : karena postnya tidak lebih dari 6 digit"
 								}
 							]
 						}
@@ -946,7 +1636,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:30:25 GMT"
+							"value": "Wed, 21 Jun 2023 05:42:28 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1008,7 +1698,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:44:24 GMT"
+							"value": "Wed, 21 Jun 2023 05:43:17 GMT"
 						},
 						{
 							"key": "Connection",
