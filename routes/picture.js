@@ -405,4 +405,100 @@ router.get("/random-image", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+router.get("/popular-images", async (req, res) => {
+    axios
+        .get(`https://danbooru.donmai.us/explore/posts/popular.json`)
+        .then((response) => {
+            console.log(response.data);
+            let data = [];
+            for (let i = 0; i < 5; i++) {
+                data.push({
+                    id: response.data[i].id,
+                    tag_name: response.data[i].tag_string_character,
+                    artist: response.data[i].tag_string_artist,
+                    created_at: response.data[i].created_at,
+                    score: response.data[i].score,
+                    fav_count: response.data[i].fav_count,
+                    rating: response.data[i].rating,
+                    picture: response.data[i].file_url,
+                    width: response.data[i].media_asset.image_width + "px",
+                    height: response.data[i].media_asset.image_height + "px",
+                    tags: response.data[i].tag_string,
+                    // kuota_user: tempKuota,
+                });
+            }
+            return res.status(200).send({
+                data: data,
+            });
+        })
+        .catch((error) => {
+            console.error(error);
+            res.status(404).send({ Error: "Posts not found!" });
+        });
+});
+
+router.get("/trending-tags", async (req, res) => {
+    const daysAgo = 7; // Mengatur jumlah hari mundur untuk mencari tag populer
+
+    try {
+        const response = await axios.get(
+            `https://danbooru.donmai.us/tags.json?search[order]=count&search[date]=${daysAgo}d`
+        );
+        const tags = response.data.map((tag) => tag.name);
+
+        res.json({ tags });
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+router.get("/most-liked-post", async (req, res) => {
+    try {
+        const response = await axios.get(
+            `https://danbooru.donmai.us/posts.json?search[order]=like_count.desc&limit=1`
+        );
+        const post = response.data[0];
+        const {
+            id,
+            file_url,
+            tag_string,
+            description,
+            fav_count,
+            image_width,
+            image_height,
+            artist,
+        } = post;
+        const tags = tag_string.split(" ");
+
+        const mostLikedPost = {
+            id,
+            url: file_url,
+            artist: artist ? artist : "Unknown",
+            tags,
+            description: description ? description : "",
+            like_count: fav_count,
+            width: image_width,
+            height: image_height,
+        };
+
+        res.json({ post: mostLikedPost });
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+router.get("/max-post", async (req, res) => {
+    try {
+        const response = await axios.get(
+            `https://danbooru.donmai.us/counts/posts.json`
+        );
+        res.json({ msg: `Total Post : ${response.data.counts.posts}` });
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 module.exports = router;
