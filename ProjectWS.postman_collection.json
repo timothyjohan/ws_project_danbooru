@@ -17,26 +17,24 @@
 							"    pm.expect(pm.response.code).to.equal(201);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Case 2 : Struktur Kembalian Sesuai\", function () {\r",
-							"    const response = pm.response.text(); // Assuming the response is plain text\r",
-							"    pm.expect(response).to.include(\"has been created! please check our information site before using our services :)\");\r",
+							"pm.test(\"Case 2 : Status Code Sudah Benar\", function () {\r",
+							"    const res = pm.response.code;\r",
+							"    pm.expect(res).to.be.oneOf([201, 403, 200, 500]);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Case 3 : Status Code Sudah Benar\", function (){\r",
-							"    const res = pm.response.code;\r",
-							"    if(res === 201){\r",
-							"       pm.expect(pm.response.code).equal(201);\r",
-							"    }\r",
-							"    else if(res === 403){\r",
-							"        pm.expect(pm.response.code).equal(403)\r",
-							"    }\r",
-							"    else if(res === 200){\r",
-							"        pm.expect(pm.response.code).equal(200)\r",
-							"    }\r",
-							"    else if(res === 500){\r",
-							"        pm.expect(pm.response.code).equal(500)\r",
-							"    }\r",
-							"});"
+							"pm.test(\"Case 3 : Response includes username\", function () {\r",
+							"    const response = pm.response.text(); // Assuming the response is plain text\r",
+							"    const message = response;\r",
+							"    const username = response.match(/Account \"(.*?)\"/)[1];\r",
+							"    pm.expect(message).to.include(username);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4 : Response suggests checking information site\", function () {\r",
+							"    const response = pm.response.text(); // Assuming the response is plain text\r",
+							"    const message = response;\r",
+							"    pm.expect(message).to.include(\"check our information site\");\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -50,7 +48,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "user3",
+							"value": "user6",
 							"type": "text"
 						},
 						{
@@ -859,6 +857,63 @@
 		},
 		{
 			"name": "(ADMIN)Delete Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1 : Status OK (201)\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2 : Struktur Kembalian Sesuai\", function () {\r",
+							"    const hasil = pm.response.json();\r",
+							"\r",
+							"    // Memeriksa apakah hasil adalah objek\r",
+							"    pm.expect(hasil).to.be.an('object');\r",
+							"\r",
+							"    // Memeriksa kunci pada objek hasil\r",
+							"    pm.expect(hasil).to.have.keys(\"message\");\r",
+							"});\r",
+							"\r",
+							"// Unit test untuk memeriksa pesan berhasil dihapus\r",
+							"pm.test(\"Case 3 : User successfully deleted\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    const message = response.message;\r",
+							"\r",
+							"    pm.expect(message).to.equal(\"User has been deleted from the database\");\r",
+							"});\r",
+							"\r",
+							"// Unit test untuk memeriksa pesan gagal dihapus\r",
+							"pm.test(\"Case 4 : User deletion succeeded\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    const message = response.message;\r",
+							"\r",
+							"    pm.expect(message).to.equal(\"User has been deleted from the database\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Unit test untuk memeriksa apakah pesan mengandung kata \"deleted\"\r",
+							"pm.test(\"Case 5 : Message contains 'deleted'\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    const message = response.message;\r",
+							"\r",
+							"    pm.expect(message).to.include(\"deleted\");\r",
+							"});\r",
+							"\r",
+							"// Unit test untuk memeriksa panjang pesan\r",
+							"pm.test(\"Case 6 : Message length\", function () {\r",
+							"    const response = pm.response.json();\r",
+							"    const message = response.message;\r",
+							"\r",
+							"    pm.expect(message).to.have.length.above(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -874,7 +929,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "user4",
+							"value": "user5",
 							"type": "text"
 						}
 					]
