@@ -454,48 +454,46 @@ router.get("/trending-tags", async (req, res) => {
     }
 });
 
-router.get("/most-liked-post", async (req, res) => {
-    try {
-        const response = await axios.get(
-            `https://danbooru.donmai.us/posts.json?search[order]=like_count.desc&limit=1`
-        );
-        const post = response.data[0];
-        const {
-            id,
-            file_url,
-            tag_string,
-            description,
-            fav_count,
-            image_width,
-            image_height,
-            artist,
-        } = post;
-        const tags = tag_string.split(" ");
-
-        const mostLikedPost = {
-            id,
-            url: file_url,
-            artist: artist ? artist : "Unknown",
-            tags,
-            description: description ? description : "",
-            like_count: fav_count,
-            width: image_width,
-            height: image_height,
-        };
-
-        res.json({ post: mostLikedPost });
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).json({ error: "Internal Server Error" });
-    }
-});
-
 router.get("/max-post", async (req, res) => {
     try {
         const response = await axios.get(
             `https://danbooru.donmai.us/counts/posts.json`
         );
         res.json({ msg: `Total Post : ${response.data.counts.posts}` });
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+router.get("/data-statistics", async (req, res) => {
+    try {
+        const postsResponse = await axios.get(
+            `https://danbooru.donmai.us/posts.json?limit=0`
+        );
+        const totalPosts = postsResponse.headers["x-total-count"];
+
+        const likesResponse = await axios.get(
+            `https://danbooru.donmai.us/posts.json?search[order]=fave_count.desc&limit=1`
+        );
+        const totalLikes = likesResponse.data[0].fave_count;
+
+        const artistsResponse = await axios.get(
+            `https://danbooru.donmai.us/artists.json?search[order]=post_count.desc&limit=5`
+        );
+        const famousArtists = artistsResponse.data.map((artist) => ({
+            name: artist.name,
+            post_count: artist.post_count,
+            like_count: artist.fav_count,
+        }));
+
+        const dataStatistics = {
+            total_posts: totalPosts,
+            total_likes: totalLikes,
+            famous_artists: famousArtists,
+        };
+
+        res.json(dataStatistics);
     } catch (error) {
         console.error("Error:", error);
         res.status(500).json({ error: "Internal Server Error" });
