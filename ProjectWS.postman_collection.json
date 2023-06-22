@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "228414fa-f968-4410-bd0f-b09cca62162f",
+		"_postman_id": "5db0d6a3-e574-4ee1-90d2-5a56d7ff492e",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26088181"
 	},
 	"item": [
 		{
@@ -1047,7 +1048,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
 						"type": "text"
 					}
 				],
@@ -1295,7 +1296,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
 						"type": "text"
 					}
 				],
@@ -1522,7 +1523,7 @@
 							"    // Memeriksa apakah hasil adalah objek\r",
 							"    pm.expect(hasil).to.be.an('object');\r",
 							"    \r",
-							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\",\"artist\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\", \"tags\");\r",
+							"    pm.expect(hasil).to.have.keys(\"id\", \"tag_name\", \"created_at\",\"artist\", \"score\", \"fav_count\", \"rating\", \"picture\", \"width\", \"height\", \"tags\", \"kuota_user\");\r",
 							"    const jsonData = pm.response.json().picture\r",
 							"    pm.visualizer.set(`\r",
 							"    <body>\r",
@@ -1549,7 +1550,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjowLCJpYXQiOjE2ODczNDE4NzgsImV4cCI6MTY4NzM0NTQ3OH0.xysv3YsX6x86KPl2MH3LbS1wfJH0exdjwIKJGGgrIC0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
 						"type": "text"
 					}
 				],
@@ -1781,7 +1782,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMCwiaWF0IjoxNjg3MzI4MDg1LCJleHAiOjE2ODczMzE2ODV9.2QsHIIkMyvld5AGTRLGT3Plmoy-auPq3bAugEJPukAk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
 						"type": "text"
 					}
 				],
