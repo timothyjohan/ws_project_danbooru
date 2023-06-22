@@ -179,11 +179,11 @@ router.get("/info", async (req, res) => {
     });
 
     try {
-        await schema.validateAsync(req.body)
+        await schema.validateAsync(req.query)
     } catch (error) {
         return res.status(403).send(error.toString())
     }
-    const data = {...req.body}
+    const data = {...req.query}
     //////////////////////////////////////////////////////////
     let token = req.header('x-auth-token')
     if (!req.header('x-auth-token')) {
