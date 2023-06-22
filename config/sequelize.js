@@ -1,10 +1,10 @@
 const Sequelize = require("sequelize");
 const db = new Sequelize(
-    "ws_project_danbooru",
-    "root",
-    "",
+    "sql12627995", //dbName
+    "sql12627995", //dbUsername
+    "2DBiygU7nL", //dbPassword
     {
-        host: "127.0.0.1",
+        host: "sql12.freemysqlhosting.net",
         port: 3306,
         dialect: "mysql",
         logging: console.log,
