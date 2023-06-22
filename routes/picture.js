@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = require('multer');
+const multer = require("multer");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const JWT_KEY = "UvuvwevwevweOnyetenyevweUgwemubwemOssas";
@@ -11,7 +11,7 @@ const { restart } = require("nodemon");
 
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './images');
+        cb(null, "./images");
     },
     filename: (req, file, cb) => {
         // Mendapatkan username dari req
@@ -27,9 +27,9 @@ const upload = multer({ storage: fileStorageEngine });
 // Middleware untuk menangkap dan menyimpan username dari token JWT
 const extractUsernameMiddleware = (req, res, next) => {
     // Mendapatkan token dari header
-    const token = req.header('x-auth-token');
+    const token = req.header("x-auth-token");
     if (!token) {
-        return res.status(401).send({ out: 'Authentication token is missing' });
+        return res.status(401).send({ out: "Authentication token is missing" });
     }
 
     try {
@@ -38,40 +38,46 @@ const extractUsernameMiddleware = (req, res, next) => {
         req.username = userdata.username; // Menyimpan username dalam req
         next(); // Lanjut ke middleware berikutnya
     } catch (err) {
-        return res.status(400).send('Invalid JWT Key');
+        return res.status(400).send("Invalid JWT Key");
     }
 };
 
-
 // Endpoint upload
-router.post('/upload', extractUsernameMiddleware, upload.single('image'), async (req, res) => {
-    let token = req.header("x-auth-token");
-    if (!req.header("x-auth-token")) {
-        let out = "Authentication token is missing";
-        return res.status(401).send({ out });
+router.post(
+    "/upload",
+    extractUsernameMiddleware,
+    upload.single("image"),
+    async (req, res) => {
+        let token = req.header("x-auth-token");
+        if (!req.header("x-auth-token")) {
+            let out = "Authentication token is missing";
+            return res.status(401).send({ out });
+        }
+        let username;
+        try {
+            let userdata = jwt.verify(token, JWT_KEY);
+            console.log(userdata.username);
+            username = userdata.username;
+        } catch (err) {
+            return res.status(400).send("Invalid JWT Key");
+        }
+
+        console.log(req.file);
+        let cekKuota = await Users.findByPk(username);
+        let tempKuota = cekKuota.us_kuota + 5;
+        console.log(tempKuota);
+        let updateKuota = await Users.update(
+            { us_kuota: tempKuota },
+            { where: { us_username: username } }
+        );
+
+        return res
+            .status(201)
+            .send(
+                `Thank you for uploading, as a reward we have added 5 kuota, \n Current kuota: ${tempKuota}`
+            );
     }
-    let username;
-    try {
-        let userdata = jwt.verify(token, JWT_KEY);
-        console.log(userdata.username);
-        username = userdata.username;
-    } catch (err) {
-        return res.status(400).send("Invalid JWT Key");
-    }
-
-    console.log(req.file);
-    let cekKuota = await Users.findByPk(username)
-    let tempKuota = cekKuota.us_kuota + 5
-    console.log(tempKuota)
-    let updateKuota = await Users.update(
-        { us_kuota: tempKuota },
-        { where: { us_username: username } }
-    )
-
-
-    return res.status(201).send(`Thank you for uploading, as a reward we have added 5 kuota, \n Current kuota: ${tempKuota}`);
-});
-
+);
 
 //MASUKIN POST KE FAV
 router.post("/fav", async (req, res) => {
@@ -436,6 +442,21 @@ router.get("/search_notag", async (req, res) => {
 });
 
 router.get("/random-image", async (req, res) => {
+    ////////////////////////////////////////////////////////// AUTH
+    let token = req.header("x-auth-token");
+    if (!req.header("x-auth-token")) {
+        let out = "Authentication token is missing";
+        return res.status(401).send({ out });
+    }
+    let username;
+    try {
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username;
+    } catch (err) {
+        return res.status(400).send("Invalid JWT Key");
+    }
+
     try {
         const min = 100000;
         const max = 999999;
@@ -464,7 +485,19 @@ router.get("/random-image", async (req, res) => {
             width: image_width,
             height: image_height,
         };
-        res.json(imageData);
+
+        let findUser = await Users.findByPk(username);
+        let tempKuota = findUser.us_kuota;
+        console.log(tempKuota);
+        if (tempKuota < 1) {
+            return res.status(403).send("kuota tidak mencukupi");
+        }
+        tempKuota -= 1;
+        let updateKuota = await Users.update(
+            { us_kuota: tempKuota },
+            { where: { us_username: username } }
+        );
+        return res.status(200).json(imageData);
     } catch (error) {
         console.error("Error:", error);
         res.status(500).json({ error: "Internal Server Error" });
@@ -472,6 +505,21 @@ router.get("/random-image", async (req, res) => {
 });
 
 router.get("/popular-images", async (req, res) => {
+    ////////////////////////////////////////////////////////// AUTH
+    let token = req.header("x-auth-token");
+    if (!req.header("x-auth-token")) {
+        let out = "Authentication token is missing";
+        return res.status(401).send({ out });
+    }
+    let username;
+    try {
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username;
+    } catch (err) {
+        return res.status(400).send("Invalid JWT Key");
+    }
+
     axios
         .get(`https://danbooru.donmai.us/explore/posts/popular.json`)
         .then((response) => {
@@ -493,6 +541,7 @@ router.get("/popular-images", async (req, res) => {
                     // kuota_user: tempKuota,
                 });
             }
+
             return res.status(200).send({
                 data: data,
             });
@@ -501,9 +550,37 @@ router.get("/popular-images", async (req, res) => {
             console.error(error);
             res.status(404).send({ Error: "Posts not found!" });
         });
+
+    //Transaction
+    let findUser = await Users.findByPk(username);
+    let tempKuota = findUser.us_kuota;
+    console.log(tempKuota);
+    if (tempKuota < 2) {
+        return res.status(403).send("kuota tidak mencukupi");
+    }
+    tempKuota -= 2;
+    let updateKuota = await Users.update(
+        { us_kuota: tempKuota },
+        { where: { us_username: username } }
+    );
 });
 
 router.get("/trending-tags", async (req, res) => {
+    ////////////////////////////////////////////////////////// AUTH
+    let token = req.header("x-auth-token");
+    if (!req.header("x-auth-token")) {
+        let out = "Authentication token is missing";
+        return res.status(401).send({ out });
+    }
+    let username;
+    try {
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username;
+    } catch (err) {
+        return res.status(400).send("Invalid JWT Key");
+    }
+
     const daysAgo = 7; // Mengatur jumlah hari mundur untuk mencari tag populer
 
     try {
@@ -511,6 +588,18 @@ router.get("/trending-tags", async (req, res) => {
             `https://danbooru.donmai.us/tags.json?search[order]=count&search[date]=${daysAgo}d`
         );
         const tags = response.data.map((tag) => tag.name);
+        //Transaction
+        let findUser = await Users.findByPk(username);
+        let tempKuota = findUser.us_kuota;
+        console.log(tempKuota);
+        if (tempKuota < 2) {
+            return res.status(403).send("kuota tidak mencukupi");
+        }
+        tempKuota -= 2;
+        let updateKuota = await Users.update(
+            { us_kuota: tempKuota },
+            { where: { us_username: username } }
+        );
 
         res.json({ tags });
     } catch (error) {
@@ -532,6 +621,21 @@ router.get("/max-post", async (req, res) => {
 });
 
 router.get("/last-created-user", async (req, res) => {
+    ////////////////////////////////////////////////////////// AUTH
+    let token = req.header("x-auth-token");
+    if (!req.header("x-auth-token")) {
+        let out = "Authentication token is missing";
+        return res.status(401).send({ out });
+    }
+    let username;
+    try {
+        let userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username;
+    } catch (err) {
+        return res.status(400).send("Invalid JWT Key");
+    }
+
     try {
         const postsResponse = await axios.get(
             `https://danbooru.donmai.us/posts.json?limit=0`
@@ -553,6 +657,18 @@ router.get("/last-created-user", async (req, res) => {
             contact_person: artist.urls,
         }));
 
+        //Transaction
+        let findUser = await Users.findByPk(username);
+        let tempKuota = findUser.us_kuota;
+        console.log(tempKuota);
+        if (tempKuota < 2) {
+            return res.status(403).send("kuota tidak mencukupi");
+        }
+        tempKuota -= 2;
+        let updateKuota = await Users.update(
+            { us_kuota: tempKuota },
+            { where: { us_username: username } }
+        );
         console.log(famousArtists);
         res.json(famousArtists);
     } catch (error) {
