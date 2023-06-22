@@ -4744,23 +4744,30 @@
 			]
 		},
 		{
+			"name": "Get Random",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "getpict (cara tembak langsung)",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg",
+					"raw": "https://danbooru.donmai.us/explore/posts/popular.json",
 					"protocol": "https",
 					"host": [
-						"cdn",
+						"danbooru",
 						"donmai",
 						"us"
 					],
 					"path": [
-						"sample",
-						"f9",
-						"08",
-						"__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
+						"explore",
+						"posts",
+						"popular.json"
 					]
 				}
 			},
