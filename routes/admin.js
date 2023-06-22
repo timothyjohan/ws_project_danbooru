@@ -55,7 +55,6 @@ router.delete('/users', async (req, res) => {
     let findUser = await Users.findByPk(username)
     if (!findUser) {
         return res.status(404).send('User not found')
-
     }
     let delUser
     try {
