@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d9e06483-08fb-4ce7-845f-cace8ba93a2a",
+		"_postman_id": "0c225e85-cb16-469e-a27c-e5e1b9a93a1d",
 		"name": "ProjectWS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26088181"
+		"_exporter_id": "25659054"
 	},
 	"item": [
 		{
@@ -67,11 +67,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"users",
@@ -108,11 +110,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/register",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -183,11 +187,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/register",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -258,11 +264,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/register",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -334,11 +342,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/register",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -408,11 +418,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/register",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -544,11 +556,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/login",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"users",
@@ -585,11 +599,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/login",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -660,11 +676,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/login",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -735,11 +753,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/login",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -810,11 +830,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/login",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -941,11 +963,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/admin/users",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"admin",
@@ -977,11 +1001,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/users",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1047,11 +1073,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/users",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1117,11 +1145,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/users",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1226,11 +1256,13 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "localhost:3000/api/admin/users",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"admin",
@@ -1253,11 +1285,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/admin/users",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1370,11 +1404,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/admin/addquota",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"admin",
@@ -1414,11 +1450,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1492,11 +1530,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1570,11 +1610,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1648,11 +1690,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1727,11 +1771,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1806,11 +1852,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/admin/addquota",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/admin/addquota",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"admin",
@@ -1912,11 +1960,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/changepw",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"users",
@@ -1962,11 +2012,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2046,11 +2098,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2130,11 +2184,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2214,11 +2270,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2298,11 +2356,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2382,11 +2442,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2467,11 +2529,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2552,11 +2616,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2637,11 +2703,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/users/changepw",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/users/changepw",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -2720,11 +2788,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/info",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/info",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"info"
@@ -2739,11 +2809,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/info",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/info",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"info"
@@ -2866,11 +2938,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/picture/fav",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -2904,11 +2978,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/fav",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -2976,11 +3052,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/fav",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3049,11 +3127,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/fav",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3121,11 +3201,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/fav",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3237,11 +3319,13 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "localhost:3000/api/picture/fav/show",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav/show",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -3265,11 +3349,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/fav/show",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav/show",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3327,11 +3413,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/fav/show",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/fav/show",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3402,11 +3490,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/picture/delete",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/delete",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -3440,11 +3530,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/delete",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/delete",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3512,11 +3604,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/delete",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/delete",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3584,11 +3678,13 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/delete",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/delete",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3657,12 +3753,15 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/picture/delete",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me//api/picture/delete",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
+								"",
 								"api",
 								"picture",
 								"delete"
@@ -3749,11 +3848,13 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=ganyu ahegao",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=ganyu ahegao&nsfw=false",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -3768,8 +3869,7 @@
 						{
 							"key": "nsfw",
 							"value": "false",
-							"description": "dapat diisi true/false, juga bisa dimatikan",
-							"disabled": true
+							"description": "dapat diisi true/false, juga bisa dimatikan"
 						}
 					]
 				},
@@ -3788,11 +3888,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=false",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=ganyu&nsfw=false",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3858,11 +3960,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=&nsfw=false",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=&nsfw=false",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3928,11 +4032,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=&nsfw=",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=&nsfw=",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -3998,11 +4104,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=ganyu&nsfw=",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4068,11 +4176,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?nsfw=false",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?nsfw=false",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4139,11 +4249,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=ganyu",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search?start_with=ganyu",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4210,11 +4322,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4311,11 +4425,13 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/search_notag",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/search_notag",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -4337,22 +4453,17 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search_notag",
+							"raw": "lhttps://leeward-eastern-atmosphere.glitch.me/api/picture/search_notag",
+							"protocol": "lhttps",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
 								"search_notag"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": null,
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -4444,11 +4555,13 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/info?id=6310048",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/info?id=6310048",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
@@ -4476,11 +4589,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/info?id=6420033",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/info?id=6420033",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4542,11 +4657,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/info?id=9999999",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/info?id=9999999",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4608,11 +4725,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/info",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/info",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4675,11 +4794,13 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/api/picture/info?id=",
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/info?id=",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"picture",
@@ -4745,7 +4866,37 @@
 							"    <body>\r",
 							"    <img src=\"${jsonData}\">\r",
 							"    </body>`);\r",
-							"});"
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2 : Data memiliki properti id yang merupakan nomor\", function () {\r",
+							"    pm.expect(typeof pm.response.json().id).to.equal(\"number\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3 : Data memiliki properti artist yang merupakan string\", function () {\r",
+							"    pm.expect(typeof pm.response.json().artist).to.equal(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4 : Data memiliki properti tags yang merupakan array\", function () {\r",
+							"    pm.expect(Array.isArray(pm.response.json().tags)).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 5 : Data memiliki properti width yang merupakan nomor\", function () {\r",
+							"    pm.expect(typeof pm.response.json().width).to.equal(\"number\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 6 : Data memiliki properti height yang merupakan nomor\", function () {\r",
+							"    pm.expect(typeof pm.response.json().height).to.equal(\"number\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 7 : Properti tags berisi setidaknya satu tag\", function () {\r",
+							"    pm.expect(pm.response.json().tags.length).to.be.greaterThan(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 8 : Properti url mengandung ekstensi file gambar\", function () {\r",
+							"    pm.expect(pm.response.json().url).to.match(/\\.(jpeg|jpg|gif|png)$/i);\r",
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -4753,61 +4904,604 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+						"description": "pastikan token diisi dengan benar",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:3000/api/picture/random-images",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/random-image",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
-						"random-images"
+						"random-image"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk menampilkan post secara random.\n\nUntuk mengakses endpoint ini, pastikan token diisi dengan benar."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/random-image",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"random-image"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15b-3VbZygjs89B3ZZjY/wkadMI3rGk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:27:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 383915,\n    \"url\": \"https://cdn.donmai.us/original/0d/c1/0dc1e76d97744c595c6b763c6f126a97.jpg\",\n    \"artist\": \"Unknown\",\n    \"tags\": [\n        \"2girls\",\n        \"blue_eyes\",\n        \"blue_hair\",\n        \"cirno\",\n        \"commentary_request\",\n        \"hat\",\n        \"letty_whiterock\",\n        \"multiple_girls\",\n        \"purple_hair\",\n        \"ribbon\",\n        \"short_hair\",\n        \"snow\",\n        \"touhou\",\n        \"wings\",\n        \"yuzuki_(yuduame)\"\n    ],\n    \"description\": \"\",\n    \"width\": 600,\n    \"height\": 800\n}"
+				},
+				{
+					"name": "contoh gagal (token tidak sesuai)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfB",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/random-image",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"random-image"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-1awE4HnFmov9jGcffn0vCjUI/bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:28:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid JWT Key"
+				}
+			]
 		},
 		{
 			"name": "Get Popular wihtin 7 days",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (200)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2: Data merupakan array\", function () {\r",
+							"    pm.expect(pm.response.json().data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3: Setiap elemen data memiliki properti id yang merupakan nomor\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.id).to.equal(\"number\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4: Setiap elemen data memiliki properti tag_name yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.tag_name).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 5: Setiap elemen data memiliki properti artist yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.artist).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 6: Setiap elemen data memiliki properti created_at yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.created_at).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 7: Setiap elemen data memiliki properti score yang merupakan nomor\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.score).to.equal(\"number\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 8: Setiap elemen data memiliki properti fav_count yang merupakan nomor\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.fav_count).to.equal(\"number\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 9: Setiap elemen data memiliki properti rating yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.rating).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 10: Setiap elemen data memiliki properti picture yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.picture).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 11: Setiap elemen data memiliki properti width yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.width).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 12: Setiap elemen data memiliki properti height yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.height).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 13: Setiap elemen data memiliki properti tags yang merupakan string\", function () {\r",
+							"    const data = pm.response.json().data;\r",
+							"    data.forEach(function (item) {\r",
+							"        pm.expect(typeof item.tags).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+						"description": "pastikan token diisi dengan benar",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:3000/api/picture/popular-images",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/popular-images",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
 						"popular-images"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk menampilkan detil post yang popiler dalam kurun waktu 7 hari terakhir.  \nUntuk dapat mengakses endpoint ini, pastikan token diisi dengan benar."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/popular-images",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"popular-images"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1122-hz2mvTFRO8LKtoUtVmi3xC9itFU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:31:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 6423780,\n            \"tag_name\": \"shiroko_(blue_archive) shiroko_(terror)_(blue_archive)\",\n            \"artist\": \"kazane-wind\",\n            \"created_at\": \"2023-06-22T06:02:10.660-04:00\",\n            \"score\": 186,\n            \"fav_count\": 179,\n            \"rating\": \"q\",\n            \"picture\": \"https://cdn.donmai.us/original/a7/27/a7279015a9f18021575e4e0a95267e6d.jpg\",\n            \"width\": \"1697px\",\n            \"height\": \"2511px\",\n            \"tags\": \"1boy 1girl absurdres animal_ear_fluff animal_ears black_choker blue_archive blue_eyes breasts broken_halo button_gap choker cleavage collared_shirt covered_nipples cross cross_hair_ornament dark_halo deep_skin disembodied_limb dress_shirt earclip embarrassed extra_ears eyes_visible_through_hair facing_viewer furrowed_brow grabbing grabbing_another's_breast grabbing_from_behind grey_hair groping hair_behind_ear hair_between_eyes hair_ornament hair_over_one_eye half-closed_eyes halo hetero high-waist_skirt highres huge_breasts inverted_cross jacket jacket_partially_removed kazane-wind long_bangs long_hair long_sleeves looking_to_the_side mismatched_pupils no_bra off_shoulder open_clothes open_collar open_jacket see-through see-through_shirt shiroko_(blue_archive) shiroko_(terror)_(blue_archive) shirt shirt_tucked_in sideways_glance simple_background skirt solo_focus sweat upper_body wolf_ears\"\n        },\n        {\n            \"id\": 6423729,\n            \"tag_name\": \"ganyu_(genshin_impact)\",\n            \"artist\": \"misaka_12003-gou\",\n            \"created_at\": \"2023-06-22T05:36:43.533-04:00\",\n            \"score\": 182,\n            \"fav_count\": 177,\n            \"rating\": \"e\",\n            \"picture\": \"https://cdn.donmai.us/original/74/be/74be89f9bbbbbf662713ddc4b0a0da31.jpg\",\n            \"width\": \"900px\",\n            \"height\": \"1285px\",\n            \"tags\": \"1boy 1girl after_fellatio ai-assisted bare_shoulders bell black_gloves blue_hair blurry blush breasts cleavage commentary_request cowbell cum cum_in_mouth cum_on_body cum_on_breasts cum_string deep_skin depth_of_field detached_sleeves empty_eyes furrowed_brow ganyu_(genshin_impact) genshin_impact gloves goat_horns grabbing_own_breast grey_background half-closed_eyes highres horns long_hair looking_at_penis misaka_12003-gou navel neck_bell nipples out-of-frame_censoring out_of_frame parted_lips penis puffy_nipples purple_eyes simple_background smile solo_focus steaming_body stomach twitter_username\"\n        },\n        {\n            \"id\": 6423698,\n            \"tag_name\": \"miyako_(blue_archive) miyako_(swimsuit)_(blue_archive)\",\n            \"artist\": \"houkisei\",\n            \"created_at\": \"2023-06-22T05:17:36.844-04:00\",\n            \"score\": 154,\n            \"fav_count\": 145,\n            \"rating\": \"s\",\n            \"picture\": \"https://cdn.donmai.us/original/09/39/093940b424de985a2864226b5a0c0ed9.jpg\",\n            \"width\": \"2055px\",\n            \"height\": \"3000px\",\n            \"tags\": \"1girl absurdres animal_ears armpits arms_behind_head arms_up ass bare_shoulders beach bird blue_archive blue_one-piece_swimsuit blue_sky blush breasts cellphone commentary dated_commentary fake_animal_ears frilled_one-piece_swimsuit frills halo highres houkisei long_hair looking_at_viewer looking_back medium_breasts miyako_(blue_archive) miyako_(swimsuit)_(blue_archive) off-shoulder_one-piece_swimsuit off_shoulder official_alternate_costume one-piece_swimsuit phone presenting_armpit purple_eyes rabbit_ears seagull side_ponytail sidelocks sky smartphone solo swimsuit thighs white_hair\"\n        },\n        {\n            \"id\": 6423710,\n            \"tag_name\": \"silver_wolf_(honkai:_star_rail)\",\n            \"artist\": \"shiben_(ugvu5784)\",\n            \"created_at\": \"2023-06-22T05:21:21.106-04:00\",\n            \"score\": 142,\n            \"fav_count\": 133,\n            \"rating\": \"s\",\n            \"picture\": \"https://cdn.donmai.us/original/94/c1/94c108ba4f12d897ecd9434bcdb2cdc0.jpg\",\n            \"width\": \"958px\",\n            \"height\": \"2048px\",\n            \"tags\": \"1girl alternate_breast_size bare_shoulders bikini black_shorts breasts cleavage collarbone commentary crossed_bangs eyewear_on_head grey_hair hair_ornament hand_up highres honkai:_star_rail honkai_(series) large_breasts long_hair looking_at_viewer micro_shorts navel outdoors parted_lips ponytail purple_eyes shiben_(ugvu5784) shorts silver_wolf_(honkai:_star_rail) smile solo stomach swimsuit thigh_strap thighs two-tone_bikini underboob water\"\n        },\n        {\n            \"id\": 6423614,\n            \"tag_name\": \"ako_(blue_archive)\",\n            \"artist\": \"osanpo02\",\n            \"created_at\": \"2023-06-22T04:40:25.197-04:00\",\n            \"score\": 127,\n            \"fav_count\": 120,\n            \"rating\": \"q\",\n            \"picture\": \"https://cdn.donmai.us/original/3e/da/3eda348888b789fd96558f69efa85de3.jpg\",\n            \"width\": \"1080px\",\n            \"height\": \"1527px\",\n            \"tags\": \"1girl ako_(blue_archive) ass black_gloves blue_archive blue_eyes blue_hair blush breasts commentary garter_belt garter_straps gloves hair_between_eyes hairband halo highres lace-trimmed_panties lace_trim large_breasts long_hair osanpo02 panties partially_visible_vulva solo thighhighs thighs underwear wedgie\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh gagal (token tidak sesuai)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfB",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/popular-images",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"popular-images"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-1awE4HnFmov9jGcffn0vCjUI/bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:32:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid JWT Key"
+				}
+			]
 		},
 		{
 			"name": "Get Tranding Tags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (200)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2: Respons memiliki properti tags yang merupakan array\", function () {\r",
+							"    pm.expect(pm.response.json().tags).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3: Setiap elemen tags merupakan string\", function () {\r",
+							"    const tags = pm.response.json().tags;\r",
+							"    tags.forEach(function (tag) {\r",
+							"        pm.expect(typeof tag).to.equal(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4: Setiap elemen tags tidak boleh kosong\", function () {\r",
+							"    const tags = pm.response.json().tags;\r",
+							"    tags.forEach(function (tag) {\r",
+							"        pm.expect(tag).to.not.be.empty;\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 5: Properti tags memiliki panjang minimal 1\", function () {\r",
+							"    const tags = pm.response.json().tags;\r",
+							"    pm.expect(tags).to.have.lengthOf.at.least(1);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+						"description": "pastikan token diisi dengan benar",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:3000/api/picture/trending-tags",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/trending-tags",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
 						"trending-tags"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk menampilkan tags yang populer dalam kurun waktu 7 hari terakhir.\n\nUntuk dapat mengakses endpoint ini, pastikan token diisi dengan benar."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/trending-tags",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"trending-tags"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "260"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"104-8uXSWq4IwZPcDAv0lPPWDjcC8lY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:33:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tags\": [\n        \"1girl\",\n        \"solo\",\n        \"highres\",\n        \"long_hair\",\n        \"commentary_request\",\n        \"breasts\",\n        \"looking_at_viewer\",\n        \"blush\",\n        \"smile\",\n        \"open_mouth\",\n        \"short_hair\",\n        \"blue_eyes\",\n        \"simple_background\",\n        \"multiple_girls\",\n        \"skirt\",\n        \"large_breasts\",\n        \"blonde_hair\",\n        \"brown_hair\",\n        \"shirt\",\n        \"absurdres\"\n    ]\n}"
+				},
+				{
+					"name": "contoh gagal (token tidak sesuai)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfB",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/trending-tags",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"trending-tags"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-1awE4HnFmov9jGcffn0vCjUI/bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:34:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid JWT Key"
+				}
+			]
 		},
 		{
 			"name": "Max Posts",
@@ -4815,49 +5509,310 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/picture/max-post",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/max-post",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
 						"max-post"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk menampilkan jumlah post yang ada.  \nEndpoint ini tidak mungkin error."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/max-post",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"max-post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-G2a9jwz0k2BlWd6iud1nZqp6uwE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:34:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Total Post : 6387690\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Get Last Created User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (200)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 2: Respons merupakan array dengan minimal satu elemen\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    pm.expect(data).to.be.an('array').that.is.not.empty;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 3: Setiap elemen memiliki properti name yang merupakan string\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    for (let i = 0; i < data.length; i++) {\r",
+							"        pm.expect(data[i].name).to.be.a('string');\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 4: Setiap elemen memiliki properti artist_id yang merupakan angka\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    for (let i = 0; i < data.length; i++) {\r",
+							"        pm.expect(data[i].artist_id).to.be.a('number');\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 5: Setiap elemen memiliki properti created_at yang merupakan string dengan format yang valid\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    for (let i = 0; i < data.length; i++) {\r",
+							"        const createdAt = data[i].created_at;\r",
+							"        pm.expect(createdAt).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}-\\d{2}:\\d{2}$/);\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Case 6: Setiap elemen memiliki properti contact_person yang merupakan array dengan minimal satu elemen\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    for (let i = 0; i < data.length; i++) {\r",
+							"        const contactPerson = data[i].contact_person;\r",
+							"        pm.expect(contactPerson).to.be.an('array').that.is.not.empty;\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+						"description": "pastikan token diisi dengan benar",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:3000/api/picture/last-created-user",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/last-created-user",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
 						"last-created-user"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk menampilkan 20 user terbaru (20 user yang baru buat akun).\n\nUntuk dapat mengakses endpoint ini, pastikan token diisi dengan benar."
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/last-created-user",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"last-created-user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6611"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19d3-zIyf04BmAbzTP9t++YdL39q7WE0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:37:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"zakro\",\n        \"artist_id\": 1489871,\n        \"created_at\": \"2023-06-22T15:33:40.139-04:00\",\n        \"contact_person\": [\n            \"-https://twitter.com/zkr_0307vn\",\n            \"https://lemoco99.fanbox.cc\",\n            \"https://sketch.pixiv.net/@lemoco18\",\n            \"https://twitter.com/intent/user?user_id=1729167661\",\n            \"https://twitter.com/zakro_zkzk25\",\n            \"https://www.pixiv.net/stacc/lemoco18\",\n            \"https://www.pixiv.net/users/3923873\"\n        ]\n    },\n    {\n        \"name\": \"knife-bullets\",\n        \"artist_id\": 1489870,\n        \"created_at\": \"2023-06-22T15:30:01.252-04:00\",\n        \"contact_person\": [\n            \"https://knife-bullets.tumblr.com\"\n        ]\n    },\n    {\n        \"name\": \"hanyouda\",\n        \"artist_id\": 1489869,\n        \"created_at\": \"2023-06-22T15:26:50.479-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/artofhany\",\n            \"https://www.deviantart.com/hanyouda\",\n            \"https://www.facebook.com/HanyoudaArt\",\n            \"https://www.pixiv.net/stacc/bayram-elif\",\n            \"https://www.pixiv.net/users/12602796\"\n        ]\n    },\n    {\n        \"name\": \"renrenka_noi\",\n        \"artist_id\": 1489868,\n        \"created_at\": \"2023-06-22T15:11:38.686-04:00\",\n        \"contact_person\": [\n            \"https://ko-fi.com/renrenkaaa\",\n            \"https://renrenkaaa.tumblr.com\",\n            \"https://twitter.com/intent/user?user_id=1140197101147586561\",\n            \"https://twitter.com/renrenka_noi\"\n        ]\n    },\n    {\n        \"name\": \"renrenkaaa\",\n        \"artist_id\": 1489867,\n        \"created_at\": \"2023-06-22T15:10:37.545-04:00\",\n        \"contact_person\": [\n            \"https://ko-fi.com/renrenkaaa\",\n            \"https://renrenkaaa.tumblr.com\",\n            \"https://twitter.com/intent/user?user_id=1140197101147586561\",\n            \"https://twitter.com/renrenkaaa\"\n        ]\n    },\n    {\n        \"name\": \"soysalmon\",\n        \"artist_id\": 1489866,\n        \"created_at\": \"2023-06-22T15:09:46.354-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/_soysalmon\",\n            \"https://twitter.com/intent/user?user_id=1234346407013699584\",\n            \"https://www.pixiv.net/stacc/user_seyu3827\",\n            \"https://www.pixiv.net/users/90907638\"\n        ]\n    },\n    {\n        \"name\": \"chis_(js60216)\",\n        \"artist_id\": 1489865,\n        \"created_at\": \"2023-06-22T15:06:22.926-04:00\",\n        \"contact_person\": [\n            \"https://home.gamer.com.tw/homeindex.php?owner=js60216\",\n            \"https://js60216.fanbox.cc\",\n            \"https://pawoo.net/@js60216\",\n            \"https://pawoo.net/web/accounts/624164\",\n            \"https://sketch.pixiv.net/@js60216\",\n            \"https://twitter.com/Cream_chis\",\n            \"https://twitter.com/intent/user?user_id=1183017303459254272\",\n            \"https://twitter.com/intent/user?user_id=3704240833\",\n            \"https://twitter.com/js60216\",\n            \"https://www.facebook.com/js60216\",\n            \"https://www.pixiv.net/fanbox/creator/8079100\",\n            \"https://www.pixiv.net/stacc/js60216\",\n            \"https://www.pixiv.net/users/8079100\"\n        ]\n    },\n    {\n        \"name\": \"yoko_jzz30\",\n        \"artist_id\": 1489864,\n        \"created_at\": \"2023-06-22T15:00:14.048-04:00\",\n        \"contact_person\": [\n            \"-https://twitter.com/intent/user?user_id=1154373289977905152\",\n            \"-https://twitter.com/yoko_jzz30\",\n            \"https://twitter.com/intent/user?user_id=1619598972192161795\",\n            \"https://twitter.com/nonorin2000\",\n            \"https://www.pixiv.net/stacc/nonorin2500\",\n            \"https://www.pixiv.net/users/1998458\"\n        ]\n    },\n    {\n        \"name\": \"history1357\",\n        \"artist_id\": 1489863,\n        \"created_at\": \"2023-06-22T14:56:44.323-04:00\",\n        \"contact_person\": [\n            \"https://poipiku.com/58920/\",\n            \"https://twitter.com/history1357\",\n            \"https://twitter.com/intent/user?user_id=342642879\",\n            \"https://www.pixiv.net/users/1437294\"\n        ]\n    },\n    {\n        \"name\": \"loiska_j\",\n        \"artist_id\": 1489862,\n        \"created_at\": \"2023-06-22T14:52:18.630-04:00\",\n        \"contact_person\": [\n            \"https://ko-fi.com/nanal\",\n            \"https://twitter.com/intent/user?user_id=749918929\",\n            \"https://twitter.com/loiska_j\",\n            \"https://www.instagram.com/loiska.j/\"\n        ]\n    },\n    {\n        \"name\": \"xianyuwang707\",\n        \"artist_id\": 1489861,\n        \"created_at\": \"2023-06-22T14:46:40.916-04:00\",\n        \"contact_person\": [\n            \"https://xianyuwang707.lofter.com\"\n        ]\n    },\n    {\n        \"name\": \"nian962464\",\n        \"artist_id\": 1489860,\n        \"created_at\": \"2023-06-22T14:45:09.898-04:00\",\n        \"contact_person\": [\n            \"https://nian162978.lofter.com\",\n            \"https://twitter.com/intent/user?user_id=1412026001815605248\",\n            \"https://twitter.com/sxnl_nian\",\n            \"https://www.pixiv.net/stacc/nian962464\",\n            \"https://www.pixiv.net/users/52013917\"\n        ]\n    },\n    {\n        \"name\": \"zo_tuite\",\n        \"artist_id\": 1489859,\n        \"created_at\": \"2023-06-22T14:44:11.498-04:00\",\n        \"contact_person\": [\n            \"-http://drawr.net/zophie\",\n            \"-http://twitpic.com/photos/zo_tuite\",\n            \"-https://www.pixiv.net/stacc/zophie\",\n            \"http://tuiteyukenu.blog.fc2.com\",\n            \"https://sketch.pixiv.net/@zo_tuite\",\n            \"https://tuiteyukenuyo.wixsite.com/tuiteyukenuyo\",\n            \"https://twitter.com/intent/user?user_id=20030536\",\n            \"https://twitter.com/zo_tuite\",\n            \"https://www.pixiv.net/stacc/zo_tuite\",\n            \"https://www.pixiv.net/users/130322\",\n            \"https://www.tinami.com/creator/profile/3775\"\n        ]\n    },\n    {\n        \"name\": \"caramelfrapz\",\n        \"artist_id\": 1489858,\n        \"created_at\": \"2023-06-22T14:39:13.546-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/caramelfrapz\",\n            \"https://twitter.com/intent/user?user_id=4760509573\"\n        ]\n    },\n    {\n        \"name\": \"seeunanda\",\n        \"artist_id\": 1489857,\n        \"created_at\": \"2023-06-22T14:35:09.201-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/seeunanda\",\n            \"https://www.artstation.com/seeunanda\",\n            \"https://www.instagram.com/seeunanda/\",\n            \"https://www.pixiv.net/stacc/seeunanda\",\n            \"https://www.pixiv.net/users/83262032\"\n        ]\n    },\n    {\n        \"name\": \"iamgaegeoji\",\n        \"artist_id\": 1489856,\n        \"created_at\": \"2023-06-22T14:33:05.528-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/iamgaegeoji\",\n            \"https://twitter.com/intent/user?user_id=1394965246498930688\"\n        ]\n    },\n    {\n        \"name\": \"yanwulazy\",\n        \"artist_id\": 1489855,\n        \"created_at\": \"2023-06-22T14:31:19.184-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/YWlazy\",\n            \"https://www.pixiv.net/stacc/495276721\",\n            \"https://www.pixiv.net/users/23213206\"\n        ]\n    },\n    {\n        \"name\": \"oouso\",\n        \"artist_id\": 1489854,\n        \"created_at\": \"2023-06-22T14:27:04.996-04:00\",\n        \"contact_person\": [\n            \"-http://c10007593.circle.ms/oc/CircleProfile.aspx\",\n            \"-http://c10036857.circle.ms/oc/CircleProfile.aspx\",\n            \"-http://p.twipple.jp/user/u_s_o\",\n            \"-http://twitpic.com/photos/u_s_o\",\n            \"-http://usotukiya.com\",\n            \"-http://usotukiya.xxxxxxxx.jp\",\n            \"-https://twitter.com/U_S_O\",\n            \"-https://twitter.com/intent/user?user_id=84344198\",\n            \"http://dic.pixiv.net/a/大嘘\",\n            \"https://enty.jp/usotukiya\",\n            \"https://fantia.jp/fanclubs/3040\",\n            \"https://pawoo.net/@USO\",\n            \"https://pawoo.net/web/accounts/353574\",\n            \"https://seiga.nicovideo.jp/user/illust/469904\",\n            \"https://sketch.pixiv.net/@sora918\",\n            \"https://space.bilibili.com/3461582476544762/dynamic\",\n            \"https://twitter.com/intent/user?user_id=1603746531747561474\",\n            \"https://twitter.com/usotukiya_USO\",\n            \"https://usotukiya.fanbox.cc\",\n            \"https://www.instagram.com/uso_tukiya/\",\n            \"https://www.nicovideo.jp/user/469904\",\n            \"https://www.patreon.com/usotukiya\",\n            \"https://www.pixiv.net/stacc/sora918\",\n            \"https://www.pixiv.net/users/457541\",\n            \"https://www.tinami.com/creator/profile/19710\",\n            \"https://www.weibo.com/u/7819349670\",\n            \"https://xfolio.jp/portfolio/usotukiya\"\n        ]\n    },\n    {\n        \"name\": \"utsukusheep\",\n        \"artist_id\": 1489853,\n        \"created_at\": \"2023-06-22T14:17:39.812-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/intent/user?user_id=836115199648272384\",\n            \"https://twitter.com/utsukusheep\"\n        ]\n    },\n    {\n        \"name\": \"kanataeni\",\n        \"artist_id\": 1489852,\n        \"created_at\": \"2023-06-22T14:03:48.327-04:00\",\n        \"contact_person\": [\n            \"https://twitter.com/huwahuwa_airy\",\n            \"https://www.pixiv.net/stacc/kanataeni\",\n            \"https://www.pixiv.net/users/10904873\"\n        ]\n    }\n]"
+				},
+				{
+					"name": "contoh gagal (token tidak sesuai)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfB",
+								"description": "pastikan token diisi dengan benar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/last-created-user",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"last-created-user"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-1awE4HnFmov9jGcffn0vCjUI/bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:37:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid JWT Key"
+				}
+			]
 		},
 		{
 			"name": "Upload image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1: Status OK (201)\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzQsImlhdCI6MTY4NzQ1NzIyNywiZXhwIjoxNjg3NDYwODI3fQ.SUjpK81wpmagtZaDTshqFLteobngDsscgF9u51fv9Nw",
-						"type": "text"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+						"type": "text",
+						"description": "pastikan token diisi dengan benar"
 					}
 				],
 				"body": {
@@ -4866,44 +5821,174 @@
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/C:/Users/user/Desktop/ganyu_genshin_impact_character_render_by_deg5270_deeqrxa-pre.png"
+							"src": "/C:/Users/User/Downloads/ganyu_genshin_impact_drawn_by_hoori.png"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/picture/upload",
+					"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/upload",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"leeward-eastern-atmosphere",
+						"glitch",
+						"me"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"picture",
 						"upload"
 					]
-				}
+				},
+				"description": "Endpoint ini digunakan untuk mengupload image dan jika user mengupload image, maka user akan mendapatkan 5 kuota tambahan.\n\nUntuk dapat mengakses endpoint ini, pastikan token diisi dengan benar."
 			},
-			"response": []
-		},
-		{
-			"name": "getpict (cara tembak langsung)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://danbooru.donmai.us/posts.json",
-					"protocol": "https",
-					"host": [
-						"danbooru",
-						"donmai",
-						"us"
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfBs",
+								"type": "text",
+								"description": "pastikan token diisi dengan benar"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ganyu_genshin_impact_drawn_by_hoori.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/upload",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"upload"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"50-DTjcztg9s2O4NhDAANxgDmvRAVQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:43:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
 					],
-					"path": [
-						"posts.json"
-					]
+					"cookie": [],
+					"body": "Thank you for uploading, as a reward we have added 5 kuota, \n Current kuota: 211"
+				},
+				{
+					"name": "contoh gagal (token tidak sesuai)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyMzksImlhdCI6MTY4NzQ2MDk4MCwiZXhwIjoxNjg3NDY0NTgwfQ.6xS78kldrdH_MHI_nf6pA9ut4geHUf5--BSylQDpfB",
+								"type": "text",
+								"description": "pastikan token diisi dengan benar"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/ganyu_genshin_impact_drawn_by_hoori.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://leeward-eastern-atmosphere.glitch.me/api/picture/upload",
+							"protocol": "https",
+							"host": [
+								"leeward-eastern-atmosphere",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"api",
+								"picture",
+								"upload"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-1awE4HnFmov9jGcffn0vCjUI/bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 19:44:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid JWT Key"
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
