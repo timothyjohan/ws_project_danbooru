@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "96e77270-b705-4fd8-ba07-4cefdeaa4bcb",
+		"_postman_id": "a7c91b9e-bcb7-4125-8a93-c9ff94222e09",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25659054"
 	},
 	"item": [
 		{
@@ -12,11 +13,11 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Case 1: Status OK (201)\", function () {\r",
+							"pm.test(\"Case 1 : Status OK (201)\", function () {\r",
 							"    pm.expect(pm.response.code).to.equal(201);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Case 2: Struktur Kembalian Sesuai\", function () {\r",
+							"pm.test(\"Case 2 : Struktur Kembalian Sesuai\", function () {\r",
 							"    const response = pm.response.text(); // Assuming the response is plain text\r",
 							"    pm.expect(response).to.include(\"has been created! please check our information site before using our services :)\");\r",
 							"});\r",
@@ -64,18 +65,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/users/register",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"register"
-					]
-				},
+				"url": "localhost:3000/api/users/register",
 				"description": "Endpoint ini berguna untuk mendaftarkan user ke dalam database.\n\nUntuk menghindari mengakses endpoint ini, pastikan bahwa :\n\n- username tidak kembar\n- password & confirm_pass lebih dari 5 char\n- password & confirm_pass sesuai"
 			},
 			"response": [
@@ -105,18 +95,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"register"
-							]
-						}
+						"url": "localhost:3000/api/users/register"
 					},
 					"status": "Bad Request",
 					"code": 400,
@@ -180,18 +159,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"register"
-							]
-						}
+						"url": "localhost:3000/api/users/register"
 					},
 					"status": "Forbidden",
 					"code": 403,
@@ -255,18 +223,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"register"
-							]
-						}
+						"url": "localhost:3000/api/users/register"
 					},
 					"status": "Forbidden",
 					"code": 403,
@@ -331,18 +288,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"register"
-							]
-						}
+						"url": "localhost:3000/api/users/register"
 					},
 					"status": "OK",
 					"code": 200,
@@ -405,18 +351,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"register"
-							]
-						}
+						"url": "localhost:3000/api/users/register"
 					},
 					"status": "Created",
 					"code": 201,
@@ -463,11 +398,11 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Case 1: Status OK (200)\", function () {\r",
+							"pm.test(\"Case 1 : Status OK (200)\", function () {\r",
 							"    pm.expect(pm.response.code).to.equal(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Case 2: Struktur Kembalian Sesuai\", function () {\r",
+							"pm.test(\"Case 2 : Struktur Kembalian Sesuai\", function () {\r",
 							"    const hasil = pm.response.json();\r",
 							"\r",
 							"    // Memeriksa apakah hasil adalah objek\r",
@@ -477,7 +412,7 @@
 							"    pm.expect(hasil).to.have.keys(\"message\", \"username\", \"token\");\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Case 3: 'Successfully logged in'\", function () {\r",
+							"pm.test(\"Case 3 : 'Successfully logged in'\", function () {\r",
 							"    const response = pm.response.json();\r",
 							"    const message = response.message;\r",
 							"    const username = response.username;\r",
@@ -487,7 +422,7 @@
 							"        pm.expect(message).to.equal(\"Admin successfully logged in\");\r",
 							"    } else {\r",
 							"        // User case\r",
-							"        pm.expect(message).to.include(\"successfully logged in\");\r",
+							"        pm.expect(message).to.include(\"Successfully logged in\");\r",
 							"    }\r",
 							"});\r",
 							"\r",
@@ -539,18 +474,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/users/login",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"login"
-					]
-				},
+				"url": "localhost:3000/api/users/login",
 				"description": "Endpoint ini digunakan untuk melakukan login, agar user dapat melihat token mereka masing-masing.\n\nUntuk dapat mengkases endpoint ini, pastikan bahwa :\n\n- password sesuai\n- user terdaftar\n    \n\nUntuk dapat mengakses login admin, pastikan bahwa anda mengisi username dan password yang sesuai untuk admin."
 			},
 			"response": [
@@ -564,7 +488,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "user3",
+									"value": "user0",
 									"type": "text"
 								},
 								{
@@ -580,18 +504,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"login"
-							]
-						}
+						"url": "localhost:3000/api/users/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -655,18 +568,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"login"
-							]
-						}
+						"url": "localhost:3000/api/users/login"
 					},
 					"status": "OK",
 					"code": 200,
@@ -730,18 +632,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"login"
-							]
-						}
+						"url": "localhost:3000/api/users/login"
 					},
 					"status": "Bad Request",
 					"code": 400,
@@ -789,7 +680,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "user4",
+									"value": "user99",
 									"type": "text"
 								},
 								{
@@ -805,18 +696,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "localhost:3000/api/users/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"users",
-								"login"
-							]
-						}
+						"url": "localhost:3000/api/users/login"
 					},
 					"status": "Not Found",
 					"code": 404,
@@ -881,18 +761,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/admin/register",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"admin",
-						"register"
-					]
-				}
+				"url": "localhost:3000/api/admin/register"
 			},
 			"response": []
 		},
@@ -933,18 +802,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/admin/users",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"admin",
-						"users"
-					]
-				}
+				"url": "localhost:3000/api/admin/users"
 			},
 			"response": []
 		},
@@ -979,18 +837,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/users/changepw",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"changepw"
-					]
-				}
+				"url": "localhost:3000/api/users/changepw"
 			},
 			"response": []
 		},
@@ -999,17 +846,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "localhost:3000/api/info",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"info"
-					]
-				}
+				"url": "localhost:3000/api/info"
 			},
 			"response": []
 		},
@@ -1049,18 +886,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "localhost:3000/api/picture/fav",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"fav"
-					]
-				}
+				"url": "localhost:3000/api/picture/fav"
 			},
 			"response": []
 		},
@@ -1104,18 +930,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": {
-					"raw": "localhost:3000/api/picture/delete",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"delete"
-					]
-				}
+				"url": "localhost:3000/api/picture/delete"
 			},
 			"response": []
 		},
@@ -1134,14 +949,16 @@
 							"    const hasil = pm.response.json();\r",
 							"    // Memeriksa apakah hasil adalah objek\r",
 							"    pm.expect(hasil).to.be.an('object');\r",
+							"    // Memeriksa apakah hasil memiliki kunci yang tepat\r",
+							"    pm.expect(hasil).to.have.keys(\"kuota_user\", \"Note\", \"Data\");\r",
 							"    // Mendapatkan nilai dari properti \"Data\" pada objek hasil\r",
 							"    const data = hasil.Data;\r",
 							"    // Memeriksa apakah data adalah array\r",
 							"    pm.expect(data).to.be.an('array');\r",
-							"    for (const h of data) {\r",
-							"        pm.expect(h).to.have.keys(\"id\", \"name\", \"created_at\", \"updated_at\");\r",
-							"    }\r",
 							"});\r",
+							"\r",
+							"\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
@@ -1153,12 +970,12 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=false",
+					"raw": "localhost:3000/api/picture/search?start_with=apple&nsfw=false",
 					"host": [
 						"localhost"
 					],
@@ -1171,7 +988,7 @@
 					"query": [
 						{
 							"key": "start_with",
-							"value": "ganyu"
+							"value": "apple"
 						},
 						{
 							"key": "nsfw",
@@ -1179,14 +996,371 @@
 						}
 					]
 				},
-				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"value\".  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
+				"description": "Endpoint ini digunakan untuk mencari 20 post yang berawalan dengan \"start_with\" dan filter \"nsfw\" yang bisa dengan bebas diaktifkan/dinonaktifkan.  \nEndpoint ini akan menampilkan data berupa :\n\n- id\n- artist_name\n- created_at\n- tags\n    \n\nSerta menampilkan pesan dan sisa kuota user.\n\nEndpoint ini tidak mungkin error.\n\nInput apapun yang diberikan tetap bisa dijalankan, dikosongkan pun tetap bisa jalan.\n\nBahkan, parameter \"start_with\" dimatikan dimatikan pun tetap bisa jalan (meskipun parameter searchnya menjadi undefined)."
 			},
 			"response": [
 				{
-					"name": "contoh berhasil (input diisi)",
+					"name": "contoh berhasil (\"start_with\" diisi)",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=false",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "ganyu"
+								},
+								{
+									"key": "nsfw",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11446"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2cb6-LrMAwolYNndiGDaEkIdpv7bDi8o\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:35:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9969,\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 6423110,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:31:45.376-04:00\",\n            \"tags\": \"2girls :d ^_^ absurdres ahoge bell black_gloves blue_hair breast_curtain breasts carrying chinese_clothes closed_eyes closed_mouth clothing_cutout covered_navel detached_sleeves dragon_boat_festival earrings ganyu_(genshin_impact) genshin_impact gloves goat_horns hair_ornament hair_over_one_eye highres hip_vent holding horns jewelry large_breasts long_hair looking_at_viewer multiple_girls navel neck_bell open_mouth outdoors shenhe_(genshin_impact) signature siya_ho smile solo_focus strong tassel white_hair\"\n        },\n        {\n            \"id\": 6423055,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:15:41.330-04:00\",\n            \"tags\": \"5boys 6+girls :d >_< ^_^ absurdres ahoge animal baizhu_(genshin_impact) bare_legs beidou_(genshin_impact) bird black_headwear blue_hair blue_sky braid chinese_clothes chinese_food chongyun_(genshin_impact) closed_eyes closed_mouth copyright_name day detached_sleeves dragon_boat_festival eyepatch fence finger_to_mouth food ganyu_(genshin_impact) genshin_impact glasses gloves goat_horns green_hair guitar guoba_(genshin_impact) hair_between_eyes hat highres horns hu_tao_(genshin_impact) instrument keqing_(genshin_impact) leggings logo long_hair looking_at_another looking_at_viewer multiple_boys multiple_girls ningguang_(genshin_impact) official_art open_mouth outdoors purple_hair qiqi_(genshin_impact) shenhe_(genshin_impact) sitting siya_ho sky smile standing thighhighs upper_body white_hair white_thighhighs xiangling_(genshin_impact) xiao_(genshin_impact) xingqiu_(genshin_impact) xinyan_(genshin_impact) yanfei_(genshin_impact) yaoyao_(genshin_impact) yelan_(genshin_impact) yun_jin_(genshin_impact) zhongli_(genshin_impact)\"\n        },\n        {\n            \"id\": 6421428,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-21T11:00:45.589-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6421238,\n            \"artist_name\": \"terableart\",\n            \"created_at\": \"2023-06-21T09:36:12.226-04:00\",\n            \"tags\": \"1girl absurdres ahoge arms_up artist_name bare_shoulders bed black_leotard black_pantyhose blue_hair blush bodystocking bodysuit bow breasts cleavage embarrassed ganyu_(genshin_impact) genshin_impact groin highres horns leotard leotard_under_clothes long_hair looking_at_viewer lying medium_breasts on_side open_mouth pantyhose purple_eyes sideboob sidelocks solo terableart thighs\"\n        },\n        {\n            \"id\": 6421230,\n            \"artist_name\": \"dazhong_(g.marika)\",\n            \"created_at\": \"2023-06-21T09:31:09.385-04:00\",\n            \"tags\": \"1girl absurdres ahoge animal_ears bare_shoulders bell black_leotard black_pantyhose blue_hair blush breasts covered_navel dazhong_(g.marika) fake_animal_ears ganyu_(genshin_impact) genshin_impact halterneck highres horns leotard long_hair looking_at_viewer medium_breasts neck_bell open_mouth pantyhose playboy_bunny purple_eyes rabbit_ears sidelocks smile solo thighs\"\n        },\n        {\n            \"id\": 6421226,\n            \"artist_name\": \"nasubin_(nasubisamurai15)\",\n            \"created_at\": \"2023-06-21T09:28:49.129-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves black_leotard blue_hair blush bodystocking bodysuit breasts brown_pantyhose chinese_knot detached_sleeves eating_flower flower flower_knot ganyu_(genshin_impact) genshin_impact gloves gold_trim groin highres holding holding_flower horns leotard leotard_under_clothes long_hair looking_at_viewer medium_breasts mountain nasubin_(nasubisamurai15) neck_bell outdoors pantyhose petals_in_mouth purple_eyes qingxin_flower sideboob sidelocks solo tassel thighlet thighs vision_(genshin_impact) white_flower white_sleeves\"\n        },\n        {\n            \"id\": 6420824,\n            \"artist_name\": \"arrrrrry1\",\n            \"created_at\": \"2023-06-21T07:03:09.021-04:00\",\n            \"tags\": \"1girl ahoge alternate_costume alternate_hairstyle arrrrrry1 blue_hair braid braided_ponytail breasts commentary cosplay crossed_bangs from_above ganyu_(genshin_impact) genshin_impact hair_between_eyes horns large_breasts lisa_(a_sobriquet_under_shade)_(genshin_impact) lisa_(genshin_impact) lisa_(genshin_impact)_(cosplay) long_sleeves open_mouth playing_with_own_hair puffy_long_sleeves puffy_sleeves purple_eyes sidelocks simple_background solo white_background\"\n        },\n        {\n            \"id\": 6420068,\n            \"artist_name\": \"taro_(peach_taro51)\",\n            \"created_at\": \"2023-06-21T01:14:01.940-04:00\",\n            \"tags\": \"1girl absurdres backless_outfit black_gloves black_pantyhose blue_flower blue_hair blurry blurry_foreground blush bodystocking book breasts calligraphy_brush closed_mouth commentary detached_sleeves flower from_behind full_body ganyu_(genshin_impact) genshin_impact glaze_lily gloves goat_horns hair_between_eyes highres horns long_hair medium_breasts outdoors paintbrush pantyhose sideboob sky smile solo taro_(peach_taro51) thighlet very_long_hair\"\n        },\n        {\n            \"id\": 6419737,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-20T23:00:43.600-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6419725,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-20T22:51:37.566-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419699,\n            \"artist_name\": \"sunnillust\",\n            \"created_at\": \"2023-06-20T22:36:32.613-04:00\",\n            \"tags\": \"1girl @_@ absurdres ahoge alternate_costume ankle_strap armpits ass bell black_bra black_footwear black_panties blue_hair bow bra bra_peek breasts cleavage collarbone collared_shirt commentary flying_paper ganyu_(genshin_impact) genshin_impact glasses hair_between_eyes hair_bow hair_intakes hand_on_own_head high-waist_skirt high_heels highres horns id_card lace-trimmed_bra lace_trim lanyard large_breasts light_blush long_hair looking_at_object lying office_lady on_side open_mouth panties panties_under_pantyhose pantyhose pantyshot paper pencil_skirt purple_eyes see-through shirt shirt_tucked_in sideboob sidelocks single_horn skirt sleeveless sleeveless_shirt solo sunnillust symbol-only_commentary tented_shirt thighband_pantyhose tripped unbuttoned underwear white_shirt wristband\"\n        },\n        {\n            \"id\": 6418368,\n            \"artist_name\": \"hai_ookami\",\n            \"created_at\": \"2023-06-20T12:03:44.585-04:00\",\n            \"tags\": \"1girl bare_shoulders bell blush bodystocking bodysuit breasts cosplay detached_sleeves from_below ganyu_(genshin_impact) ganyu_(genshin_impact)_(cosplay) genshin_impact greyscale groin hai_ookami hair_ornament highres leotard leotard_under_clothes looking_down medium_breasts monochrome neck_bell open_mouth pantyhose ponytail solo standing tassel thighs yoimiya_(genshin_impact)\"\n        },\n        {\n            \"id\": 6418166,\n            \"artist_name\": \"cyicheng\",\n            \"created_at\": \"2023-06-20T11:07:21.792-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves blue_footwear blue_hair bodysuit breasts brown_bodysuit covered_navel cyicheng detached_sleeves ganyu_(genshin_impact) genshin_impact gloves goat_horns horns large_breasts long_hair looking_at_viewer mixed-language_commentary paid_reward_available parted_lips patreon_username purple_eyes solo thighs vision_(genshin_impact)\"\n        },\n        {\n            \"id\": 6417055,\n            \"artist_name\": \"oni_setsu_maru\",\n            \"created_at\": \"2023-06-20T01:52:39.567-04:00\",\n            \"tags\": \"1girl absurdres ahoge ballerina ballet ballet_slippers bell blue_hair broken_mirror chinese_commentary commentary_request crystalfly_(genshin_impact) ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim hair_down highres horns long_hair looking_at_viewer mirror neck_bell oni_setsu_maru purple_eyes ripples solo starry_background tutu\"\n        },\n        {\n            \"id\": 6413682,\n            \"artist_name\": \"kaname_24\",\n            \"created_at\": \"2023-06-19T03:36:29.395-04:00\",\n            \"tags\": \"1girl =3 ahoge artist_name bare_shoulders bell black_gloves blue_hair blush bodystocking breasts chinese_knot cowbell detached_sleeves flower_knot ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim highres horns kaname_24 leotard leotard_under_clothes long_hair looking_at_viewer low_ponytail medium_breasts neck_bell pantyhose purple_eyes sidelocks solo vision_(genshin_impact) white_sleeves\"\n        },\n        {\n            \"id\": 6412382,\n            \"artist_name\": \"artastiq\",\n            \"created_at\": \"2023-06-18T16:30:25.002-04:00\",\n            \"tags\": \"1boy 1girl ahoge arm_tattoo artastiq ass bare_shoulders bead_necklace beads bell black_gloves black_hair blue_hair blush bodystocking breast_press chinese_knot collarbone cowbell curled_horns detached_sleeves facial_mark forehead_mark ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim gradient_hair green_hair hetero highres horns hug jewelry leotard leotard_under_clothes long_hair long_sleeves low_ponytail multicolored_hair neck_bell necklace parted_bangs short_hair short_hair_with_long_locks shoulder_spikes sidelocks smile spikes sweatdrop tattoo toned toned_male twitter_username two-tone_hair v-shaped_eyebrows vision_(genshin_impact) white_background wide_sleeves xiao_(genshin_impact) yellow_eyes\"\n        },\n        {\n            \"id\": 6411232,\n            \"artist_name\": \"skai_kun\",\n            \"created_at\": \"2023-06-18T10:25:00.319-04:00\",\n            \"tags\": \"1girl ahoge alternate_costume bare_shoulders bikini blue_hair blush breasts cleavage commentary english_commentary ganyu_(genshin_impact) genshin_impact goat_horns hair_between_eyes highres holding holding_surfboard horns large_breasts long_hair looking_at_viewer navel off_shoulder outdoors parted_lips purple_eyes sideboob skai_kun solo stomach striped striped_bikini surfboard swimsuit underboob wet\"\n        },\n        {\n            \"id\": 6410072,\n            \"artist_name\": \"hooriyuu\",\n            \"created_at\": \"2023-06-18T02:15:30.980-04:00\",\n            \"tags\": \"1girl absurdres ahoge alternate_costume blue_hair breasts china_tracksuit collarbone facing_up full_body ganyu_(genshin_impact) genshin_impact goat_horns green_jacket green_pants green_track_suit hair_between_eyes half-closed_eyes highres hooriyuu horns jacket long_hair looking_at_viewer medium_breasts meme_attire open_mouth pants partially_unzipped purple_eyes shadow shirt sidelocks solo sweat sweaty_clothes track_jacket track_pants twitter_username unzipping white_background white_footwear white_shirt\"\n        },\n        {\n            \"id\": 6410028,\n            \"artist_name\": \"yabby\",\n            \"created_at\": \"2023-06-18T01:50:37.260-04:00\",\n            \"tags\": \"1girl absurdres ahoge bare_shoulders blue_hair breasts cleavage duster feather_duster full_body ganyu_(genshin_impact) genshin_impact hair_between_eyes highres horns large_breasts leaning_forward light_blue_hair long_hair simple_background solo thighhighs very_long_hair white_background yabby\"\n        },\n        {\n            \"id\": 6409989,\n            \"artist_name\": \"sob_(submar1089)\",\n            \"created_at\": \"2023-06-18T01:38:04.230-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass_visible_through_thighs bag border breasts flower full_body ganyu_(genshin_impact) genshin_impact goat_horns hair_flower hair_ornament highres horns large_breasts long_hair navel off_shoulder orange_eyes qingxin_flower school_bag sidelocks sob_(submar1089) solo stomach swimsuit thigh_strap thighs very_long_hair vision_(genshin_impact) wading water white_border white_flower\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh berhasil (\"start_with\" dikosongkan)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=&nsfw=false",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": ""
+								},
+								{
+									"key": "nsfw",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10502"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2906-G/+jiA9PzV/e5+nik2T+OWbikJQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:35:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9964,\n    \"Note\": \"Here is 20 result about name tag start with \",\n    \"Data\": [\n        {\n            \"id\": 6424061,\n            \"artist_name\": \"agulo\",\n            \"created_at\": \"2023-06-22T08:34:19.218-04:00\",\n            \"tags\": \"1girl agulo antenna_hair breasts brown_hair flower hair_flower hair_ornament hakama highres japanese_clothes long_hair looking_at_viewer miko pale_skin purple_eyes rance_(series) rance_10 simple_background solo tokugawa_tone white_background\"\n        },\n        {\n            \"id\": 6424060,\n            \"artist_name\": \"pydiyudie\",\n            \"created_at\": \"2023-06-22T08:34:00.877-04:00\",\n            \"tags\": \"3girls bird_girl bird_legs bird_tail bird_wings black_hair blood clone colored_skin crack curled_up eggshell embryo feathered_wings final_fantasy final_fantasy_xiv full_body grey_eyes grey_skin hatching head_wings highres looking_at_viewer meteion mini_person minigirl monster_girl multiple_girls pydiyudie short_hair tail talons veins wide-eyed wings\"\n        },\n        {\n            \"id\": 6424059,\n            \"artist_name\": \"dddd_akagi\",\n            \"created_at\": \"2023-06-22T08:33:43.118-04:00\",\n            \"tags\": \"1girl absurdres ass bare_legs barefoot bikini blush brown_hair crossed_ankles dddd_akagi highres idolmaster idolmaster_cinderella_girls long_hair nose_blush one_side_up pink_bikini shimamura_uzuki simple_background soles solo sweatdrop swimsuit toes very_long_hair white_background\"\n        },\n        {\n            \"id\": 6424058,\n            \"artist_name\": \"kik1\",\n            \"created_at\": \"2023-06-22T08:33:09.304-04:00\",\n            \"tags\": \"1girl ahoge animal_ears bare_shoulders belt black_gloves blue_archive blush breasts coat coat_on_shoulders demon_girl demon_horns demon_wings forehead gloves groin hair_ornament hair_over_shoulder hairclip halo hand_on_own_chest highres hina_(blue_archive) holding holding_tray horns kik1 long_hair looking_at_viewer military necktie open_mouth rabbit_ears sitting sleeveless small_breasts sweat thighhighs thighs tray white_hair wings\"\n        },\n        {\n            \"id\": 6424057,\n            \"artist_name\": \"yamabuki_ryuu\",\n            \"created_at\": \"2023-06-22T08:31:52.066-04:00\",\n            \"tags\": \"5girls <key>_(blue_archive) <key>_(robot)_(blue_archive) aris_(blue_archive) black_hair blonde_hair blue_archive blue_hair bow controller duplicate famicom flat_screen_tv game_boy game_boy_advance game_cartridge game_console game_controller halo handheld_game_console highres himari_(blue_archive) holding holding_controller holding_game_controller looking_at_viewer looking_back multiple_girls pixel-perfect_duplicate playing_games red_bow sega_mega_drive sitting sitting_on_lap sitting_on_person smile television toki_(blue_archive) v wheelchair white_hair yamabuki_ryuu yuuka_(blue_archive) yuzu_(blue_archive)\"\n        },\n        {\n            \"id\": 6424056,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:30:37.866-04:00\",\n            \"tags\": \"1girl @_@ bikini blue_hair blue_sailor_collar blunt_bangs blush breasts collarbone commentary_request hair_ornament highres inaeda_kei lize_helesta long_hair multicolored_hair nijisanji open_mouth outdoors purple_eyes rubber_duck sailor_collar school_uniform see-through see-through_shirt serafuku shirt solo swimsuit thighs two-tone_hair virtual_youtuber water wet wet_clothes white_hair\"\n        },\n        {\n            \"id\": 6424055,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:29:41.405-04:00\",\n            \"tags\": \"1girl backlighting black_hair blue_eyes blush closed_mouth collarbone commentary dutch_angle goggles hair_between_eyes hat inaeda_kei long_hair looking_at_viewer neck_ribbon neckerchief original ribbon sailor_collar sailor_hat school_uniform serafuku shadow shirt short_sleeves sidelocks solo twitter_username upper_body white_headwear white_neckerchief white_sailor_collar white_serafuku white_shirt\"\n        },\n        {\n            \"id\": 6424054,\n            \"artist_name\": \"walter_(watlerreinewelt)\",\n            \"created_at\": \"2023-06-22T08:29:21.953-04:00\",\n            \"tags\": \"1girl 2koma absurdres bikini black_headwear black_jacket breasts brown_hair choker clothing_cutout comic disgust doll_joints flower hair_flower hair_ornament herta_(honkai:_star_rail) highres holding holding_clothes holding_swimsuit honkai:_star_rail honkai_(series) jacket joints long_sleeves looking_at_viewer micro_bikini parted_lips purple_background purple_choker purple_eyes purple_flower shoulder_cutout simple_background small_breasts solo striped striped_bikini swimsuit walter_(watlerreinewelt)\"\n        },\n        {\n            \"id\": 6424053,\n            \"artist_name\": \"yue_(shemika98425261)\",\n            \"created_at\": \"2023-06-22T08:29:00.684-04:00\",\n            \"tags\": \"1boy aged_down aqua_eyes black_hair chinese_clothes dan_heng_(honkai:_star_rail) dan_heng_(imbibitor_lunae)_(honkai:_star_rail) dragon_boy dragon_horns eyeshadow highres honkai:_star_rail honkai_(series) horns long_hair makeup male_focus snowing solo spoilers yue_(shemika98425261)\"\n        },\n        {\n            \"id\": 6424052,\n            \"artist_name\": \"hidefu_kitayan\",\n            \"created_at\": \"2023-06-22T08:28:20.007-04:00\",\n            \"tags\": \"1boy 2girls :3 ahoge blonde_hair blush box breasts brown_eyes brown_hair chibi comic commentary_request duster forest glasses grey_hair hands_on_own_head headpat hidefu_kitayan highres holding holding_box holding_duster imaizumi_kagerou indoors long_hair morichika_rinnosuke multiple_girls multiple_tails nature no_mouth o_o outdoors pointing pointing_at_self short_hair simple_background tail touhou translation_request tree triangle_mouth yakumo_ran\"\n        },\n        {\n            \"id\": 6424051,\n            \"artist_name\": \"hidefu_kitayan\",\n            \"created_at\": \"2023-06-22T08:28:17.779-04:00\",\n            \"tags\": \"1boy 2girls ascot blush bow breasts chibi comic commentary_request fang glasses grey_eyes grey_hair hat heart hidefu_kitayan highres izayoi_sakuya maid maid_headdress morichika_rinnosuke multiple_girls no_mouth purple_hair remilia_scarlet short_hair simple_background sweatdrop touhou translation_request triangle_mouth white_background wings\"\n        },\n        {\n            \"id\": 6424050,\n            \"artist_name\": \"udon_(udonalium)\",\n            \"created_at\": \"2023-06-22T08:27:48.171-04:00\",\n            \"tags\": \"1girl absurdres alcohol animal animal_on_lap arm_support bare_legs bare_shoulders barefoot beer blush breasts brown_eyes brown_hair brown_shirt camisole cat cleavage collarbone hair_between_eyes highres indian_style indoors large_breasts looking_at_animal medium_hair mole on_lap open_mouth original shirt short_shorts shorts sitting smile tareme taut_clothes taut_shirt udon_(udonalium)\"\n        },\n        {\n            \"id\": 6424049,\n            \"artist_name\": \"kaede_(shijie_heping)\",\n            \"created_at\": \"2023-06-22T08:27:32.771-04:00\",\n            \"tags\": \"6+girls black_hair blue_eyes blue_hair blush chinese_commentary close-up commentary_request eye_focus feathers finger_to_mouth gradient_hair green_eyes grey_eyes highres kaede_(shijie_heping) light_brown_hair looking_at_viewer multicolored_eyes multicolored_hair multiple_girls orange_eyes orange_hair original painting_(medium) petals photo_(medium) pink_eyes purple_hair red_eyes star-shaped_pupils star_(symbol) symbol-shaped_pupils tassel tearing_up traditional_media two-tone_hair watercolor_(medium) white_hair\"\n        },\n        {\n            \"id\": 6424048,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:27:25.314-04:00\",\n            \"tags\": \"1girl bird black_socks blue_bow blue_bowtie bow bowtie chain-link_fence commentary_request dress_shirt feet_out_of_frame fence floating_hair grey_hair grey_skirt hair_behind_ear hair_ornament hairclip highres inaeda_kei kneehighs leaning long_hair looking_at_viewer original outdoors plaid plaid_skirt pleated_skirt red_eyes school_uniform shadow shirt short_sleeves skirt smile socks solo swept_bangs twitter_username umbrella white_shirt\"\n        },\n        {\n            \"id\": 6424047,\n            \"artist_name\": \"yonako_(123456nya)\",\n            \"created_at\": \"2023-06-22T08:26:09.104-04:00\",\n            \"tags\": \"1girl ahoge animal_ears armband black_gloves blue_archive blush cat_ears coat coat_on_shoulders confused demon_girl demon_horns forehead gloves hair_ornament hair_over_shoulder hairclip highres hina_(blue_archive) horns military military_uniform open_mouth ponytail simple_background solo sweat uniform white_background white_hair yonako_(123456nya)\"\n        },\n        {\n            \"id\": 6424046,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:25:44.316-04:00\",\n            \"tags\": \"1girl artist_name asakura_toru bare_shoulders blue_eyes brown_hair collarbone commentary_request hair_between_eyes head_rest highres idolmaster idolmaster_shiny_colors inaeda_kei knees_up light_particles looking_at_viewer off_shoulder parted_lips shirt sideways solo white_shirt\"\n        },\n        {\n            \"id\": 6424044,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:24:12.792-04:00\",\n            \"tags\": \"2girls ? black_hair blue_eyes blue_neckerchief blue_sailor_collar blue_serafuku blue_shirt blue_tank_top blush book breasts brown_hair cleavage commentary_request cowboy_shot idolmaster idolmaster_shiny_colors inaeda_kei jacket jewelry kazano_hiori long_hair long_sleeves looking_at_another multiple_girls neckerchief necklace open_mouth ponytail puffy_sleeves purple_eyes sailor_collar school_uniform see-through see-through_jacket serafuku serizawa_asahi shadow shirt short_hair sidelocks simple_background spoken_question_mark sweatdrop tank_top white_background yuri\"\n        },\n        {\n            \"id\": 6424043,\n            \"artist_name\": \"gyaza\",\n            \"created_at\": \"2023-06-22T08:23:58.653-04:00\",\n            \"tags\": \"1girl ;d absurdres ahoge ankle_boots artist_name asymmetrical_legwear black_footwear black_gloves black_jacket black_skirt black_sports_bra black_thighhighs blue_eyes blue_horns blue_thighhighs boots crop_top crystal demon_girl demon_horns demon_tail demon_wings fangs fanzheng_zhen_zhishi_ge_ai_moyu_de_mowang flat_chest full_body garter_straps gloves grey_background gyaza hand_up highres horns huilu jacket leg_up legwear_garter long_hair looking_at_viewer low_wings miniskirt mismatched_legwear multiple_wings navel o-ring_legwear_garter ok_sign one_eye_closed open_clothes open_jacket ponytail purple_wings see-through see-through_sleeves short_sleeves skirt smile solo sparkle sports_bra standing standing_on_one_leg star-shaped_pupils star_(symbol) stomach striped striped_thighhighs symbol-shaped_pupils tail tail_ornament tail_ring thighhighs two-tone_legwear very_long_hair watermark white_hair wings\"\n        },\n        {\n            \"id\": 6424042,\n            \"artist_name\": \"shirokumall\",\n            \"created_at\": \"2023-06-22T08:23:53.432-04:00\",\n            \"tags\": \"1girl absurdres bare_legs blonde_hair brown_background brown_dress brown_ribbon detached_sleeves dress frilled_skirt frilled_sleeves frills hair_ribbon highres kurodani_yamame long_hair looking_at_viewer one-hour_drawing_challenge ponytail ribbon shirokumall skirt sleeveless smile solo touhou yellow_eyes\"\n        },\n        {\n            \"id\": 6424037,\n            \"artist_name\": \"otsuzaka\",\n            \"created_at\": \"2023-06-22T08:20:15.210-04:00\",\n            \"tags\": \"4girls ^_^ armband atarashii_gakko! braid braided_ponytail closed_eyes glasses highres holding holding_hair jumping kanon_(atarashii_gakko) kneehighs long_sleeves looking_ahead mizyu_(atarashii_gakko) multiple_girls on_one_knee otsuzaka real_life rin_(atarashii_gakko) school_uniform serafuku shoes short_hair smile socks straight_hair suzuka_(atarashii_gakko) tongue tongue_out twintails uwabaki\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh berhasil (kedua parameter dikosongkan)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=&nsfw=",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": ""
+								},
+								{
+									"key": "nsfw",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10072"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2758-HPJji0ntaHgtq5g6bByhHYanItw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:36:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9959,\n    \"Note\": \"Here is 20 result about name tag start with \",\n    \"Data\": [\n        {\n            \"id\": 6424066,\n            \"artist_name\": \"suzuko_(katahaba_v3)\",\n            \"created_at\": \"2023-06-22T08:36:47.978-04:00\",\n            \"tags\": \"2boys black_background black_hair blood blood_splatter buttons checkered_clothes checkered_scarf danganronpa_(series) danganronpa_v3:_killing_harmony dated double-breasted dual_persona happy_birthday highres jacket long_sleeves multicolored_hair multiple_boys official_alternate_costume oma_kokichi pink_background pink_blood pink_hair purple_eyes purple_hair scarf smile suzuko_(katahaba_v3) two-tone_hair upper_body white_jacket\"\n        },\n        {\n            \"id\": 6424065,\n            \"artist_name\": \"shirokumall\",\n            \"created_at\": \"2023-06-22T08:36:04.774-04:00\",\n            \"tags\": \"1girl absurdres black_sash blue_dress braid breasts clenched_teeth coin coin_on_string dress hair_bobbles hair_ornament highres holding holding_scythe holed_coin japanese_clothes large_breasts looking_at_viewer medium_hair musical_note obi one-hour_drawing_challenge onozuka_komachi orange_background puffy_short_sleeves puffy_sleeves red_eyes red_hair sash scythe shirokumall short_sleeves smile solo speech_bubble teeth touhou twin_braids white_background\"\n        },\n        {\n            \"id\": 6424064,\n            \"artist_name\": \"rirene_rn\",\n            \"created_at\": \"2023-06-22T08:35:52.795-04:00\",\n            \"tags\": \"2girls animal_ears blonde_hair blue_eyes commission cotton_candy facial_mark final_fantasy final_fantasy_xiv fireworks floral_print holding japanese_clothes kimono long_sleeves multiple_girls obi pink_kimono ponytail rirene_rn sample_watermark sash smile whisker_markings yellow_eyes\"\n        },\n        {\n            \"id\": 6424063,\n            \"artist_name\": \"wakamepiza\",\n            \"created_at\": \"2023-06-22T08:35:49.626-04:00\",\n            \"tags\": \"1girl absurdres animal_ears bikini black_bikini blue_archive blue_hoodie breasts brown_eyes brown_hair candy cleavage clothes_lift contrapposto cowboy_shot cropped_hoodie eyewear_hang eyewear_removed fake_animal_ears food front-tie_bikini_top front-tie_top halo highres holding holding_candy holding_food hood hoodie hoodie_lift large_breasts lollipop long_hair long_sleeves looking_at_viewer moe_(blue_archive) moe_(swimsuit)_(blue_archive) navel official_alternate_costume open_mouth round_eyewear side-tie_bikini_bottom simple_background smile solo swimsuit twintails wakamepiza white_background yellow_eyes yellow_halo\"\n        },\n        {\n            \"id\": 6424062,\n            \"artist_name\": \"kein_hasegawa\",\n            \"created_at\": \"2023-06-22T08:35:49.026-04:00\",\n            \"tags\": \"1girl black_dress dress elf fantasy flower hair_flower hair_ornament hair_ribbon highres kein_hasegawa long_bangs long_hair looking_at_viewer open_mouth original pointy_ears ribbon very_long_hair white_hair yellow_eyes\"\n        },\n        {\n            \"id\": 6424061,\n            \"artist_name\": \"agulo\",\n            \"created_at\": \"2023-06-22T08:34:19.218-04:00\",\n            \"tags\": \"1girl agulo antenna_hair breasts brown_hair flower hair_flower hair_ornament hakama highres japanese_clothes long_hair looking_at_viewer miko pale_skin purple_eyes rance_(series) rance_10 simple_background solo tokugawa_tone white_background\"\n        },\n        {\n            \"id\": 6424060,\n            \"artist_name\": \"pydiyudie\",\n            \"created_at\": \"2023-06-22T08:34:00.877-04:00\",\n            \"tags\": \"3girls bird_girl bird_legs bird_tail bird_wings black_hair blood clone colored_skin crack curled_up eggshell embryo feathered_wings final_fantasy final_fantasy_xiv full_body grey_eyes grey_skin hatching head_wings highres looking_at_viewer meteion mini_person minigirl monster_girl multiple_girls pydiyudie short_hair tail talons veins wide-eyed wings\"\n        },\n        {\n            \"id\": 6424059,\n            \"artist_name\": \"dddd_akagi\",\n            \"created_at\": \"2023-06-22T08:33:43.118-04:00\",\n            \"tags\": \"1girl absurdres ass bare_legs barefoot bikini blush brown_hair crossed_ankles dddd_akagi highres idolmaster idolmaster_cinderella_girls long_hair nose_blush one_side_up pink_bikini shimamura_uzuki simple_background soles solo sweatdrop swimsuit toes very_long_hair white_background\"\n        },\n        {\n            \"id\": 6424058,\n            \"artist_name\": \"kik1\",\n            \"created_at\": \"2023-06-22T08:33:09.304-04:00\",\n            \"tags\": \"1girl ahoge animal_ears bare_shoulders belt black_gloves blue_archive blush breasts coat coat_on_shoulders demon_girl demon_horns demon_wings forehead gloves groin hair_ornament hair_over_shoulder hairclip halo hand_on_own_chest highres hina_(blue_archive) holding holding_tray horns kik1 long_hair looking_at_viewer military necktie open_mouth rabbit_ears sitting sleeveless small_breasts sweat thighhighs thighs tray white_hair wings\"\n        },\n        {\n            \"id\": 6424057,\n            \"artist_name\": \"yamabuki_ryuu\",\n            \"created_at\": \"2023-06-22T08:31:52.066-04:00\",\n            \"tags\": \"5girls <key>_(blue_archive) <key>_(robot)_(blue_archive) aris_(blue_archive) black_hair blonde_hair blue_archive blue_hair bow controller duplicate famicom flat_screen_tv game_boy game_boy_advance game_cartridge game_console game_controller halo handheld_game_console highres himari_(blue_archive) holding holding_controller holding_game_controller looking_at_viewer looking_back multiple_girls pixel-perfect_duplicate playing_games red_bow sega_mega_drive sitting sitting_on_lap sitting_on_person smile television toki_(blue_archive) v wheelchair white_hair yamabuki_ryuu yuuka_(blue_archive) yuzu_(blue_archive)\"\n        },\n        {\n            \"id\": 6424056,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:30:37.866-04:00\",\n            \"tags\": \"1girl @_@ bikini blue_hair blue_sailor_collar blunt_bangs blush breasts collarbone commentary_request hair_ornament highres inaeda_kei lize_helesta long_hair multicolored_hair nijisanji open_mouth outdoors purple_eyes rubber_duck sailor_collar school_uniform see-through see-through_shirt serafuku shirt solo swimsuit thighs two-tone_hair virtual_youtuber water wet wet_clothes white_hair\"\n        },\n        {\n            \"id\": 6424055,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:29:41.405-04:00\",\n            \"tags\": \"1girl backlighting black_hair blue_eyes blush closed_mouth collarbone commentary dutch_angle goggles hair_between_eyes hat inaeda_kei long_hair looking_at_viewer neck_ribbon neckerchief original ribbon sailor_collar sailor_hat school_uniform serafuku shadow shirt short_sleeves sidelocks solo twitter_username upper_body white_headwear white_neckerchief white_sailor_collar white_serafuku white_shirt\"\n        },\n        {\n            \"id\": 6424054,\n            \"artist_name\": \"walter_(watlerreinewelt)\",\n            \"created_at\": \"2023-06-22T08:29:21.953-04:00\",\n            \"tags\": \"1girl 2koma absurdres bikini black_headwear black_jacket breasts brown_hair choker clothing_cutout comic disgust doll_joints flower hair_flower hair_ornament herta_(honkai:_star_rail) highres holding holding_clothes holding_swimsuit honkai:_star_rail honkai_(series) jacket joints long_sleeves looking_at_viewer micro_bikini parted_lips purple_background purple_choker purple_eyes purple_flower shoulder_cutout simple_background small_breasts solo striped striped_bikini swimsuit walter_(watlerreinewelt)\"\n        },\n        {\n            \"id\": 6424053,\n            \"artist_name\": \"yue_(shemika98425261)\",\n            \"created_at\": \"2023-06-22T08:29:00.684-04:00\",\n            \"tags\": \"1boy aged_down aqua_eyes black_hair chinese_clothes dan_heng_(honkai:_star_rail) dan_heng_(imbibitor_lunae)_(honkai:_star_rail) dragon_boy dragon_horns eyeshadow highres honkai:_star_rail honkai_(series) horns long_hair makeup male_focus snowing solo spoilers yue_(shemika98425261)\"\n        },\n        {\n            \"id\": 6424052,\n            \"artist_name\": \"hidefu_kitayan\",\n            \"created_at\": \"2023-06-22T08:28:20.007-04:00\",\n            \"tags\": \"1boy 2girls :3 ahoge blonde_hair blush box breasts brown_eyes brown_hair chibi comic commentary_request duster forest glasses grey_hair hands_on_own_head headpat hidefu_kitayan highres holding holding_box holding_duster imaizumi_kagerou indoors long_hair morichika_rinnosuke multiple_girls multiple_tails nature no_mouth o_o outdoors pointing pointing_at_self short_hair simple_background tail touhou translation_request tree triangle_mouth yakumo_ran\"\n        },\n        {\n            \"id\": 6424051,\n            \"artist_name\": \"hidefu_kitayan\",\n            \"created_at\": \"2023-06-22T08:28:17.779-04:00\",\n            \"tags\": \"1boy 2girls ascot blush bow breasts chibi comic commentary_request fang glasses grey_eyes grey_hair hat heart hidefu_kitayan highres izayoi_sakuya maid maid_headdress morichika_rinnosuke multiple_girls no_mouth purple_hair remilia_scarlet short_hair simple_background sweatdrop touhou translation_request triangle_mouth white_background wings\"\n        },\n        {\n            \"id\": 6424050,\n            \"artist_name\": \"udon_(udonalium)\",\n            \"created_at\": \"2023-06-22T08:27:48.171-04:00\",\n            \"tags\": \"1girl absurdres alcohol animal animal_on_lap arm_support bare_legs bare_shoulders barefoot beer blush breasts brown_eyes brown_hair brown_shirt camisole cat cleavage collarbone hair_between_eyes highres indian_style indoors large_breasts looking_at_animal medium_hair mole on_lap open_mouth original shirt short_shorts shorts sitting smile tareme taut_clothes taut_shirt udon_(udonalium)\"\n        },\n        {\n            \"id\": 6424049,\n            \"artist_name\": \"kaede_(shijie_heping)\",\n            \"created_at\": \"2023-06-22T08:27:32.771-04:00\",\n            \"tags\": \"6+girls black_hair blue_eyes blue_hair blush chinese_commentary close-up commentary_request eye_focus feathers finger_to_mouth gradient_hair green_eyes grey_eyes highres kaede_(shijie_heping) light_brown_hair looking_at_viewer multicolored_eyes multicolored_hair multiple_girls orange_eyes orange_hair original painting_(medium) petals photo_(medium) pink_eyes purple_hair red_eyes star-shaped_pupils star_(symbol) symbol-shaped_pupils tassel tearing_up traditional_media two-tone_hair watercolor_(medium) white_hair\"\n        },\n        {\n            \"id\": 6424048,\n            \"artist_name\": \"inaeda_kei\",\n            \"created_at\": \"2023-06-22T08:27:25.314-04:00\",\n            \"tags\": \"1girl bird black_socks blue_bow blue_bowtie bow bowtie chain-link_fence commentary_request dress_shirt feet_out_of_frame fence floating_hair grey_hair grey_skirt hair_behind_ear hair_ornament hairclip highres inaeda_kei kneehighs leaning long_hair looking_at_viewer original outdoors plaid plaid_skirt pleated_skirt red_eyes school_uniform shadow shirt short_sleeves skirt smile socks solo swept_bangs twitter_username umbrella white_shirt\"\n        },\n        {\n            \"id\": 6424047,\n            \"artist_name\": \"yonako_(123456nya)\",\n            \"created_at\": \"2023-06-22T08:26:09.104-04:00\",\n            \"tags\": \"1girl ahoge animal_ears armband black_gloves blue_archive blush cat_ears coat coat_on_shoulders confused demon_girl demon_horns forehead gloves hair_ornament hair_over_shoulder hairclip highres hina_(blue_archive) horns military military_uniform open_mouth ponytail simple_background solo sweat uniform white_background white_hair yonako_(123456nya)\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh berhasil (\"nsfw\" dikosongkan)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?start_with=ganyu&nsfw=",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "ganyu"
+								},
+								{
+									"key": "nsfw",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11322"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c3a-Qzb49QHtAR9KqHSw2ASXFg1D7DM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:37:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9954,\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 6423729,\n            \"artist_name\": \"misaka_12003-gou\",\n            \"created_at\": \"2023-06-22T05:36:43.533-04:00\",\n            \"tags\": \"1boy 1girl bare_shoulders black_gloves blue_hair blush breasts cleavage cum cum_on_body cum_on_breasts cum_string detached_sleeves ganyu_(genshin_impact) genshin_impact gloves goat_horns grey_background highres horns long_hair looking_at_penis misaka_12003-gou navel nipples parted_lips penis purple_eyes simple_background smile solo_focus twitter_username\"\n        },\n        {\n            \"id\": 6423110,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:31:45.376-04:00\",\n            \"tags\": \"2girls :d ^_^ absurdres ahoge bell black_gloves blue_hair breast_curtain breasts carrying chinese_clothes closed_eyes closed_mouth clothing_cutout covered_navel detached_sleeves dragon_boat_festival earrings ganyu_(genshin_impact) genshin_impact gloves goat_horns hair_ornament hair_over_one_eye highres hip_vent holding horns jewelry large_breasts long_hair looking_at_viewer multiple_girls navel neck_bell open_mouth outdoors shenhe_(genshin_impact) signature siya_ho smile solo_focus strong tassel white_hair\"\n        },\n        {\n            \"id\": 6423055,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:15:41.330-04:00\",\n            \"tags\": \"5boys 6+girls :d >_< ^_^ absurdres ahoge animal baizhu_(genshin_impact) bare_legs beidou_(genshin_impact) bird black_headwear blue_hair blue_sky braid chinese_clothes chinese_food chongyun_(genshin_impact) closed_eyes closed_mouth copyright_name day detached_sleeves dragon_boat_festival eyepatch fence finger_to_mouth food ganyu_(genshin_impact) genshin_impact glasses gloves goat_horns green_hair guitar guoba_(genshin_impact) hair_between_eyes hat highres horns hu_tao_(genshin_impact) instrument keqing_(genshin_impact) leggings logo long_hair looking_at_another looking_at_viewer multiple_boys multiple_girls ningguang_(genshin_impact) official_art open_mouth outdoors purple_hair qiqi_(genshin_impact) shenhe_(genshin_impact) sitting siya_ho sky smile standing thighhighs upper_body white_hair white_thighhighs xiangling_(genshin_impact) xiao_(genshin_impact) xingqiu_(genshin_impact) xinyan_(genshin_impact) yanfei_(genshin_impact) yaoyao_(genshin_impact) yelan_(genshin_impact) yun_jin_(genshin_impact) zhongli_(genshin_impact)\"\n        },\n        {\n            \"id\": 6421428,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-21T11:00:45.589-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6421238,\n            \"artist_name\": \"terableart\",\n            \"created_at\": \"2023-06-21T09:36:12.226-04:00\",\n            \"tags\": \"1girl absurdres ahoge arms_up artist_name bare_shoulders bed black_leotard black_pantyhose blue_hair blush bodystocking bodysuit bow breasts cleavage embarrassed ganyu_(genshin_impact) genshin_impact groin highres horns leotard leotard_under_clothes long_hair looking_at_viewer lying medium_breasts on_side open_mouth pantyhose purple_eyes sideboob sidelocks solo terableart thighs\"\n        },\n        {\n            \"id\": 6421230,\n            \"artist_name\": \"dazhong_(g.marika)\",\n            \"created_at\": \"2023-06-21T09:31:09.385-04:00\",\n            \"tags\": \"1girl absurdres ahoge animal_ears bare_shoulders bell black_leotard black_pantyhose blue_hair blush breasts covered_navel dazhong_(g.marika) fake_animal_ears ganyu_(genshin_impact) genshin_impact halterneck highres horns leotard long_hair looking_at_viewer medium_breasts neck_bell open_mouth pantyhose playboy_bunny purple_eyes rabbit_ears sidelocks smile solo thighs\"\n        },\n        {\n            \"id\": 6421226,\n            \"artist_name\": \"nasubin_(nasubisamurai15)\",\n            \"created_at\": \"2023-06-21T09:28:49.129-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves black_leotard blue_hair blush bodystocking bodysuit breasts brown_pantyhose chinese_knot detached_sleeves eating_flower flower flower_knot ganyu_(genshin_impact) genshin_impact gloves gold_trim groin highres holding holding_flower horns leotard leotard_under_clothes long_hair looking_at_viewer medium_breasts mountain nasubin_(nasubisamurai15) neck_bell outdoors pantyhose petals_in_mouth purple_eyes qingxin_flower sideboob sidelocks solo tassel thighlet thighs vision_(genshin_impact) white_flower white_sleeves\"\n        },\n        {\n            \"id\": 6420824,\n            \"artist_name\": \"arrrrrry1\",\n            \"created_at\": \"2023-06-21T07:03:09.021-04:00\",\n            \"tags\": \"1girl ahoge alternate_costume alternate_hairstyle arrrrrry1 blue_hair braid braided_ponytail breasts commentary cosplay crossed_bangs from_above ganyu_(genshin_impact) genshin_impact hair_between_eyes horns large_breasts lisa_(a_sobriquet_under_shade)_(genshin_impact) lisa_(genshin_impact) lisa_(genshin_impact)_(cosplay) long_sleeves open_mouth playing_with_own_hair puffy_long_sleeves puffy_sleeves purple_eyes sidelocks simple_background solo white_background\"\n        },\n        {\n            \"id\": 6420068,\n            \"artist_name\": \"taro_(peach_taro51)\",\n            \"created_at\": \"2023-06-21T01:14:01.940-04:00\",\n            \"tags\": \"1girl absurdres backless_outfit black_gloves black_pantyhose blue_flower blue_hair blurry blurry_foreground blush bodystocking book breasts calligraphy_brush closed_mouth commentary detached_sleeves flower from_behind full_body ganyu_(genshin_impact) genshin_impact glaze_lily gloves goat_horns hair_between_eyes highres horns long_hair medium_breasts outdoors paintbrush pantyhose sideboob sky smile solo taro_(peach_taro51) thighlet very_long_hair\"\n        },\n        {\n            \"id\": 6420033,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-21T01:03:54.302-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6420032,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-21T01:03:49.411-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes ripples rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419737,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-20T23:00:43.600-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6419725,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-20T22:51:37.566-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419724,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-20T22:51:34.747-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes ripples rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419699,\n            \"artist_name\": \"sunnillust\",\n            \"created_at\": \"2023-06-20T22:36:32.613-04:00\",\n            \"tags\": \"1girl @_@ absurdres ahoge alternate_costume ankle_strap armpits ass bell black_bra black_footwear black_panties blue_hair bow bra bra_peek breasts cleavage collarbone collared_shirt commentary flying_paper ganyu_(genshin_impact) genshin_impact glasses hair_between_eyes hair_bow hair_intakes hand_on_own_head high-waist_skirt high_heels highres horns id_card lace-trimmed_bra lace_trim lanyard large_breasts light_blush long_hair looking_at_object lying office_lady on_side open_mouth panties panties_under_pantyhose pantyhose pantyshot paper pencil_skirt purple_eyes see-through shirt shirt_tucked_in sideboob sidelocks single_horn skirt sleeveless sleeveless_shirt solo sunnillust symbol-only_commentary tented_shirt thighband_pantyhose tripped unbuttoned underwear white_shirt wristband\"\n        },\n        {\n            \"id\": 6418368,\n            \"artist_name\": \"hai_ookami\",\n            \"created_at\": \"2023-06-20T12:03:44.585-04:00\",\n            \"tags\": \"1girl bare_shoulders bell blush bodystocking bodysuit breasts cosplay detached_sleeves from_below ganyu_(genshin_impact) ganyu_(genshin_impact)_(cosplay) genshin_impact greyscale groin hai_ookami hair_ornament highres leotard leotard_under_clothes looking_down medium_breasts monochrome neck_bell open_mouth pantyhose ponytail solo standing tassel thighs yoimiya_(genshin_impact)\"\n        },\n        {\n            \"id\": 6418166,\n            \"artist_name\": \"cyicheng\",\n            \"created_at\": \"2023-06-20T11:07:21.792-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves blue_footwear blue_hair bodysuit breasts brown_bodysuit covered_navel cyicheng detached_sleeves ganyu_(genshin_impact) genshin_impact gloves goat_horns horns large_breasts long_hair looking_at_viewer mixed-language_commentary paid_reward_available parted_lips patreon_username purple_eyes solo thighs vision_(genshin_impact)\"\n        },\n        {\n            \"id\": 6417055,\n            \"artist_name\": \"oni_setsu_maru\",\n            \"created_at\": \"2023-06-20T01:52:39.567-04:00\",\n            \"tags\": \"1girl absurdres ahoge ballerina ballet ballet_slippers bell blue_hair broken_mirror chinese_commentary commentary_request crystalfly_(genshin_impact) ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim hair_down highres horns long_hair looking_at_viewer mirror neck_bell oni_setsu_maru purple_eyes ripples solo starry_background tutu\"\n        },\n        {\n            \"id\": 6413682,\n            \"artist_name\": \"kaname_24\",\n            \"created_at\": \"2023-06-19T03:36:29.395-04:00\",\n            \"tags\": \"1girl =3 ahoge artist_name bare_shoulders bell black_gloves blue_hair blush bodystocking breasts chinese_knot cowbell detached_sleeves flower_knot ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim highres horns kaname_24 leotard leotard_under_clothes long_hair looking_at_viewer low_ponytail medium_breasts neck_bell pantyhose purple_eyes sidelocks solo vision_(genshin_impact) white_sleeves\"\n        },\n        {\n            \"id\": 6412382,\n            \"artist_name\": \"artastiq\",\n            \"created_at\": \"2023-06-18T16:30:25.002-04:00\",\n            \"tags\": \"1boy 1girl ahoge arm_tattoo artastiq ass bare_shoulders bead_necklace beads bell black_gloves black_hair blue_hair blush bodystocking breast_press chinese_knot collarbone cowbell curled_horns detached_sleeves facial_mark forehead_mark ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim gradient_hair green_hair hetero highres horns hug jewelry leotard leotard_under_clothes long_hair long_sleeves low_ponytail multicolored_hair neck_bell necklace parted_bangs short_hair short_hair_with_long_locks shoulder_spikes sidelocks smile spikes sweatdrop tattoo toned toned_male twitter_username two-tone_hair v-shaped_eyebrows vision_(genshin_impact) white_background wide_sleeves xiao_(genshin_impact) yellow_eyes\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh apabila parameter \"start_with\" dimatikan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search?nsfw=false",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "ganyu",
+									"disabled": true
+								},
+								{
+									"key": "nsfw",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-5oZPoNejxrHH2pUGO/fOLoPIhKo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:38:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9949,\n    \"Note\": \"Here is 0 result about name tag start with undefined\",\n    \"Data\": []\n}"
+				},
+				{
+					"name": "contoh apabila parameter \"nsfw\" dimatikan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/api/picture/search?start_with=ganyu",
 							"host": [
@@ -1201,129 +1375,11 @@
 							"query": [
 								{
 									"key": "start_with",
-									"value": "ganyu",
-									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1620"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"654-nBk7i3c++0rif0Jx0Vc81BIROzw\""
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 18 Jun 2023 17:51:15 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 1902723,\n            \"name\": \"ganyu(genshin_impact)\",\n            \"created_at\": \"2023-02-17T12:26:10.288-05:00\",\n            \"updated_at\": \"2023-02-17T12:26:10.288-05:00\"\n        },\n        {\n            \"id\": 1870743,\n            \"name\": \"ganyusukasusu\",\n            \"created_at\": \"2022-12-01T18:07:12.845-05:00\",\n            \"updated_at\": \"2022-12-01T18:07:12.845-05:00\"\n        },\n        {\n            \"id\": 1858245,\n            \"name\": \"ganyu_(autumn_pop-up_store)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T20:19:43.269-04:00\",\n            \"updated_at\": \"2022-10-27T20:19:53.541-04:00\"\n        },\n        {\n            \"id\": 1858103,\n            \"name\": \"ganyu_(winter_olympics)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T11:03:12.944-04:00\",\n            \"updated_at\": \"2022-10-27T11:03:38.034-04:00\"\n        },\n        {\n            \"id\": 1858094,\n            \"name\": \"ganyu_(china_merchants_bank)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T10:31:33.205-04:00\",\n            \"updated_at\": \"2022-10-27T10:32:07.179-04:00\"\n        },\n        {\n            \"id\": 1844584,\n            \"name\": \"ganyujiang~\",\n            \"created_at\": \"2022-09-19T20:48:26.907-04:00\",\n            \"updated_at\": \"2022-09-19T20:48:26.907-04:00\"\n        },\n        {\n            \"id\": 1814043,\n            \"name\": \"ganyu_(qilin)_(genshin_impact)\",\n            \"created_at\": \"2022-07-09T19:10:08.900-04:00\",\n            \"updated_at\": \"2022-07-09T19:10:08.926-04:00\"\n        },\n        {\n            \"id\": 1695058,\n            \"name\": \"ganyu_(impacto_genshin)\",\n            \"created_at\": \"2021-09-20T12:05:32.976-04:00\",\n            \"updated_at\": \"2021-09-20T12:05:32.976-04:00\"\n        },\n        {\n            \"id\": 1619687,\n            \"name\": \"ganyu_(genshin_impact)_(cosplay)\",\n            \"created_at\": \"2020-12-31T07:43:07.505-05:00\",\n            \"updated_at\": \"2020-12-31T07:43:07.505-05:00\"\n        },\n        {\n            \"id\": 1602203,\n            \"name\": \"ganyu_(genshin_impact)\",\n            \"created_at\": \"2020-10-18T21:55:37.708-04:00\",\n            \"updated_at\": \"2020-10-25T02:10:42.428-04:00\"\n        },\n        {\n            \"id\": 1601769,\n            \"name\": \"ganyu\",\n            \"created_at\": \"2020-10-17T02:38:48.062-04:00\",\n            \"updated_at\": \"2021-01-17T04:20:06.222-05:00\"\n        }\n    ]\n}"
-				},
-				{
-					"name": "contoh berhasil (input kosong)",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"picture",
-								"search"
-							],
-							"query": [
+									"value": "ganyu"
+								},
 								{
-									"key": "start_with",
-									"value": "",
-									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2649"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"a59-gYJsYznPPY8v7zDBokmHXk98Z84\""
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:19:26 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with \",\n    \"Data\": [\n        {\n            \"id\": 1955960,\n            \"name\": \"crimson_nova_trinity_the_dark_cubic_lord\",\n            \"created_at\": \"2023-06-18T14:12:20.604-04:00\",\n            \"updated_at\": \"2023-06-18T14:12:20.604-04:00\"\n        },\n        {\n            \"id\": 1955959,\n            \"name\": \"four_have.\",\n            \"created_at\": \"2023-06-18T14:07:43.711-04:00\",\n            \"updated_at\": \"2023-06-18T14:07:43.711-04:00\"\n        },\n        {\n            \"id\": 1955958,\n            \"name\": \"acoco_kaicyan\",\n            \"created_at\": \"2023-06-18T14:06:19.021-04:00\",\n            \"updated_at\": \"2023-06-18T14:06:19.021-04:00\"\n        },\n        {\n            \"id\": 1955957,\n            \"name\": \"lunae_mon\",\n            \"created_at\": \"2023-06-18T14:03:46.066-04:00\",\n            \"updated_at\": \"2023-06-18T14:03:46.066-04:00\"\n        },\n        {\n            \"id\": 1955956,\n            \"name\": \"tadano_hitohito_(cosplay)\",\n            \"created_at\": \"2023-06-18T14:02:33.076-04:00\",\n            \"updated_at\": \"2023-06-18T14:02:33.076-04:00\"\n        },\n        {\n            \"id\": 1955955,\n            \"name\": \"comsou\",\n            \"created_at\": \"2023-06-18T14:01:52.145-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:52.145-04:00\"\n        },\n        {\n            \"id\": 1955954,\n            \"name\": \"kichi_i_i\",\n            \"created_at\": \"2023-06-18T14:01:45.779-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:45.779-04:00\"\n        },\n        {\n            \"id\": 1955953,\n            \"name\": \"earl_grey_ballistic\",\n            \"created_at\": \"2023-06-18T14:00:59.302-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:59.302-04:00\"\n        },\n        {\n            \"id\": 1955952,\n            \"name\": \"shuspocket\",\n            \"created_at\": \"2023-06-18T14:00:37.219-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:37.219-04:00\"\n        },\n        {\n            \"id\": 1955951,\n            \"name\": \"jeanne0424\",\n            \"created_at\": \"2023-06-18T14:00:23.061-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:23.061-04:00\"\n        },\n        {\n            \"id\": 1955950,\n            \"name\": \"kure_(90_xxx)\",\n            \"created_at\": \"2023-06-18T13:58:51.353-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:51.353-04:00\"\n        },\n        {\n            \"id\": 1955949,\n            \"name\": \"beefussop12\",\n            \"created_at\": \"2023-06-18T13:58:03.332-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:03.332-04:00\"\n        },\n        {\n            \"id\": 1955948,\n            \"name\": \"anzubowl\",\n            \"created_at\": \"2023-06-18T13:56:33.620-04:00\",\n            \"updated_at\": \"2023-06-18T13:56:33.620-04:00\"\n        },\n        {\n            \"id\": 1955947,\n            \"name\": \"maabo_harusame\",\n            \"created_at\": \"2023-06-18T13:54:21.657-04:00\",\n            \"updated_at\": \"2023-06-18T13:54:21.657-04:00\"\n        },\n        {\n            \"id\": 1955946,\n            \"name\": \"gundam_calibarn_(cosplay)\",\n            \"created_at\": \"2023-06-18T13:48:50.675-04:00\",\n            \"updated_at\": \"2023-06-18T13:48:50.675-04:00\"\n        },\n        {\n            \"id\": 1955945,\n            \"name\": \"shiawasemono_(utau)\",\n            \"created_at\": \"2023-06-18T13:42:46.023-04:00\",\n            \"updated_at\": \"2023-06-18T13:42:46.023-04:00\"\n        },\n        {\n            \"id\": 1955944,\n            \"name\": \"corydoras_(fish)\",\n            \"created_at\": \"2023-06-18T13:37:25.418-04:00\",\n            \"updated_at\": \"2023-06-18T13:37:25.418-04:00\"\n        },\n        {\n            \"id\": 1955943,\n            \"name\": \"phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:57.524-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:57.524-04:00\"\n        },\n        {\n            \"id\": 1955942,\n            \"name\": \"user_phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:24.689-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:24.689-04:00\"\n        },\n        {\n            \"id\": 1955941,\n            \"name\": \"blendzy\",\n            \"created_at\": \"2023-06-18T13:32:04.695-04:00\",\n            \"updated_at\": \"2023-06-18T13:32:04.695-04:00\"\n        }\n    ]\n}"
-				},
-				{
-					"name": "contoh berhasil (parameter start_with dimatikan)",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/api/picture/search",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"picture",
-								"search"
-							],
-							"query": [
-								{
-									"key": "start_with",
-									"value": "apple",
+									"key": "nsfw",
+									"value": "false",
 									"disabled": true
 								}
 							]
@@ -1343,15 +1399,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "1302"
+							"value": "11322"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"516-8Z3FGkHV0fpZ6SXX5ZMiGI4ldpM\""
+							"value": "W/\"2c3a-nUNnGNKsoe7iHxORJ+UYH/9dnQw\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:24:49 GMT"
+							"value": "Thu, 22 Jun 2023 12:39:05 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1363,7 +1419,79 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with undefined\",\n    \"Data\": [\n        {\n            \"id\": 1491020,\n            \"name\": \"undefined_(vocaloid)\",\n            \"created_at\": \"2018-09-03T12:34:42.515-04:00\",\n            \"updated_at\": \"2019-08-27T19:39:13.435-04:00\"\n        },\n        {\n            \"id\": 1041095,\n            \"name\": \"undefined\",\n            \"created_at\": \"2013-03-10T03:34:26.128-04:00\",\n            \"updated_at\": \"2019-08-26T03:59:22.786-04:00\"\n        },\n        {\n            \"id\": 681935,\n            \"name\": \"undefined_fantasic_object\",\n            \"created_at\": \"2015-01-31T17:57:07.465-05:00\",\n            \"updated_at\": \"2015-01-31T17:57:07.465-05:00\"\n        },\n        {\n            \"id\": 597196,\n            \"name\": \"undefined_fanastic_object\",\n            \"created_at\": \"2013-02-25T01:12:17.578-05:00\",\n            \"updated_at\": \"2015-01-09T02:07:55.563-05:00\"\n        },\n        {\n            \"id\": 565794,\n            \"name\": \"undefined_fanstatic_object\",\n            \"created_at\": \"2016-08-25T20:56:15.653-04:00\",\n            \"updated_at\": \"2016-08-25T20:56:15.653-04:00\"\n        },\n        {\n            \"id\": 564470,\n            \"name\": \"undefined_fantastic_objest\",\n            \"created_at\": \"2013-02-24T22:16:19.211-05:00\",\n            \"updated_at\": \"2015-02-01T10:17:26.073-05:00\"\n        },\n        {\n            \"id\": 545343,\n            \"name\": \"undefined_fantastic_oject\",\n            \"created_at\": \"2015-02-07T06:26:54.086-05:00\",\n            \"updated_at\": \"2015-02-07T06:26:54.086-05:00\"\n        },\n        {\n            \"id\": 504379,\n            \"name\": \"undefined_fantastic\",\n            \"created_at\": \"2017-11-07T07:14:06.658-05:00\",\n            \"updated_at\": \"2017-11-07T07:14:06.658-05:00\"\n        },\n        {\n            \"id\": 472969,\n            \"name\": \"undefined_fantastic_object\",\n            \"created_at\": \"2013-02-28T16:41:00.142-05:00\",\n            \"updated_at\": \"2019-09-02T04:22:22.374-04:00\"\n        }\n    ]\n}"
+					"body": "{\n    \"kuota_user\": 9944,\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 6423729,\n            \"artist_name\": \"misaka_12003-gou\",\n            \"created_at\": \"2023-06-22T05:36:43.533-04:00\",\n            \"tags\": \"1boy 1girl bare_shoulders black_gloves blue_hair blush breasts cleavage cum cum_on_body cum_on_breasts cum_string detached_sleeves ganyu_(genshin_impact) genshin_impact gloves goat_horns grey_background highres horns long_hair looking_at_penis misaka_12003-gou navel nipples parted_lips penis purple_eyes simple_background smile solo_focus twitter_username\"\n        },\n        {\n            \"id\": 6423110,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:31:45.376-04:00\",\n            \"tags\": \"2girls :d ^_^ absurdres ahoge bell black_gloves blue_hair breast_curtain breasts carrying chinese_clothes closed_eyes closed_mouth clothing_cutout covered_navel detached_sleeves dragon_boat_festival earrings ganyu_(genshin_impact) genshin_impact gloves goat_horns hair_ornament hair_over_one_eye highres hip_vent holding horns jewelry large_breasts long_hair looking_at_viewer multiple_girls navel neck_bell open_mouth outdoors shenhe_(genshin_impact) signature siya_ho smile solo_focus strong tassel white_hair\"\n        },\n        {\n            \"id\": 6423055,\n            \"artist_name\": \"siya_ho\",\n            \"created_at\": \"2023-06-22T00:15:41.330-04:00\",\n            \"tags\": \"5boys 6+girls :d >_< ^_^ absurdres ahoge animal baizhu_(genshin_impact) bare_legs beidou_(genshin_impact) bird black_headwear blue_hair blue_sky braid chinese_clothes chinese_food chongyun_(genshin_impact) closed_eyes closed_mouth copyright_name day detached_sleeves dragon_boat_festival eyepatch fence finger_to_mouth food ganyu_(genshin_impact) genshin_impact glasses gloves goat_horns green_hair guitar guoba_(genshin_impact) hair_between_eyes hat highres horns hu_tao_(genshin_impact) instrument keqing_(genshin_impact) leggings logo long_hair looking_at_another looking_at_viewer multiple_boys multiple_girls ningguang_(genshin_impact) official_art open_mouth outdoors purple_hair qiqi_(genshin_impact) shenhe_(genshin_impact) sitting siya_ho sky smile standing thighhighs upper_body white_hair white_thighhighs xiangling_(genshin_impact) xiao_(genshin_impact) xingqiu_(genshin_impact) xinyan_(genshin_impact) yanfei_(genshin_impact) yaoyao_(genshin_impact) yelan_(genshin_impact) yun_jin_(genshin_impact) zhongli_(genshin_impact)\"\n        },\n        {\n            \"id\": 6421428,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-21T11:00:45.589-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6421238,\n            \"artist_name\": \"terableart\",\n            \"created_at\": \"2023-06-21T09:36:12.226-04:00\",\n            \"tags\": \"1girl absurdres ahoge arms_up artist_name bare_shoulders bed black_leotard black_pantyhose blue_hair blush bodystocking bodysuit bow breasts cleavage embarrassed ganyu_(genshin_impact) genshin_impact groin highres horns leotard leotard_under_clothes long_hair looking_at_viewer lying medium_breasts on_side open_mouth pantyhose purple_eyes sideboob sidelocks solo terableart thighs\"\n        },\n        {\n            \"id\": 6421230,\n            \"artist_name\": \"dazhong_(g.marika)\",\n            \"created_at\": \"2023-06-21T09:31:09.385-04:00\",\n            \"tags\": \"1girl absurdres ahoge animal_ears bare_shoulders bell black_leotard black_pantyhose blue_hair blush breasts covered_navel dazhong_(g.marika) fake_animal_ears ganyu_(genshin_impact) genshin_impact halterneck highres horns leotard long_hair looking_at_viewer medium_breasts neck_bell open_mouth pantyhose playboy_bunny purple_eyes rabbit_ears sidelocks smile solo thighs\"\n        },\n        {\n            \"id\": 6421226,\n            \"artist_name\": \"nasubin_(nasubisamurai15)\",\n            \"created_at\": \"2023-06-21T09:28:49.129-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves black_leotard blue_hair blush bodystocking bodysuit breasts brown_pantyhose chinese_knot detached_sleeves eating_flower flower flower_knot ganyu_(genshin_impact) genshin_impact gloves gold_trim groin highres holding holding_flower horns leotard leotard_under_clothes long_hair looking_at_viewer medium_breasts mountain nasubin_(nasubisamurai15) neck_bell outdoors pantyhose petals_in_mouth purple_eyes qingxin_flower sideboob sidelocks solo tassel thighlet thighs vision_(genshin_impact) white_flower white_sleeves\"\n        },\n        {\n            \"id\": 6420824,\n            \"artist_name\": \"arrrrrry1\",\n            \"created_at\": \"2023-06-21T07:03:09.021-04:00\",\n            \"tags\": \"1girl ahoge alternate_costume alternate_hairstyle arrrrrry1 blue_hair braid braided_ponytail breasts commentary cosplay crossed_bangs from_above ganyu_(genshin_impact) genshin_impact hair_between_eyes horns large_breasts lisa_(a_sobriquet_under_shade)_(genshin_impact) lisa_(genshin_impact) lisa_(genshin_impact)_(cosplay) long_sleeves open_mouth playing_with_own_hair puffy_long_sleeves puffy_sleeves purple_eyes sidelocks simple_background solo white_background\"\n        },\n        {\n            \"id\": 6420068,\n            \"artist_name\": \"taro_(peach_taro51)\",\n            \"created_at\": \"2023-06-21T01:14:01.940-04:00\",\n            \"tags\": \"1girl absurdres backless_outfit black_gloves black_pantyhose blue_flower blue_hair blurry blurry_foreground blush bodystocking book breasts calligraphy_brush closed_mouth commentary detached_sleeves flower from_behind full_body ganyu_(genshin_impact) genshin_impact glaze_lily gloves goat_horns hair_between_eyes highres horns long_hair medium_breasts outdoors paintbrush pantyhose sideboob sky smile solo taro_(peach_taro51) thighlet very_long_hair\"\n        },\n        {\n            \"id\": 6420033,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-21T01:03:54.302-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6420032,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-21T01:03:49.411-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes ripples rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419737,\n            \"artist_name\": \"wol_(wol_927)\",\n            \"created_at\": \"2023-06-20T23:00:43.600-04:00\",\n            \"tags\": \"1girl ahoge black_footwear black_skirt blue_hair blush breasts collared_shirt formal ganyu_(genshin_impact) genshin_impact goat_horns green_nails highres horns large_breasts long_hair looking_at_viewer office_lady open_mouth pantyhose pencil_skirt purple_eyes shirt short_sleeves skirt solo sweat white_shirt wol_(wol_927)\"\n        },\n        {\n            \"id\": 6419725,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-20T22:51:37.566-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419724,\n            \"artist_name\": \"choisd4516\",\n            \"created_at\": \"2023-06-20T22:51:34.747-04:00\",\n            \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes ripples rock sidelocks soles solo swimsuit towel water wooden_bucket\"\n        },\n        {\n            \"id\": 6419699,\n            \"artist_name\": \"sunnillust\",\n            \"created_at\": \"2023-06-20T22:36:32.613-04:00\",\n            \"tags\": \"1girl @_@ absurdres ahoge alternate_costume ankle_strap armpits ass bell black_bra black_footwear black_panties blue_hair bow bra bra_peek breasts cleavage collarbone collared_shirt commentary flying_paper ganyu_(genshin_impact) genshin_impact glasses hair_between_eyes hair_bow hair_intakes hand_on_own_head high-waist_skirt high_heels highres horns id_card lace-trimmed_bra lace_trim lanyard large_breasts light_blush long_hair looking_at_object lying office_lady on_side open_mouth panties panties_under_pantyhose pantyhose pantyshot paper pencil_skirt purple_eyes see-through shirt shirt_tucked_in sideboob sidelocks single_horn skirt sleeveless sleeveless_shirt solo sunnillust symbol-only_commentary tented_shirt thighband_pantyhose tripped unbuttoned underwear white_shirt wristband\"\n        },\n        {\n            \"id\": 6418368,\n            \"artist_name\": \"hai_ookami\",\n            \"created_at\": \"2023-06-20T12:03:44.585-04:00\",\n            \"tags\": \"1girl bare_shoulders bell blush bodystocking bodysuit breasts cosplay detached_sleeves from_below ganyu_(genshin_impact) ganyu_(genshin_impact)_(cosplay) genshin_impact greyscale groin hai_ookami hair_ornament highres leotard leotard_under_clothes looking_down medium_breasts monochrome neck_bell open_mouth pantyhose ponytail solo standing tassel thighs yoimiya_(genshin_impact)\"\n        },\n        {\n            \"id\": 6418166,\n            \"artist_name\": \"cyicheng\",\n            \"created_at\": \"2023-06-20T11:07:21.792-04:00\",\n            \"tags\": \"1girl ahoge bare_shoulders bell black_gloves blue_footwear blue_hair bodysuit breasts brown_bodysuit covered_navel cyicheng detached_sleeves ganyu_(genshin_impact) genshin_impact gloves goat_horns horns large_breasts long_hair looking_at_viewer mixed-language_commentary paid_reward_available parted_lips patreon_username purple_eyes solo thighs vision_(genshin_impact)\"\n        },\n        {\n            \"id\": 6417055,\n            \"artist_name\": \"oni_setsu_maru\",\n            \"created_at\": \"2023-06-20T01:52:39.567-04:00\",\n            \"tags\": \"1girl absurdres ahoge ballerina ballet ballet_slippers bell blue_hair broken_mirror chinese_commentary commentary_request crystalfly_(genshin_impact) ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim hair_down highres horns long_hair looking_at_viewer mirror neck_bell oni_setsu_maru purple_eyes ripples solo starry_background tutu\"\n        },\n        {\n            \"id\": 6413682,\n            \"artist_name\": \"kaname_24\",\n            \"created_at\": \"2023-06-19T03:36:29.395-04:00\",\n            \"tags\": \"1girl =3 ahoge artist_name bare_shoulders bell black_gloves blue_hair blush bodystocking breasts chinese_knot cowbell detached_sleeves flower_knot ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim highres horns kaname_24 leotard leotard_under_clothes long_hair looking_at_viewer low_ponytail medium_breasts neck_bell pantyhose purple_eyes sidelocks solo vision_(genshin_impact) white_sleeves\"\n        },\n        {\n            \"id\": 6412382,\n            \"artist_name\": \"artastiq\",\n            \"created_at\": \"2023-06-18T16:30:25.002-04:00\",\n            \"tags\": \"1boy 1girl ahoge arm_tattoo artastiq ass bare_shoulders bead_necklace beads bell black_gloves black_hair blue_hair blush bodystocking breast_press chinese_knot collarbone cowbell curled_horns detached_sleeves facial_mark forehead_mark ganyu_(genshin_impact) genshin_impact gloves goat_horns gold_trim gradient_hair green_hair hetero highres horns hug jewelry leotard leotard_under_clothes long_hair long_sleeves low_ponytail multicolored_hair neck_bell necklace parted_bangs short_hair short_hair_with_long_locks shoulder_spikes sidelocks smile spikes sweatdrop tattoo toned toned_male twitter_username two-tone_hair v-shaped_eyebrows vision_(genshin_impact) white_background wide_sleeves xiao_(genshin_impact) yellow_eyes\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "contoh apabila kedua parameter dimatikan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"search"
+							],
+							"query": [
+								{
+									"key": "start_with",
+									"value": "ganyu",
+									"disabled": true
+								},
+								{
+									"key": "nsfw",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-78JeUce5TooV8v2tBY1HelnDbBE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:39:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"kuota_user\": 9939,\n    \"Note\": \"Here is 0 result about name tag start with undefined\",\n    \"Data\": []\n}"
 				}
 			]
 		},
@@ -1382,13 +1510,12 @@
 							"    const hasil = pm.response.json();\r",
 							"    // Memeriksa apakah hasil adalah objek\r",
 							"    pm.expect(hasil).to.be.an('object');\r",
+							"    // Memeriksa apakah hasil memiliki kunci yang tepat\r",
+							"    pm.expect(hasil).to.have.keys(\"kuota_user\", \"Note\", \"Data\");\r",
 							"    // Mendapatkan nilai dari properti \"Data\" pada objek hasil\r",
 							"    const data = hasil.Data;\r",
 							"    // Memeriksa apakah data adalah array\r",
 							"    pm.expect(data).to.be.an('array');\r",
-							"    for (const h of data) {\r",
-							"        pm.expect(h).to.have.keys(\"id\", \"name\", \"created_at\", \"updated_at\");\r",
-							"    }\r",
 							"});\r",
 							""
 						],
@@ -1401,38 +1528,27 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
 						"type": "text"
 					}
 				],
-				"url": {
-					"raw": "localhost:3000/api/picture/search_notag?",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"search_notag"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null
-						}
-					]
-				},
-				"description": "Endpoint ini digunakan untuk mencari 20 post yang terbaru.  \nEndpoint ini akan menampilkan :\n\n- id\n- name\n- created_at\n- updated_at\n    \n\nEndpoint ini tidak mungkin error."
+				"url": "localhost:3000/api/picture/search_notag",
+				"description": "Endpoint ini digunakan untuk mencari 20 post terbaru.  \nEndpoint ini akan menampilkan :\n\n- id\n- artist_name\n- created_at\n- Tags\n    \n\nSerta menampilkan pesan dan sisa kuota user.\n\nEndpoint ini tidak mungkin error."
 			},
 			"response": [
 				{
-					"name": "contoh berhasil (input diisi)",
+					"name": "contoh berhasil",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=ganyu",
+							"raw": "localhost:3000/api/picture/search_notag",
 							"host": [
 								"localhost"
 							],
@@ -1440,134 +1556,12 @@
 							"path": [
 								"api",
 								"picture",
-								"search"
+								"search_notag"
 							],
 							"query": [
 								{
-									"key": "start_with",
-									"value": "ganyu",
-									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1620"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"654-nBk7i3c++0rif0Jx0Vc81BIROzw\""
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 18 Jun 2023 17:51:15 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with ganyu\",\n    \"Data\": [\n        {\n            \"id\": 1902723,\n            \"name\": \"ganyu(genshin_impact)\",\n            \"created_at\": \"2023-02-17T12:26:10.288-05:00\",\n            \"updated_at\": \"2023-02-17T12:26:10.288-05:00\"\n        },\n        {\n            \"id\": 1870743,\n            \"name\": \"ganyusukasusu\",\n            \"created_at\": \"2022-12-01T18:07:12.845-05:00\",\n            \"updated_at\": \"2022-12-01T18:07:12.845-05:00\"\n        },\n        {\n            \"id\": 1858245,\n            \"name\": \"ganyu_(autumn_pop-up_store)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T20:19:43.269-04:00\",\n            \"updated_at\": \"2022-10-27T20:19:53.541-04:00\"\n        },\n        {\n            \"id\": 1858103,\n            \"name\": \"ganyu_(winter_olympics)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T11:03:12.944-04:00\",\n            \"updated_at\": \"2022-10-27T11:03:38.034-04:00\"\n        },\n        {\n            \"id\": 1858094,\n            \"name\": \"ganyu_(china_merchants_bank)_(genshin_impact)\",\n            \"created_at\": \"2022-10-27T10:31:33.205-04:00\",\n            \"updated_at\": \"2022-10-27T10:32:07.179-04:00\"\n        },\n        {\n            \"id\": 1844584,\n            \"name\": \"ganyujiang~\",\n            \"created_at\": \"2022-09-19T20:48:26.907-04:00\",\n            \"updated_at\": \"2022-09-19T20:48:26.907-04:00\"\n        },\n        {\n            \"id\": 1814043,\n            \"name\": \"ganyu_(qilin)_(genshin_impact)\",\n            \"created_at\": \"2022-07-09T19:10:08.900-04:00\",\n            \"updated_at\": \"2022-07-09T19:10:08.926-04:00\"\n        },\n        {\n            \"id\": 1695058,\n            \"name\": \"ganyu_(impacto_genshin)\",\n            \"created_at\": \"2021-09-20T12:05:32.976-04:00\",\n            \"updated_at\": \"2021-09-20T12:05:32.976-04:00\"\n        },\n        {\n            \"id\": 1619687,\n            \"name\": \"ganyu_(genshin_impact)_(cosplay)\",\n            \"created_at\": \"2020-12-31T07:43:07.505-05:00\",\n            \"updated_at\": \"2020-12-31T07:43:07.505-05:00\"\n        },\n        {\n            \"id\": 1602203,\n            \"name\": \"ganyu_(genshin_impact)\",\n            \"created_at\": \"2020-10-18T21:55:37.708-04:00\",\n            \"updated_at\": \"2020-10-25T02:10:42.428-04:00\"\n        },\n        {\n            \"id\": 1601769,\n            \"name\": \"ganyu\",\n            \"created_at\": \"2020-10-17T02:38:48.062-04:00\",\n            \"updated_at\": \"2021-01-17T04:20:06.222-05:00\"\n        }\n    ]\n}"
-				},
-				{
-					"name": "contoh berhasil (input kosong)",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/api/picture/search?start_with=",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"picture",
-								"search"
-							],
-							"query": [
-								{
-									"key": "start_with",
-									"value": "",
-									"description": "endpoint ini tidak mungkin error. Input apapun yang diberikan tetap bisa dijalankan. Bahkan dikosongkan pun tetap bisa jalan."
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2649"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"a59-gYJsYznPPY8v7zDBokmHXk98Z84\""
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:19:26 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with \",\n    \"Data\": [\n        {\n            \"id\": 1955960,\n            \"name\": \"crimson_nova_trinity_the_dark_cubic_lord\",\n            \"created_at\": \"2023-06-18T14:12:20.604-04:00\",\n            \"updated_at\": \"2023-06-18T14:12:20.604-04:00\"\n        },\n        {\n            \"id\": 1955959,\n            \"name\": \"four_have.\",\n            \"created_at\": \"2023-06-18T14:07:43.711-04:00\",\n            \"updated_at\": \"2023-06-18T14:07:43.711-04:00\"\n        },\n        {\n            \"id\": 1955958,\n            \"name\": \"acoco_kaicyan\",\n            \"created_at\": \"2023-06-18T14:06:19.021-04:00\",\n            \"updated_at\": \"2023-06-18T14:06:19.021-04:00\"\n        },\n        {\n            \"id\": 1955957,\n            \"name\": \"lunae_mon\",\n            \"created_at\": \"2023-06-18T14:03:46.066-04:00\",\n            \"updated_at\": \"2023-06-18T14:03:46.066-04:00\"\n        },\n        {\n            \"id\": 1955956,\n            \"name\": \"tadano_hitohito_(cosplay)\",\n            \"created_at\": \"2023-06-18T14:02:33.076-04:00\",\n            \"updated_at\": \"2023-06-18T14:02:33.076-04:00\"\n        },\n        {\n            \"id\": 1955955,\n            \"name\": \"comsou\",\n            \"created_at\": \"2023-06-18T14:01:52.145-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:52.145-04:00\"\n        },\n        {\n            \"id\": 1955954,\n            \"name\": \"kichi_i_i\",\n            \"created_at\": \"2023-06-18T14:01:45.779-04:00\",\n            \"updated_at\": \"2023-06-18T14:01:45.779-04:00\"\n        },\n        {\n            \"id\": 1955953,\n            \"name\": \"earl_grey_ballistic\",\n            \"created_at\": \"2023-06-18T14:00:59.302-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:59.302-04:00\"\n        },\n        {\n            \"id\": 1955952,\n            \"name\": \"shuspocket\",\n            \"created_at\": \"2023-06-18T14:00:37.219-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:37.219-04:00\"\n        },\n        {\n            \"id\": 1955951,\n            \"name\": \"jeanne0424\",\n            \"created_at\": \"2023-06-18T14:00:23.061-04:00\",\n            \"updated_at\": \"2023-06-18T14:00:23.061-04:00\"\n        },\n        {\n            \"id\": 1955950,\n            \"name\": \"kure_(90_xxx)\",\n            \"created_at\": \"2023-06-18T13:58:51.353-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:51.353-04:00\"\n        },\n        {\n            \"id\": 1955949,\n            \"name\": \"beefussop12\",\n            \"created_at\": \"2023-06-18T13:58:03.332-04:00\",\n            \"updated_at\": \"2023-06-18T13:58:03.332-04:00\"\n        },\n        {\n            \"id\": 1955948,\n            \"name\": \"anzubowl\",\n            \"created_at\": \"2023-06-18T13:56:33.620-04:00\",\n            \"updated_at\": \"2023-06-18T13:56:33.620-04:00\"\n        },\n        {\n            \"id\": 1955947,\n            \"name\": \"maabo_harusame\",\n            \"created_at\": \"2023-06-18T13:54:21.657-04:00\",\n            \"updated_at\": \"2023-06-18T13:54:21.657-04:00\"\n        },\n        {\n            \"id\": 1955946,\n            \"name\": \"gundam_calibarn_(cosplay)\",\n            \"created_at\": \"2023-06-18T13:48:50.675-04:00\",\n            \"updated_at\": \"2023-06-18T13:48:50.675-04:00\"\n        },\n        {\n            \"id\": 1955945,\n            \"name\": \"shiawasemono_(utau)\",\n            \"created_at\": \"2023-06-18T13:42:46.023-04:00\",\n            \"updated_at\": \"2023-06-18T13:42:46.023-04:00\"\n        },\n        {\n            \"id\": 1955944,\n            \"name\": \"corydoras_(fish)\",\n            \"created_at\": \"2023-06-18T13:37:25.418-04:00\",\n            \"updated_at\": \"2023-06-18T13:37:25.418-04:00\"\n        },\n        {\n            \"id\": 1955943,\n            \"name\": \"phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:57.524-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:57.524-04:00\"\n        },\n        {\n            \"id\": 1955942,\n            \"name\": \"user_phfr3843\",\n            \"created_at\": \"2023-06-18T13:36:24.689-04:00\",\n            \"updated_at\": \"2023-06-18T13:36:24.689-04:00\"\n        },\n        {\n            \"id\": 1955941,\n            \"name\": \"blendzy\",\n            \"created_at\": \"2023-06-18T13:32:04.695-04:00\",\n            \"updated_at\": \"2023-06-18T13:32:04.695-04:00\"\n        }\n    ]\n}"
-				},
-				{
-					"name": "contoh berhasil (parameter start_with dimatikan)",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/api/picture/search",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"picture",
-								"search"
-							],
-							"query": [
-								{
-									"key": "start_with",
-									"value": "apple",
+									"key": "",
+									"value": null,
 									"disabled": true
 								}
 							]
@@ -1587,15 +1581,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "1302"
+							"value": "10308"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"516-8Z3FGkHV0fpZ6SXX5ZMiGI4ldpM\""
+							"value": "W/\"2844-BaHrfd8Z182fc/PwMUAxnMn03+k\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 18 Jun 2023 18:24:49 GMT"
+							"value": "Thu, 22 Jun 2023 12:46:12 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1607,7 +1601,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"Note\": \"Here is 20 result about name tag start with undefined\",\n    \"Data\": [\n        {\n            \"id\": 1491020,\n            \"name\": \"undefined_(vocaloid)\",\n            \"created_at\": \"2018-09-03T12:34:42.515-04:00\",\n            \"updated_at\": \"2019-08-27T19:39:13.435-04:00\"\n        },\n        {\n            \"id\": 1041095,\n            \"name\": \"undefined\",\n            \"created_at\": \"2013-03-10T03:34:26.128-04:00\",\n            \"updated_at\": \"2019-08-26T03:59:22.786-04:00\"\n        },\n        {\n            \"id\": 681935,\n            \"name\": \"undefined_fantasic_object\",\n            \"created_at\": \"2015-01-31T17:57:07.465-05:00\",\n            \"updated_at\": \"2015-01-31T17:57:07.465-05:00\"\n        },\n        {\n            \"id\": 597196,\n            \"name\": \"undefined_fanastic_object\",\n            \"created_at\": \"2013-02-25T01:12:17.578-05:00\",\n            \"updated_at\": \"2015-01-09T02:07:55.563-05:00\"\n        },\n        {\n            \"id\": 565794,\n            \"name\": \"undefined_fanstatic_object\",\n            \"created_at\": \"2016-08-25T20:56:15.653-04:00\",\n            \"updated_at\": \"2016-08-25T20:56:15.653-04:00\"\n        },\n        {\n            \"id\": 564470,\n            \"name\": \"undefined_fantastic_objest\",\n            \"created_at\": \"2013-02-24T22:16:19.211-05:00\",\n            \"updated_at\": \"2015-02-01T10:17:26.073-05:00\"\n        },\n        {\n            \"id\": 545343,\n            \"name\": \"undefined_fantastic_oject\",\n            \"created_at\": \"2015-02-07T06:26:54.086-05:00\",\n            \"updated_at\": \"2015-02-07T06:26:54.086-05:00\"\n        },\n        {\n            \"id\": 504379,\n            \"name\": \"undefined_fantastic\",\n            \"created_at\": \"2017-11-07T07:14:06.658-05:00\",\n            \"updated_at\": \"2017-11-07T07:14:06.658-05:00\"\n        },\n        {\n            \"id\": 472969,\n            \"name\": \"undefined_fantastic_object\",\n            \"created_at\": \"2013-02-28T16:41:00.142-05:00\",\n            \"updated_at\": \"2019-09-02T04:22:22.374-04:00\"\n        }\n    ]\n}"
+					"body": "{\n    \"kuota_user\": 9874,\n    \"Note\": \"Here is 20 result of the latest posts\",\n    \"Data\": [\n        {\n            \"id\": 6424076,\n            \"artist_name\": \"daimahmw77\",\n            \"created_at\": \"2023-06-22T08:43:47.355-04:00\",\n            \"tags\": \"against_glass animal_ears aqua_bow aqua_bowtie ass blue_archive blue_hairband blue_leotard bow bowtie chandelier daimahmw77 detached_collar earpiece fake_animal_ears fake_tail hairband halo highleg highleg_leotard highres leotard official_alternate_costume playboy_bunny rabbit_ears rabbit_tail sitting strapless strapless_leotard tail thighhighs toki_(blue_archive) toki_(bunny)_(blue_archive) white_thighhighs white_wrist_cuffs wrist_cuffs\"\n        },\n        {\n            \"id\": 6424075,\n            \"artist_name\": \"masao\",\n            \"created_at\": \"2023-06-22T08:43:13.018-04:00\",\n            \"tags\": \"1girl absurdres animal_ear_fluff animal_ears black_bodysuit black_choker black_gloves bodysuit bow breasts choker commission elbow_gloves fate/grand_order fate_(series) fox_ears fox_girl fox_tail gigantic_breasts glasses gloves grey-framed_eyewear highres hip_vent koyanskaya_(assassin)_(first_ascension)_(fate) koyanskaya_(fate) looking_at_viewer masao navel nipple_slip nipples open_bodysuit open_clothes pink_bow pink_hair plump side_ponytail sidelocks skeb_commission solo tail tamamo_(fate) unzipped yellow_eyes\"\n        },\n        {\n            \"id\": 6424074,\n            \"artist_name\": \"yuuta_(806350354)\",\n            \"created_at\": \"2023-06-22T08:43:10.197-04:00\",\n            \"tags\": \"bird black_hair blue_sky broom broom_riding chair classroom cloud commentary desk dragon dreaming eastern_dragon gake_no_ue_no_ponyo haku_(sen_to_chihiro_no_kamikakushi) highres japanese_clothes kiki_(majo_no_takkyuubin) kimono majo_no_takkyuubin notebook ogino_chihiro ponyo red_kimono school_desk seagull sen_to_chihiro_no_kamikakushi sky sleeping_on_desk studio_ghibli stuffed_animal stuffed_panda stuffed_toy susuwatari tenkuu_no_shiro_laputa tonari_no_totoro totoro witch yuuta_(806350354)\"\n        },\n        {\n            \"id\": 6424073,\n            \"artist_name\": \"nihonbashi_yowoko\",\n            \"created_at\": \"2023-06-22T08:42:39.632-04:00\",\n            \"tags\": \"3girls asymmetrical_bangs black_eyes black_hair blue_eyes breasts brown_hair closed_mouth crossed_bangs eyelashes glasses grey_eyes grey_hair groin hand_up knee_pads long_hair long_sleeves long_tail looking_at_viewer medium_breasts multiple_girls nihonbashi_yowoko parted_bangs red_shirt red_shorts shirt shoes short_hair shorts shoujo_fight side_ponytail sportswear standing swept_bangs tail thighs twintails volleyball volleyball_uniform wavy_hair\"\n        },\n        {\n            \"id\": 6424072,\n            \"artist_name\": \"ao12073010\",\n            \"created_at\": \"2023-06-22T08:42:10.829-04:00\",\n            \"tags\": \"1girl absurdres ao12073010 black_hair blue_archive blue_eyes blue_halo bra breasts choker frilled_bra frilled_choker frills halo heart heart_hands highres long_hair medium_breasts midriff moe_moe_kyun! navel saori_(blue_archive) thigh_strap underwear unfinished wrist_cuffs\"\n        },\n        {\n            \"id\": 6424071,\n            \"artist_name\": \"potg_(piotegu)\",\n            \"created_at\": \"2023-06-22T08:41:22.700-04:00\",\n            \"tags\": \"1girl blue_eyes commentary dappled_sunlight day dress flower grass green_theme highres on_grass on_ground original outdoors potg_(piotegu) puffy_short_sleeves puffy_sleeves red_dress shade short_sleeves sitting solo sunlight\"\n        },\n        {\n            \"id\": 6424070,\n            \"artist_name\": \"panos_(ssgpanos)\",\n            \"created_at\": \"2023-06-22T08:39:50.544-04:00\",\n            \"tags\": \"1girl ankle_boots artist_name asymmetrical_clothes blonde_hair blue_eyes blue_hair boots cleavage_cutout clothing_cutout commentary detached_sleeves earrings fishnet_pantyhose fishnets from_below grin guitar hair_between_eyes highres holding holding_instrument honkai:_star_rail honkai_(series) instrument jewelry lightning_bolt_symbol long_hair looking_at_viewer looking_down multicolored_hair multiple_earrings multiple_rings music panos_(ssgpanos) pantyhose pink_background playing_instrument ring serval_landau smile solo streaked_hair thigh_strap translation_request two-tone_hair white_footwear\"\n        },\n        {\n            \"id\": 6424069,\n            \"artist_name\": \"un_uk\",\n            \"created_at\": \"2023-06-22T08:39:39.028-04:00\",\n            \"tags\": \"1girl black_choker blue_eyes blue_jacket blue_skirt boots breasts camera choker commentary feet_up gradient_jacket highres holding holding_camera honkai:_star_rail honkai_(series) jacket large_breasts long_sleeves looking_at_viewer march_7th_(honkai:_star_rail) medium_hair multicolored_clothes multicolored_jacket one_eye_closed pink_hair pink_jacket pleated_skirt purple_eyes purple_footwear shirt skirt sleeves_past_wrists smile solo teeth thighs two-tone_eyes two-tone_jacket un_uk v white_shirt\"\n        },\n        {\n            \"id\": 6424068,\n            \"artist_name\": \"sakura_ichi\",\n            \"created_at\": \"2023-06-22T08:38:43.061-04:00\",\n            \"tags\": \"2boys :d ahoge black_hair black_jacket blush breast_pocket buttons checkered_clothes checkered_scarf closed_eyes danganronpa_(series) danganronpa_v3:_killing_harmony double-breasted feeding hair_between_eyes happy_birthday highres jacket male_focus multiple_boys oma_kokichi open_mouth pale_skin pocket saihara_shuichi sakura_ichi scarf short_hair smile teeth upper_teeth_only\"\n        },\n        {\n            \"id\": 6424067,\n            \"artist_name\": \"yns_(ynsyns99)\",\n            \"created_at\": \"2023-06-22T08:38:05.812-04:00\",\n            \"tags\": \"2girls 3boys apple bare_shoulders beard bird_boy blue_eyes brown_footwear brown_headwear closed_eyes day dress facial_hair food from_behind fruit glasses grass grey_dress grey_hair highres holding holding_hands holding_newspaper link looking_at_another master_sword multiple_boys multiple_girls newspaper outdoors princess_zelda purah rito short_hair speech_bubble the_legend_of_zelda the_legend_of_zelda:_tears_of_the_kingdom tower translation_request yns_(ynsyns99)\"\n        },\n        {\n            \"id\": 6424066,\n            \"artist_name\": \"suzuko_(katahaba_v3)\",\n            \"created_at\": \"2023-06-22T08:36:47.978-04:00\",\n            \"tags\": \"2boys black_background black_hair blood blood_splatter buttons checkered_clothes checkered_scarf danganronpa_(series) danganronpa_v3:_killing_harmony dated double-breasted dual_persona happy_birthday highres jacket long_sleeves multicolored_hair multiple_boys official_alternate_costume oma_kokichi pink_background pink_blood pink_hair purple_eyes purple_hair scarf smile suzuko_(katahaba_v3) two-tone_hair upper_body white_jacket\"\n        },\n        {\n            \"id\": 6424065,\n            \"artist_name\": \"shirokumall\",\n            \"created_at\": \"2023-06-22T08:36:04.774-04:00\",\n            \"tags\": \"1girl absurdres black_sash blue_dress braid breasts clenched_teeth coin coin_on_string dress hair_bobbles hair_ornament highres holding holding_scythe holed_coin japanese_clothes large_breasts looking_at_viewer medium_hair musical_note obi one-hour_drawing_challenge onozuka_komachi orange_background puffy_short_sleeves puffy_sleeves red_eyes red_hair sash scythe shirokumall short_sleeves smile solo speech_bubble teeth touhou twin_braids white_background\"\n        },\n        {\n            \"id\": 6424064,\n            \"artist_name\": \"rirene_rn\",\n            \"created_at\": \"2023-06-22T08:35:52.795-04:00\",\n            \"tags\": \"2girls animal_ears blonde_hair blue_eyes commission cotton_candy facial_mark final_fantasy final_fantasy_xiv fireworks floral_print holding japanese_clothes kimono long_sleeves multiple_girls obi pink_kimono ponytail rirene_rn sample_watermark sash smile whisker_markings yellow_eyes\"\n        },\n        {\n            \"id\": 6424063,\n            \"artist_name\": \"wakamepiza\",\n            \"created_at\": \"2023-06-22T08:35:49.626-04:00\",\n            \"tags\": \"1girl absurdres animal_ears bikini black_bikini blue_archive blue_hoodie breasts brown_eyes brown_hair candy cleavage clothes_lift contrapposto cowboy_shot cropped_hoodie eyewear_hang eyewear_removed fake_animal_ears food front-tie_bikini_top front-tie_top halo highres holding holding_candy holding_food hood hoodie hoodie_lift large_breasts lollipop long_hair long_sleeves looking_at_viewer moe_(blue_archive) moe_(swimsuit)_(blue_archive) navel official_alternate_costume open_mouth round_eyewear side-tie_bikini_bottom simple_background smile solo swimsuit twintails wakamepiza white_background yellow_eyes yellow_halo\"\n        },\n        {\n            \"id\": 6424062,\n            \"artist_name\": \"kein_hasegawa\",\n            \"created_at\": \"2023-06-22T08:35:49.026-04:00\",\n            \"tags\": \"1girl black_dress dress elf fantasy flower hair_flower hair_ornament hair_ribbon highres kein_hasegawa long_bangs long_hair looking_at_viewer open_mouth original pointy_ears ribbon very_long_hair white_hair yellow_eyes\"\n        },\n        {\n            \"id\": 6424061,\n            \"artist_name\": \"agulo\",\n            \"created_at\": \"2023-06-22T08:34:19.218-04:00\",\n            \"tags\": \"1girl agulo antenna_hair breasts brown_hair flower hair_flower hair_ornament hakama highres japanese_clothes long_hair looking_at_viewer miko pale_skin purple_eyes rance_(series) rance_10 simple_background solo tokugawa_tone white_background\"\n        },\n        {\n            \"id\": 6424060,\n            \"artist_name\": \"pydiyudie\",\n            \"created_at\": \"2023-06-22T08:34:00.877-04:00\",\n            \"tags\": \"3girls bird_girl bird_legs bird_tail bird_wings black_hair blood clone colored_skin crack curled_up eggshell embryo feathered_wings final_fantasy final_fantasy_xiv full_body grey_eyes grey_skin hatching head_wings highres looking_at_viewer meteion mini_person minigirl monster_girl multiple_girls pydiyudie short_hair tail talons veins wide-eyed wings\"\n        },\n        {\n            \"id\": 6424059,\n            \"artist_name\": \"dddd_akagi\",\n            \"created_at\": \"2023-06-22T08:33:43.118-04:00\",\n            \"tags\": \"1girl absurdres ass bare_legs barefoot bikini blush brown_hair crossed_ankles dddd_akagi highres idolmaster idolmaster_cinderella_girls long_hair nose_blush one_side_up pink_bikini shimamura_uzuki simple_background soles solo sweatdrop swimsuit toes very_long_hair white_background\"\n        },\n        {\n            \"id\": 6424058,\n            \"artist_name\": \"kik1\",\n            \"created_at\": \"2023-06-22T08:33:09.304-04:00\",\n            \"tags\": \"1girl ahoge animal_ears bare_shoulders belt black_gloves blue_archive blush breasts coat coat_on_shoulders demon_girl demon_horns demon_wings forehead gloves groin hair_ornament hair_over_shoulder hairclip halo hand_on_own_chest highres hina_(blue_archive) holding holding_tray horns kik1 long_hair looking_at_viewer military necktie open_mouth rabbit_ears sitting sleeveless small_breasts sweat thighhighs thighs tray white_hair wings\"\n        },\n        {\n            \"id\": 6424057,\n            \"artist_name\": \"yamabuki_ryuu\",\n            \"created_at\": \"2023-06-22T08:31:52.066-04:00\",\n            \"tags\": \"5girls <key>_(blue_archive) <key>_(robot)_(blue_archive) aris_(blue_archive) black_hair blonde_hair blue_archive blue_hair bow controller duplicate famicom flat_screen_tv game_boy game_boy_advance game_cartridge game_console game_controller halo handheld_game_console highres himari_(blue_archive) holding holding_controller holding_game_controller looking_at_viewer looking_back multiple_girls pixel-perfect_duplicate playing_games red_bow sega_mega_drive sitting sitting_on_lap sitting_on_person smile television toki_(blue_archive) v wheelchair white_hair yamabuki_ryuu yuuka_(blue_archive) yuzu_(blue_archive)\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -1655,7 +1649,7 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
 						"type": "text"
 					}
 				],
@@ -1677,16 +1671,22 @@
 						}
 					]
 				},
-				"description": "Endpoint ini digunakan untuk memunculkan detil informasi dari suatu post dengan id yang spesifik.\n\nUntuk menghindari kegagalan, value \"id\" tidak boleh melebihi 6 digit & tidak boleh kosong."
+				"description": "Endpoint ini digunakan untuk memunculkan detil informasi dari suatu post dengan id yang spesifik dan menampilkan gambar yang dicari.\n\nEndpoint ini akan menampilkan :\n\n- id\n- tag_name\n- artist\n- created_at\n- score\n- fav_count\n- rating\n- picture (berupa link)\n- width\n- height\n- tags\n    \n\nSerta menampilkan sisa kuota user.\n\nUntuk melihat gambarnya tanpa harus membuka link yang diberikan di browser, anda dapat melihatnya di tab \"Visualize\".\n\nUntuk menghindari kegagalan, value \"id\" tidak boleh melebihi 6 digit & tidak boleh kosong."
 			},
 			"response": [
 				{
 					"name": "contoh berhasil",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:3000/api/picture/info?id=123",
+							"raw": "localhost:3000/api/picture/info?id=6420033",
 							"host": [
 								"localhost"
 							],
@@ -1699,7 +1699,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "123"
+									"value": "6420033"
 								}
 							]
 						}
@@ -1718,15 +1718,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "592"
+							"value": "671"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"250-pME6P8DUW2PuuXBB3VOz+ANyAAo\""
+							"value": "W/\"29f-2534QcC6dr0QUTWnbImudSnRC3A\""
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 21 Jun 2023 05:41:41 GMT"
+							"value": "Thu, 22 Jun 2023 12:51:51 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1738,13 +1738,19 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": 123,\n    \"tag_name\": \"suigintou\",\n    \"artist\": \"shinshin\",\n    \"created_at\": \"2005-05-25T11:07:40.000-04:00\",\n    \"score\": 8,\n    \"fav_count\": 18,\n    \"rating\": \"g\",\n    \"picture\": \"https://cdn.donmai.us/original/a1/cf/a1cfa0a448bbca975267789e2a22bfb0.jpg\",\n    \"width\": \"618px\",\n    \"height\": \"718px\",\n    \"tags\": \"1girl black_dress black_wings dress feathers frilled_dress frilled_sleeves frills gothic gothic_lolita gradient_background hairband hand_up headdress holding holding_feather lolita_fashion lolita_hairband long_hair long_sleeves pale_skin pink_eyes rozen_maiden shinshin solo source_request suigintou upper_body white_hair wings\"\n}"
+					"body": "{\n    \"id\": 6420033,\n    \"tag_name\": \"ganyu_(genshin_impact)\",\n    \"artist\": \"choisd4516\",\n    \"created_at\": \"2023-06-21T01:03:54.302-04:00\",\n    \"score\": 68,\n    \"fav_count\": 64,\n    \"rating\": \"q\",\n    \"picture\": \"https://cdn.donmai.us/original/fd/c1/fdc1bd1304332e03b871fbc8fc623646.jpg\",\n    \"width\": \"3445px\",\n    \"height\": \"4837px\",\n    \"tags\": \"1girl absurdres ahoge ass back bare_shoulders barefoot bathing bikini bikini_pull black_bikini blue_hair blush breasts bucket choisd4516 clothes_pull feet full_body ganyu_(genshin_impact) genshin_impact highres horns large_breasts legs long_hair looking_at_viewer looking_back onsen open_mouth purple_eyes rock sidelocks soles solo swimsuit towel water wooden_bucket\",\n    \"kuota_user\": 9851\n}"
 				},
 				{
-					"name": "contoh gagal (input \"id\" lebih dari 6 digit)",
+					"name": "contoh gagal (value \"id\" lebih dari 6 digit)",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/api/picture/info?id=9999999",
 							"host": [
@@ -1759,8 +1765,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "9999999",
-									"description": "alasan not found : karena postnya tidak lebih dari 6 digit"
+									"value": "9999999"
 								}
 							]
 						}
@@ -1787,7 +1792,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 21 Jun 2023 05:42:28 GMT"
+							"value": "Thu, 22 Jun 2023 12:53:16 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1805,7 +1810,13 @@
 					"name": "contoh gagal (parameter \"id\" dimatikan)",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:3000/api/picture/info",
 							"host": [
@@ -1820,16 +1831,15 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "123",
-									"description": "alasan not found : parameter \"id\" dimatikan",
+									"value": "9999999",
 									"disabled": true
 								}
 							]
 						}
 					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
 					"header": [
 						{
 							"key": "X-Powered-By",
@@ -1837,19 +1847,19 @@
 						},
 						{
 							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
+							"value": "text/html; charset=utf-8"
 						},
 						{
 							"key": "Content-Length",
-							"value": "28"
+							"value": "33"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"1c-bW+2u5uGrG4SGw1qL4+yugsq0fs\""
+							"value": "W/\"21-Ac4qGlAUERRwuAP3vJU/h+GCz2A\""
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 21 Jun 2023 05:43:17 GMT"
+							"value": "Thu, 22 Jun 2023 12:53:47 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1861,7 +1871,73 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"Error\": \"Posts not found!\"\n}"
+					"body": "ValidationError: \"id\" is required"
+				},
+				{
+					"name": "contoh gagal (parameter \"id\" dikosongkan)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/picture/info?id=",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"picture",
+								"info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-W9UdwFX1qpTaYFSjHF9dNmF7sK8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 12:54:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "ValidationError: \"id\" is not allowed to be empty"
 				}
 			]
 		},
@@ -1870,21 +1946,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg",
-					"protocol": "https",
-					"host": [
-						"cdn",
-						"donmai",
-						"us"
-					],
-					"path": [
-						"sample",
-						"f9",
-						"08",
-						"__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
-					]
-				}
+				"url": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
 			},
 			"response": []
 		}
