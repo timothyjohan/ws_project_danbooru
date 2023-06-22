@@ -1,47 +1,48 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Users = require('../models/Users');
+const Users = require("../models/Users");
 const jwt = require("jsonwebtoken");
-const JWT_KEY = 'UvuvwevwevweOnyetenyevweUgwemubwemOssas'
-const Joi = require('joi');
-
+const JWT_KEY = "UvuvwevwevweOnyetenyevweUgwemubwemOssas";
+const Joi = require("joi");
 
 // Register user account
-router.post('/register', async (req, res) => {
+router.post("/register", async (req, res) => {
     const schema = Joi.object({
         username: Joi.string().required(),
         password: Joi.string().min(5).required(),
-        confirm_pass: Joi.string().min(5).required()
+        confirm_pass: Joi.string().min(5).required(),
     });
 
     try {
-        await schema.validateAsync(req.body)
+        await schema.validateAsync(req.body);
     } catch (error) {
-        return res.status(403).send(error.toString())
+        return res.status(403).send(error.toString());
     }
 
     let account = {
-        ...req.body
-    } // cara aksesnya account.username/account.password/account.confirm_pass
+        ...req.body,
+    }; // cara aksesnya account.username/account.password/account.confirm_pass
 
     // let { username, password, confirm_pass } = req.body
     //user g boleh regis pake username admin
-    if (account.username == 'admin') {
-        return res.status(403).send({ message: 'Username has unauthorized credentials' })
+    if (account.username == "admin") {
+        return res
+            .status(403)
+            .send({ message: "Username has unauthorized credentials" });
     }
 
     //cek username biar gk duplicate
-    let cekDB = await Users.findByPk(account.username)
+    let cekDB = await Users.findByPk(account.username);
     if (cekDB) {
-        let message = `Username "${account.username}" has been taken`
-        return res.status(400).send(message)
+        let message = `Username "${account.username}" has been taken`;
+        return res.status(400).send(message);
     }
 
     //buat ngcheck password sama cofirm sama apa engga
     if (account.password != account.confirm_pass) {
         return res.status(200).send({
-            message: 'Password Confirmation Mismatched'
-        })
+            message: "Password Confirmation Mismatched",
+        });
     }
 
     //Pake trycatch utk bikin account User
@@ -49,74 +50,81 @@ router.post('/register', async (req, res) => {
         let createUser = await Users.create({
             us_username: account.username,
             us_password: account.password,
-            us_kuota: 10
-        })
+            us_kuota: 10,
+        });
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send(error);
     }
-    let message = `Account "${account.username}" has been created! please check our information site before using our services :)`
+    let message = `Account "${account.username}" has been created! Please check our information site before using our services :)`;
 
-    return res.status(201).send(message)
-})
+    return res.status(201).send(message);
+});
 
 //User Login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
     const schema = Joi.object({
         username: Joi.string().required(),
         password: Joi.string().required(),
     });
 
     try {
-        await schema.validateAsync(req.body)
+        await schema.validateAsync(req.body);
     } catch (error) {
-        return res.status(403).send(error.toString())
+        return res.status(403).send(error.toString());
     }
 
     let account = {
-        ...req.body
-    }
+        ...req.body,
+    };
     // let { username, password } = req.body
     //Login admin
-    if (account.username == 'admin' && account.password == 'nimda321') {
+    if (account.username == "admin" && account.password == "nimda321") {
         //token yang diambil cuman username dari admin untuk mempermudah akses yg lain
-        let token = jwt.sign({
-            username: account.username,
-        }, JWT_KEY, { expiresIn: '3600s' })
+        let token = jwt.sign(
+            {
+                username: account.username,
+            },
+            JWT_KEY,
+            { expiresIn: "3600s" }
+        );
         return res.status(200).send({
-            'message': 'Admin successfully logged in',
+            message: "Admin successfully logged in",
             username: account.username,
-            token: token
-        })
-
+            token: token,
+        });
     }
 
-    //Cari apa username ada di database 
-    let findUser = await Users.findByPk(account.username)
+    //Cari apa username ada di database
+    let findUser = await Users.findByPk(account.username);
     if (!findUser) {
-        return res.status(404).send({ message: 'username not found' })
+        return res.status(404).send({ message: "username not found" });
     }
     //matching password di database
     if (account.password != findUser.us_password) {
-        return res.status(400).send({ message: 'incorrect password' })
+        return res.status(400).send({ message: "incorrect password" });
     }
     // console.log(findUser.us_username)
     // console.log(findUser.us_password)
 
     //Masukin ke token n bikin JWT expire 1 jam
-    let kuota = findUser.us_kuota
-    let token = jwt.sign({
-        username: account.username,
-        password: account.password,
-        kuota: kuota
-    }, JWT_KEY, { expiresIn: '3600s' })
+    let kuota = findUser.us_kuota;
+    let token = jwt.sign(
+        {
+            username: account.username,
+            password: account.password,
+            kuota: kuota,
+        },
+        JWT_KEY,
+        { expiresIn: "3600s" }
+    );
     return res.status(200).send({
-        'message': 'Successfully logged in',
+        message: "Successfully logged in",
         username: account.username,
-        token: token
-    })
-})
+        token: token,
+    });
+});
 
-router.put('/changepw', async (req, res) => {
+router.put("/changepw", async (req, res) => {
     const schema = Joi.object({
         old_password: Joi.string().required(),
         new_password: Joi.string().required(),
@@ -124,40 +132,42 @@ router.put('/changepw', async (req, res) => {
     });
 
     try {
-        await schema.validateAsync(req.body)
+        await schema.validateAsync(req.body);
     } catch (error) {
-        return res.status(403).send(error.toString())
+        return res.status(403).send(error.toString());
     }
-    const data = {...req.body}
-    if(data.new_password != data.confirm_pass){
-        return res.status(401).send('New password and confirm password should be same!');
+    const data = { ...req.body };
+    if (data.new_password != data.confirm_pass) {
+        return res
+            .status(401)
+            .send("New password and confirm password should be same!");
     }
-    let token = req.header('x-auth-token')
-    if(!req.header('x-auth-token')){
-       let out = 'Authentication token is missing';
-       return res.status(401).send({out});
+    let token = req.header("x-auth-token");
+    if (!req.header("x-auth-token")) {
+        let out = "Authentication token is missing";
+        return res.status(401).send({ out });
     }
-    try{
+    try {
         let userdata = jwt.verify(token, JWT_KEY);
         console.log(userdata);
         const change = await Users.findOne({
-            where:{
-                us_username : userdata.username,
-                us_password : data.old_password
-            }
+            where: {
+                us_username: userdata.username,
+                us_password: data.old_password,
+            },
         });
         console.log("lewat find");
-        if(change){
+        if (change) {
             change.update({
-                us_password : data.new_password
-            })
-            return res.status(201).send('Successfully updated new password!');
-        }else{
-            return res.status(401).send('Wrong password');
+                us_password: data.new_password,
+            });
+            return res.status(201).send("Successfully updated new password!");
+        } else {
+            return res.status(401).send("Wrong password");
         }
-    }catch(err){
-        return res.status(400).send('Invalid JWT Key');
+    } catch (err) {
+        return res.status(400).send("Invalid JWT Key");
     }
-})
+});
 
-module.exports = router 
+module.exports = router;
