@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Users = require('../models/Users');
 const jwt = require("jsonwebtoken");
+const Joi = require('joi');
 const JWT_KEY = 'UvuvwevwevweOnyetenyevweUgwemubwemOssas'
 
 router.get('/users', async (req, res) => {
@@ -70,5 +71,30 @@ router.delete('/users', async (req, res) => {
 
 })
 
+router.put('/addquota', async (req, res) => {
+    const schema = Joi.object({
+        username : Joi.string().required(),
+        quota : Joi.number().min(1).max(100).required(),
+    });
+
+    try {
+        await schema.validateAsync(req.body)
+    } catch (error) {
+        return res.status(403).send(error.toString())
+    }
+
+    let { username, quota } = req.body
+
+    let findUser = await Users.findByPk(username)
+    if (!findUser) {
+        return res.status(404).send('User not found')
+    }else{
+        findUser.update({
+            us_kuota : Number(findUser.us_kuota) + Number(quota)
+        })
+        console.log(findUser.us_kuota);
+        return res.status(201).send({ message: `Username ${username} successfully top up! Quota : ${findUser.us_kuota}`}) 
+    }
+})
 
 module.exports = router 
