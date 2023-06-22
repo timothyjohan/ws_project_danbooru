@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../models/Users');
+const Favorites = require('../models/Favorite');
 const jwt = require("jsonwebtoken");
 const Joi = require('joi');
 const JWT_KEY = 'UvuvwevwevweOnyetenyevweUgwemubwemOssas'
@@ -58,17 +59,18 @@ router.delete('/users', async (req, res) => {
         return res.status(404).send('User not found')
     }
     let delUser
+    let delFk
     try {
+        delFk = await Favorites.destroy({
+            where: { us_username: username }
+        })
         delUser = await Users.destroy({
             where: { us_username: username }
         })
-
     } catch (error) {
-        return res.status(500).send(error)
-
+        return res.status(500).send(error)    
     }
     return res.status(201).send({ message: 'User has been deleted from the database' })
-
 })
 
 router.put('/addquota', async (req, res) => {

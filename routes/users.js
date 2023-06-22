@@ -12,7 +12,7 @@ router.post("/register", async (req, res) => {
         password: Joi.string().min(5).required(),
         confirm_pass: Joi.string().min(5).required(),
     });
-
+    
     try {
         await schema.validateAsync(req.body);
     } catch (error) {
