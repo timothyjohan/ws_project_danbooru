@@ -466,7 +466,7 @@ router.get("/max-post", async (req, res) => {
     }
 });
 
-router.get("/data-statistics", async (req, res) => {
+router.get("/last-created-user", async (req, res) => {
     try {
         const postsResponse = await axios.get(
             `https://danbooru.donmai.us/posts.json?limit=0`
@@ -479,21 +479,17 @@ router.get("/data-statistics", async (req, res) => {
         const totalLikes = likesResponse.data[0].fave_count;
 
         const artistsResponse = await axios.get(
-            `https://danbooru.donmai.us/artists.json?search[order]=post_count.desc&limit=5`
+            `https://danbooru.donmai.us/artist_versions.json`
         );
         const famousArtists = artistsResponse.data.map((artist) => ({
             name: artist.name,
-            post_count: artist.post_count,
-            like_count: artist.fav_count,
+            artist_id: artist.id,
+            created_at: artist.created_at,
+            contact_person: artist.urls,
         }));
 
-        const dataStatistics = {
-            total_posts: totalPosts,
-            total_likes: totalLikes,
-            famous_artists: famousArtists,
-        };
-
-        res.json(dataStatistics);
+        console.log(famousArtists);
+        res.json(famousArtists);
     } catch (error) {
         console.error("Error:", error);
         res.status(500).json({ error: "Internal Server Error" });

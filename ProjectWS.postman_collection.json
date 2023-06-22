@@ -531,7 +531,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "user2",
+							"value": "user0",
 							"description": "pastikan user sudah terdaftar",
 							"type": "text"
 						},
@@ -3755,13 +3755,13 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTc0LCJpYXQiOjE2ODc0MzczMDAsImV4cCI6MTY4NzQ0MDkwMH0.1Cfnzv3kwQJsB3WEs9aoDkKYmSpYGDEX0x1DO4cHSTw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyNTcsImlhdCI6MTY4NzQ1MjUxNSwiZXhwIjoxNjg3NDU2MTE1fQ.VwNO_ZzFJneW5Pm6Twf67QgKsQaUqSm5FCGBgCNfFTY",
 						"type": "text",
 						"description": "pastikan token sesuai"
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/search?start_with=apple&nsfw=false",
+					"raw": "localhost:3000/api/picture/search?start_with=ganyu ahegao",
 					"host": [
 						"localhost"
 					],
@@ -3774,13 +3774,14 @@
 					"query": [
 						{
 							"key": "start_with",
-							"value": "apple",
+							"value": "ganyu ahegao",
 							"description": "dapat diisi apapun atau dikosongkan, juga bisa dimatikan"
 						},
 						{
 							"key": "nsfw",
 							"value": "false",
-							"description": "dapat diisi true/false, juga bisa dimatikan"
+							"description": "dapat diisi true/false, juga bisa dimatikan",
+							"disabled": true
 						}
 					]
 				},
@@ -4449,13 +4450,13 @@
 				"header": [
 					{
 						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5OTA0LCJpYXQiOjE2ODc0Mzc5MDIsImV4cCI6MTY4NzQ0MTUwMn0.7UemH3DkG562sBYil2CQ5qzzPVDUj8bWT2sywLkOyPc",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoyNTcsImlhdCI6MTY4NzQ1MjUxNSwiZXhwIjoxNjg3NDU2MTE1fQ.VwNO_ZzFJneW5Pm6Twf67QgKsQaUqSm5FCGBgCNfFTY",
 						"type": "text",
 						"description": "pastikan token sesuai"
 					}
 				],
 				"url": {
-					"raw": "localhost:3000/api/picture/info?id =6420033",
+					"raw": "localhost:3000/api/picture/info?id=6310048",
 					"host": [
 						"localhost"
 					],
@@ -4467,9 +4468,8 @@
 					],
 					"query": [
 						{
-							"key": "id ",
-							"value": "6420033",
-							"description": "pastikan \"id\" terisi dan maksimalnya hanya 6 digit"
+							"key": "id",
+							"value": "6310048"
 						}
 					]
 				},
@@ -4745,9 +4745,119 @@
 		},
 		{
 			"name": "Get Random",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Case 1 : Status OK (200)\", function () {\r",
+							"    pm.expect(pm.response.code).equal(200);\r",
+							"    const jsonData = pm.response.json().url\r",
+							"    pm.visualizer.set(`\r",
+							"    <body>\r",
+							"    <img src=\"${jsonData}\">\r",
+							"    </body>`);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/random-images",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"random-images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Popular wihtin 7 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/popular-images",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"popular-images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tranding Tags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/trending-tags",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"trending-tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Max Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/max-post",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"max-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Last Created User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/last-created-user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"last-created-user"
+					]
+				}
 			},
 			"response": []
 		},
@@ -4757,7 +4867,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://danbooru.donmai.us/explore/posts/popular.json",
+					"raw": "https://danbooru.donmai.us/posts.json",
 					"protocol": "https",
 					"host": [
 						"danbooru",
@@ -4765,9 +4875,7 @@
 						"us"
 					],
 					"path": [
-						"explore",
-						"posts",
-						"popular.json"
+						"posts.json"
 					]
 				}
 			},
