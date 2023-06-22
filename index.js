@@ -1,5 +1,8 @@
 const { urlencoded } = require('express');
 const express = require('express')
+const multer = require('multer');
+// const upload = multer({ storage : fileStorageEngine})
+
 const app = express()
 const port = 3000
 const users = require('./routes/users');
@@ -16,3 +19,4 @@ app.use('/api/users', users)
 app.use('/api/admin', admin)
 app.use('/api/picture', picture)
 app.use('/api/info', info)
+
