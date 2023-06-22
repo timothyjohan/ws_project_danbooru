@@ -127,8 +127,8 @@ router.post("/login", async (req, res) => {
 router.put("/changepw", async (req, res) => {
     const schema = Joi.object({
         old_password: Joi.string().required(),
-        new_password: Joi.string().required(),
-        confirm_pass: Joi.string().required(),
+        new_password: Joi.string().min(5).required(),
+        confirm_pass: Joi.string().min(5).required(),
     });
 
     try {
