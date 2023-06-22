@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a7c91b9e-bcb7-4125-8a93-c9ff94222e09",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25659054"
 	},
 	"item": [
@@ -65,7 +65,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/register",
+				"url": {
+					"raw": "localhost:3000/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
 				"description": "Endpoint ini berguna untuk mendaftarkan user ke dalam database.\n\nUntuk menghindari mengakses endpoint ini, pastikan bahwa :\n\n- username tidak kembar\n- password & confirm_pass lebih dari 5 char\n- password & confirm_pass sesuai"
 			},
 			"response": [
@@ -95,7 +106,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/register"
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
 					},
 					"status": "Bad Request",
 					"code": 400,
@@ -159,7 +181,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/register"
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
 					},
 					"status": "Forbidden",
 					"code": 403,
@@ -223,7 +256,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/register"
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
 					},
 					"status": "Forbidden",
 					"code": 403,
@@ -288,7 +332,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/register"
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
 					},
 					"status": "OK",
 					"code": 200,
@@ -351,7 +406,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/register"
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
 					},
 					"status": "Created",
 					"code": 201,
@@ -474,7 +540,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/login",
+				"url": {
+					"raw": "localhost:3000/api/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
 				"description": "Endpoint ini digunakan untuk melakukan login, agar user dapat melihat token mereka masing-masing.\n\nUntuk dapat mengkases endpoint ini, pastikan bahwa :\n\n- password sesuai\n- user terdaftar\n    \n\nUntuk dapat mengakses login admin, pastikan bahwa anda mengisi username dan password yang sesuai untuk admin."
 			},
 			"response": [
@@ -504,7 +581,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/login"
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"status": "OK",
 					"code": 200,
@@ -568,7 +656,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/login"
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"status": "OK",
 					"code": 200,
@@ -632,7 +731,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/login"
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"status": "Bad Request",
 					"code": 400,
@@ -696,7 +806,18 @@
 								}
 							]
 						},
-						"url": "localhost:3000/api/users/login"
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"status": "Not Found",
 					"code": 404,
@@ -740,30 +861,249 @@
 			"name": "(ADMIN)Delete Account",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg3NDM5MTA0LCJleHAiOjE2ODc0NDI3MDR9.EUjiopetMW6MH_vfc44e2gSKzUFhu2HgetcvMyTsWEA",
+						"description": "hanya admin yang dapat mengakses endpoint ini",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "user0",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123",
-							"type": "text"
-						},
-						{
-							"key": "confirm_pass",
-							"value": "123",
+							"value": "user4",
 							"type": "text"
 						}
 					]
 				},
-				"url": "localhost:3000/api/admin/register"
+				"url": {
+					"raw": "localhost:3000/api/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"users"
+					]
+				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "contoh berhasil",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg3NDM5MTA0LCJleHAiOjE2ODc0NDI3MDR9.EUjiopetMW6MH_vfc44e2gSKzUFhu2HgetcvMyTsWEA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-y5Yxv3oxjvFzFJHTrhcbQtxCn+Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 13:07:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User has been deleted from the database\"\n}"
+				},
+				{
+					"name": "contoh gagal (user tidak ditemukan)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjg3NDM5MTA0LCJleHAiOjE2ODc0NDI3MDR9.EUjiopetMW6MH_vfc44e2gSKzUFhu2HgetcvMyTsWEA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user99",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-AeuUaVSDFyr5HsjCcV+fKNkZtqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 13:07:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User not found"
+				},
+				{
+					"name": "contoh gagal (yang mengakses bukan admin)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjo5ODQyLCJpYXQiOjE2ODc0MzkzMDgsImV4cCI6MTY4NzQ0MjkwOH0.TI3f0hR0fg1lV3SwCj6V_8NbVczSWUxClWYHteeoZ4U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/admin/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-vdlUntX/dBrQY/uzKBZSZr+YYKg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Jun 2023 13:08:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized Access"
+				}
+			]
 		},
 		{
 			"name": "(ADMIN)View All Accounts",
@@ -802,7 +1142,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/admin/users"
+				"url": {
+					"raw": "localhost:3000/api/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
@@ -837,7 +1188,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/users/changepw"
+				"url": {
+					"raw": "localhost:3000/api/users/changepw",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"changepw"
+					]
+				}
 			},
 			"response": []
 		},
@@ -846,7 +1208,17 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:3000/api/info"
+				"url": {
+					"raw": "localhost:3000/api/info",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"info"
+					]
+				}
 			},
 			"response": []
 		},
@@ -886,7 +1258,18 @@
 						}
 					]
 				},
-				"url": "localhost:3000/api/picture/fav"
+				"url": {
+					"raw": "localhost:3000/api/picture/fav",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"fav"
+					]
+				}
 			},
 			"response": []
 		},
@@ -930,7 +1313,18 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:3000/api/picture/delete"
+				"url": {
+					"raw": "localhost:3000/api/picture/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"delete"
+					]
+				}
 			},
 			"response": []
 		},
@@ -1532,7 +1926,18 @@
 						"type": "text"
 					}
 				],
-				"url": "localhost:3000/api/picture/search_notag",
+				"url": {
+					"raw": "localhost:3000/api/picture/search_notag",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"search_notag"
+					]
+				},
 				"description": "Endpoint ini digunakan untuk mencari 20 post terbaru.  \nEndpoint ini akan menampilkan :\n\n- id\n- artist_name\n- created_at\n- Tags\n    \n\nSerta menampilkan pesan dan sisa kuota user.\n\nEndpoint ini tidak mungkin error."
 			},
 			"response": [
@@ -1946,7 +2351,21 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
+				"url": {
+					"raw": "https://cdn.donmai.us/sample/f9/08/__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"donmai",
+						"us"
+					],
+					"path": [
+						"sample",
+						"f9",
+						"08",
+						"__tingyun_honkai_and_1_more_drawn_by_nanni_jjang__sample-f908fbf975c2b5e7f5d7086a6c6f123d.jpg"
+					]
+				}
 			},
 			"response": []
 		}
