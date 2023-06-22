@@ -8,7 +8,7 @@ const Users = require('../models/Users');
 const Favorite = require('../models/Favorite');
 const { restart } = require("nodemon");
 
-
+//MASUKIN POST KE FAV
 router.post("/fav", async (req, res) => {
     ////////////////////////////////////////////////////////// JOI
     const schema = Joi.object({
@@ -20,7 +20,6 @@ router.post("/fav", async (req, res) => {
     } catch (error) {
         return res.status(403).send(error.toString())
     }
-    const num = req.body.id;
     ////////////////////////////////////////////////////////// AUTH
     let token = req.header('x-auth-token')
     if (!req.header('x-auth-token')) {
@@ -36,7 +35,8 @@ router.post("/fav", async (req, res) => {
         return res.status(400).send('Invalid JWT Key');
     }
 
-    //////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////// SEARCH ID FROM DANBORU
+    let num = req.body.id;
     let data
     let response
     try {
@@ -89,7 +89,49 @@ router.post("/fav", async (req, res) => {
 
 });
 
+//SHOW POST YANG SDH MASUK FAV
 router.get("/fav/show", async (req, res) => {
+    //////////////////////////////////////////////////////////
+    let token = req.header('x-auth-token')
+    if (!req.header('x-auth-token')) {
+        let out = 'Authentication token is missing';
+        return res.status(401).send({ out });
+    }
+    let username
+    let userdata
+    try {
+        userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username
+    } catch (err) {
+        return res.status(400).send('Invalid JWT Key');
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    let getFav = await Favorite.findAll({
+        where:{
+            us_username : username
+        },
+        attributes: ['id_picture']
+    })
+    console.log(getFav);
+    return res.status(201).send(getFav);
+});
+
+//DELETE POST
+router.delete("/delete", async (req, res) => {
+    const schema = Joi.object({
+        id: Joi.string().required()
+    });
+
+    try {
+        await schema.validateAsync(req.body)
+    } catch (error) {
+        return res.status(403).send(error.toString())
+    }
+    
+    //////////////////////////////////////////////////////////
     let token = req.header('x-auth-token')
     if (!req.header('x-auth-token')) {
         let out = 'Authentication token is missing';
@@ -105,10 +147,43 @@ router.get("/fav/show", async (req, res) => {
         return res.status(400).send('Invalid JWT Key');
     }
 
+    const num = req.body.id;
+    let findFav = await Favorite.findOne({
+        where:{
+            us_username : username,
+            id_picture : num
+        }
+    })
+    if(findFav){
+        let delUser
+        try {
+            delUser = await Favorite.destroy({
+                where: {
+                    us_username: username,
+                    id_picture : num
+                }
+            })
+        } catch (error) {
+            return res.status(500).send(error)
+        }
+        return res.status(201).send({ message: 'Post has been deleted from the database' })
+    }else{
+        return res.status(404).send({ message: `Post not found in favorite`})
+    }
 });
 
 //Search by ID
 router.get("/info", async (req, res) => {
+    const schema = Joi.object({
+        id: Joi.string().required()
+    });
+
+    try {
+        await schema.validateAsync(req.body)
+    } catch (error) {
+        return res.status(403).send(error.toString())
+    }
+    const data = {...req.body}
     //////////////////////////////////////////////////////////
     let token = req.header('x-auth-token')
     if (!req.header('x-auth-token')) {
@@ -121,7 +196,6 @@ router.get("/info", async (req, res) => {
         userdata = jwt.verify(token, JWT_KEY);
         console.log(userdata.username);
         username = userdata.username
-        // const insert = 
     } catch (err) {
         return res.status(400).send('Invalid JWT Key');
     }
@@ -144,7 +218,6 @@ router.get("/info", async (req, res) => {
         .get(`https://danbooru.donmai.us/posts/${num}.json`)
         .then((response) => {
             console.log(response.data);
-
             return res.status(200).send({
                 id: response.data.id,
                 tag_name: response.data.tag_string_character,

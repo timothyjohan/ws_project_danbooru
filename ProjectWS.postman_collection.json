@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "5db0d6a3-e574-4ee1-90d2-5a56d7ff492e",
+		"_postman_id": "96e77270-b705-4fd8-ba07-4cefdeaa4bcb",
 		"name": "ProjectWS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26088181"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -860,7 +859,7 @@
 		{
 			"name": "(ADMIN)Delete Account",
 			"request": {
-				"method": "POST",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "urlencoded",
@@ -883,14 +882,14 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "localhost:3000/api/admin/register",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"api",
-						"users",
+						"admin",
 						"register"
 					]
 				}
@@ -1009,6 +1008,112 @@
 					"path": [
 						"api",
 						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to favorite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json().picture\r",
+							"    pm.visualizer.set(`\r",
+							"    <body>\r",
+							"    <img src=\"${jsonData}\">\r",
+							"    </body>`);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "6420033",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/picture/fav",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"fav"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show favorite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/api/picture/fav/show",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"fav",
+						"show"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete favorite",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/picture/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"picture",
+						"delete"
 					]
 				}
 			},
@@ -1759,112 +1864,6 @@
 					"body": "{\n    \"Error\": \"Posts not found!\"\n}"
 				}
 			]
-		},
-		{
-			"name": "Add to favorite",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"const jsonData = pm.response.json().picture\r",
-							"    pm.visualizer.set(`\r",
-							"    <body>\r",
-							"    <img src=\"${jsonData}\">\r",
-							"    </body>`);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwIiwicGFzc3dvcmQiOiIxMjM0NSIsImt1b3RhIjoxMzksImlhdCI6MTY4NzQzMTE2MSwiZXhwIjoxNjg3NDM0NzYxfQ.JY6JGbaEO2WBCv52CiugJLZ3VXgqnbNYGGtbu6vQfZ4",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "id",
-							"value": "6420033",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "localhost:3000/api/picture/fav",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"fav"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete favorite",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/api/picture/delete",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"delete"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Show favorite",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": {
-					"raw": "localhost:3000/api/picture/fav/show",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"picture",
-						"fav",
-						"show"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
 		},
 		{
 			"name": "getpict (cara tembak langsung)",
