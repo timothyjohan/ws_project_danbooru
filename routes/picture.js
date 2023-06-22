@@ -6,17 +6,22 @@ const Joi = require("joi");
 const axios = require("axios");
 const Users = require('../models/Users');
 const Favorite = require('../models/Favorite');
-
 const { restart } = require("nodemon");
 
-// router.get("/", async (req, res) => {
-//     await axios.get(`https://danbooru.donmai.us/posts.json`).then((response) => {
-//         console.log(response.data.length);
-//     });
-// });
 
 router.post("/fav", async (req, res) => {
-    //////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////// JOI
+    const schema = Joi.object({
+        id : Joi.string().required(),
+    });
+
+    try {
+        await schema.validateAsync(req.body)
+    } catch (error) {
+        return res.status(403).send(error.toString())
+    }
+    const num = req.body.id;
+    ////////////////////////////////////////////////////////// AUTH
     let token = req.header('x-auth-token')
     if (!req.header('x-auth-token')) {
         let out = 'Authentication token is missing';
@@ -27,14 +32,11 @@ router.post("/fav", async (req, res) => {
         let userdata = jwt.verify(token, JWT_KEY);
         console.log(userdata.username);
         username = userdata.username
-        // const insert = 
     } catch (err) {
         return res.status(400).send('Invalid JWT Key');
     }
 
     //////////////////////////////////////////////////////////
-
-    let num = req.body.id;
     let data
     let response
     try {
@@ -87,7 +89,23 @@ router.post("/fav", async (req, res) => {
 
 });
 
-router.get("/fav/show", async (req, res) => { });
+router.get("/fav/show", async (req, res) => {
+    let token = req.header('x-auth-token')
+    if (!req.header('x-auth-token')) {
+        let out = 'Authentication token is missing';
+        return res.status(401).send({ out });
+    }
+    let username
+    let userdata
+    try {
+        userdata = jwt.verify(token, JWT_KEY);
+        console.log(userdata.username);
+        username = userdata.username
+    } catch (err) {
+        return res.status(400).send('Invalid JWT Key');
+    }
+
+});
 
 //Search by ID
 router.get("/info", async (req, res) => {
@@ -275,6 +293,5 @@ router.get("/search_notag", async (req, res) => {
         Data: data,
     });
 });
-
 
 module.exports = router;
