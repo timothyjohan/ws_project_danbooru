@@ -1,11 +1,12 @@
 const Sequelize = require("sequelize");
+require('dotenv').config();
 const db = new Sequelize(
-    "sql12627995", //dbName
-    "sql12627995", //dbUsername
-    "2DBiygU7nL", //dbPassword
+    process.env.DB_NAME, //dbName
+    process.env.DB_USERNAME, //dbUsername
+    process.env.DB_PASSWORD, //dbPassword
     {
-        host: "sql12.freemysqlhosting.net",
-        port: 3306,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
         dialect: "mysql",
         logging: console.log,
         timezone: "+07:00",

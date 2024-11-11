@@ -4,7 +4,7 @@ const multer = require('multer');
 // const upload = multer({ storage : fileStorageEngine})
 
 const app = express()
-const port = 3000
+const port = 3001
 const users = require('./routes/users');
 const admin = require('./routes/admin');
 const picture = require('./routes/picture');
